@@ -22,29 +22,13 @@ type FrameworkNode = {
   children?: FrameworkNode[];
 };
 
+type CourseFramework = ReturnType<typeof buildFramework>;
+
 const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle">> = {
   "02期货市场的运作机制.pdf": {
     summary:
       "本章是衍生金融工具课程的市场制度基础。学习目标不是只记住“期货是标准化远期”，而是理解期货市场如何通过合约标准化、交易所交易、保证金、逐日盯市、清算所和监管体系，把未来价格交易变成可流动、可清算、可控违约风险的市场机制。",
-    keyConcepts: [
-      "远期合约",
-      "期货合约",
-      "标准化合约",
-      "保证金账户",
-      "初始保证金",
-      "维持保证金",
-      "追加保证金通知",
-      "逐日盯市",
-      "结算价",
-      "清算所",
-      "中央对手方",
-      "实物交割",
-      "现金结算",
-      "场外市场",
-      "信用风险",
-      "集中清算",
-      "金融监管",
-    ],
+    keyConcepts: ["远期合约", "期货合约", "标准化合约", "保证金账户", "初始保证金", "维持保证金", "追加保证金通知", "逐日盯市", "结算价", "清算所", "中央对手方", "实物交割", "现金结算", "场外市场", "信用风险", "集中清算", "金融监管"],
     nodes: [
       {
         name: "一、远期与期货的经济本质",
@@ -87,25 +71,12 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
         name: "三、保证金制度与逐日盯市",
         summary: "保证金和逐日盯市是期货市场风险控制的核心。投资者不是一次性支付合约全额价值，而是缴纳履约担保，并根据每日结算价把盈亏及时反映到账户中。",
         children: [
-          {
-            name: "1. 保证金账户",
-            summary: "保证金是履约担保，不是购买标的资产的成本。期货具有杠杆特征，因为投资者只需缴纳合约价值的一小部分即可控制较大的名义头寸。",
-            children: [
-              { name: "初始保证金", summary: "开仓时必须存入的最低金额，用于覆盖正常市场波动下可能发生的损失。" },
-              { name: "维持保证金", summary: "持仓期间账户余额必须维持的最低水平，通常低于初始保证金。" },
-              { name: "追加保证金通知", summary: "当保证金余额低于维持保证金时，投资者需要补足至规定水平；若未补足，头寸可能被强制平仓。" },
-            ],
-          },
-          {
-            name: "2. 逐日盯市流程",
-            summary: "每个交易日结束后，交易所根据结算价计算多头和空头当日盈亏，盈利方保证金账户增加，亏损方保证金账户减少。",
-            children: [
-              { name: "结算价", summary: "结算价是每日盈亏计算的依据，不一定等同于某一笔成交价格。" },
-              { name: "每日盈亏", summary: "若价格上涨，多头盈利、空头亏损；若价格下跌，多头亏损、空头盈利。" },
-              { name: "风险释放", summary: "逐日盯市把到期可能集中爆发的违约风险拆分到每个交易日处理。" },
-            ],
-          },
-          { name: "3. 保证金制度的学习重点", summary: "保证金不是合约价格，也不是购买资产的本金；它的作用是约束交易者履约并为清算所提供风险缓冲。" },
+          { name: "保证金账户", summary: "保证金是履约担保，不是购买标的资产的成本。期货具有杠杆特征，因为投资者只需缴纳合约价值的一小部分即可控制较大的名义头寸。" },
+          { name: "初始保证金", summary: "开仓时必须存入的最低金额，用于覆盖正常市场波动下可能发生的损失。" },
+          { name: "维持保证金", summary: "持仓期间账户余额必须维持的最低水平，通常低于初始保证金。" },
+          { name: "追加保证金通知", summary: "当保证金余额低于维持保证金时，投资者需要补足至规定水平；若未补足，头寸可能被强制平仓。" },
+          { name: "逐日盯市", summary: "每个交易日结束后，交易所根据结算价计算多空双方当日盈亏，盈利方账户增加，亏损方账户减少。" },
+          { name: "风险释放", summary: "逐日盯市把到期可能集中爆发的违约风险拆分到每个交易日处理。" },
         ],
       },
       {
@@ -144,10 +115,10 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
         name: "七、本章学习抓手与易错点",
         summary: "本章应围绕“期货如何把远期合约制度化”来理解，而不是孤立背概念。",
         children: [
-          { name: "易错点 1：保证金不是购买成本", summary: "保证金是履约担保，期货合约的名义价值通常远大于保证金。" },
-          { name: "易错点 2：逐日盯市不是到期结算", summary: "逐日盯市每天结算盈亏，降低风险累积。" },
-          { name: "易错点 3：清算所不是普通中介", summary: "清算所承担中央对手方职能，是风险控制核心。" },
-          { name: "易错点 4：标准化既是优势也是限制", summary: "标准化提高流动性，但会导致套保中的合约不完全匹配问题。" },
+          { name: "保证金不是购买成本", summary: "保证金是履约担保，期货合约的名义价值通常远大于保证金。" },
+          { name: "逐日盯市不是到期结算", summary: "逐日盯市每天结算盈亏，降低风险累积。" },
+          { name: "清算所不是普通中介", summary: "清算所承担中央对手方职能，是风险控制核心。" },
+          { name: "标准化既是优势也是限制", summary: "标准化提高流动性，但会导致套保中的合约不完全匹配问题。" },
         ],
       },
     ],
@@ -155,23 +126,7 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
   "03利用期货的对冲策略.pdf": {
     summary:
       "本章从“期货能交易未来价格”进一步走向风险管理应用，核心是理解企业、投资者和资产管理者如何用期货建立与现货风险相反的头寸。重点包括多头套保、空头套保、基差风险、交叉套保、最优套保比率、最优合约数量以及股票指数期货在组合 β 管理中的应用。",
-    keyConcepts: [
-      "套期保值",
-      "多头套期保值",
-      "空头套期保值",
-      "基差",
-      "基差风险",
-      "交叉套期保值",
-      "最小方差套保",
-      "最优套保比率",
-      "相关系数",
-      "现货价格变化标准差",
-      "期货价格变化标准差",
-      "最优合约数量",
-      "股票指数期货",
-      "组合 β",
-      "系统性风险",
-    ],
+    keyConcepts: ["套期保值", "多头套期保值", "空头套期保值", "基差", "基差风险", "交叉套期保值", "最小方差套保", "最优套保比率", "相关系数", "现货价格变化标准差", "期货价格变化标准差", "最优合约数量", "股票指数期货", "组合 β", "系统性风险"],
     nodes: [
       {
         name: "一、套期保值的核心思想",
@@ -208,7 +163,7 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
         summary: "基差是现货价格与期货价格的差额，通常写作 b = S - F。现实套保是否完美，关键取决于套保开始和结束时基差如何变化。",
         children: [
           { name: "基差定义", summary: "b = S - F，其中 S 是现货价格，F 是期货价格。基差可能为正、为负或接近零。" },
-          { name: "基差走强", summary: "基差变大，即现货相对期货更强。对空头套保和多头套保的影响方向不同，需要结合有效价格判断。" },
+          { name: "基差走强", summary: "基差变大，即现货相对期货更强。基差变化会使实际锁定价格偏离预期。" },
           { name: "基差走弱", summary: "基差变小，即现货相对期货更弱。基差变化会使实际锁定价格偏离预期。" },
           { name: "到期收敛", summary: "同一标的在交割期附近现货价格和期货价格趋于一致，因此基差接近零；但多数套保会在到期前结束。" },
           { name: "基差风险来源", summary: "现货和期货标的不同、地点不同、品质不同、到期日不同、供需冲击不同，都会导致基差变化。" },
@@ -258,10 +213,10 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
         name: "九、本章学习抓手与易错点",
         summary: "本章应以“风险方向判断 + 基差风险 + 数量化套保”作为主线。",
         children: [
-          { name: "易错点 1：套保目标不是保证盈利", summary: "套保是降低风险；若价格朝有利方向变化，期货头寸可能抵消部分现货收益。" },
-          { name: "易错点 2：多头/空头方向容易反", summary: "未来买入现货用多头套保，未来卖出现货用空头套保。" },
-          { name: "易错点 3：基差不是期货价格", summary: "基差是现货价格与期货价格之差，基差变化才是套保不完美的关键。" },
-          { name: "易错点 4：套保比率与合约数量不同", summary: "h* 是比例，N* 是合约张数；两者公式和含义不能混淆。" },
+          { name: "套保目标不是保证盈利", summary: "套保是降低风险；若价格朝有利方向变化，期货头寸可能抵消部分现货收益。" },
+          { name: "多头/空头方向容易反", summary: "未来买入现货用多头套保，未来卖出现货用空头套保。" },
+          { name: "基差不是期货价格", summary: "基差是现货价格与期货价格之差，基差变化才是套保不完美的关键。" },
+          { name: "套保比率与合约数量不同", summary: "h* 是比例，N* 是合约张数；两者公式和含义不能混淆。" },
         ],
       },
     ],
@@ -269,25 +224,7 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
   "04利率.pdf": {
     summary:
       "本章是衍生品定价的时间价值基础。学习重点不是孤立记忆各种利率名称，而是建立从复利、连续复利、零息利率、债券定价、收益率、平价收益率到远期利率和期限结构的完整贴现框架，为后续远期、期货、互换和期权定价提供统一语言。",
-    keyConcepts: [
-      "利率",
-      "无风险利率",
-      "国债利率",
-      "LIBOR",
-      "OIS",
-      "回购利率",
-      "复利频率",
-      "有效年利率",
-      "连续复利",
-      "贴现因子",
-      "零息利率",
-      "债券定价",
-      "到期收益率",
-      "平价收益率",
-      "远期利率",
-      "期限结构",
-      "收益率曲线",
-    ],
+    keyConcepts: ["利率", "无风险利率", "国债利率", "LIBOR", "OIS", "回购利率", "复利频率", "有效年利率", "连续复利", "贴现因子", "零息利率", "债券定价", "到期收益率", "平价收益率", "远期利率", "期限结构", "收益率曲线"],
     nodes: [
       {
         name: "一、利率的经济含义与市场基准",
@@ -377,11 +314,11 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
         name: "九、本章学习抓手与易错点",
         summary: "本章的主线是“把未来现金流变成今天的价值”。所有利率概念最终都服务于现金流比较、贴现和无套利定价。",
         children: [
-          { name: "易错点 1：利率必须说明复利频率", summary: "同一个数字在年复利、半年复利和连续复利下含义不同。" },
-          { name: "易错点 2：连续复利和离散复利不能直接混用", summary: "使用公式前要确认利率口径一致。" },
-          { name: "易错点 3：零息利率不等于到期收益率", summary: "零息利率对应单一到期现金流；到期收益率是整只债券的单一内部收益率。" },
-          { name: "易错点 4：远期利率不是确定预测", summary: "远期利率是当前市场隐含利率，未来实际即期利率可能不同。" },
-          { name: "易错点 5：债券现金流应按期限分别贴现", summary: "多期现金流不能随意用一个利率处理，除非明确是在使用到期收益率口径。" },
+          { name: "利率必须说明复利频率", summary: "同一个数字在年复利、半年复利和连续复利下含义不同。" },
+          { name: "连续复利和离散复利不能直接混用", summary: "使用公式前要确认利率口径一致。" },
+          { name: "零息利率不等于到期收益率", summary: "零息利率对应单一到期现金流；到期收益率是整只债券的单一内部收益率。" },
+          { name: "远期利率不是确定预测", summary: "远期利率是当前市场隐含利率，未来实际即期利率可能不同。" },
+          { name: "债券现金流应按期限分别贴现", summary: "多期现金流不能随意用一个利率处理，除非明确是在使用到期收益率口径。" },
         ],
       },
     ],
@@ -390,6 +327,16 @@ const chapterSeeds: Record<string, Omit<ChapterSeed, "fileName" | "chapterTitle"
 
 function chapterTitleFromFile(fileName: string) {
   return path.basename(fileName, path.extname(fileName));
+}
+
+function getSeededChapters() {
+  return Object.entries(chapterSeeds).map(([fileName, seed]) => ({
+    fileName,
+    chapterTitle: chapterTitleFromFile(fileName),
+    summary: seed.summary,
+    keyConcepts: seed.keyConcepts,
+    nodes: seed.nodes,
+  }));
 }
 
 function trimNodes(nodes: FrameworkNode[], maxDepth: number, currentDepth = 1): FrameworkNode[] {
@@ -475,6 +422,10 @@ function buildFramework(detail: "CONCISE" | "DETAILED", chapters: ChapterSeed[])
       ],
     },
   };
+}
+
+export function getFixedCourseFramework(detail: "CONCISE" | "DETAILED"): CourseFramework {
+  return buildFramework(detail, getSeededChapters());
 }
 
 function buildCheatsheet(chapters: ChapterSeed[]) {
