@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
-import { getFixedCourseFramework } from "@/lib/ingestion/ingest-fixed-course";
+import { getFixedCourseFramework } from "@/lib/fixed-course-framework";
 
 type Params = { subjectId: string };
 

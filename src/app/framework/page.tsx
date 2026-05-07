@@ -1,5 +1,6 @@
 "use client";
 
+import { getFixedCourseFramework } from "@/lib/fixed-course-framework";
 import { useEffect, useMemo, useState } from "react";
 
 type Subject = { id: string; name: string };
@@ -79,18 +80,26 @@ function parseFramework(content: string): FrameworkData | null {
 export default function FrameworkPage() {
   const [subject, setSubject] = useState<Subject | null>(null);
   const [level, setLevel] = useState<"concise" | "detailed">("detailed");
-  const [content, setContent] = useState<string>("");
+  const [content, setContent] = useState<string>(() => JSON.stringify(getFixedCourseFramework("DETAILED"), null, 2));
 
   async function loadSubject() {
-    const res = await fetch("/api/subjects/default");
-    const data = await res.json();
-    if (data.subject) setSubject(data.subject);
+    try {
+      const res = await fetch("/api/subjects/default");
+      const data = await res.json();
+      if (data.subject) setSubject(data.subject);
+    } catch {
+      setSubject({ id: "fixed-course", name: "衍生金融工具" });
+    }
   }
 
   async function loadFramework(subjectId: string, lv: "concise" | "detailed") {
-    const res = await fetch(`/api/subjects/${subjectId}/framework?level=${lv}`);
-    const data = (await res.json()) as { artifact: Artifact | null };
-    setContent(data.artifact?.contentJson ?? "知识框架尚未预置，请由维护者运行固定课程导入脚本。");
+    try {
+      const res = await fetch(`/api/subjects/${subjectId}/framework?level=${lv}`);
+      const data = (await res.json()) as { artifact: Artifact | null };
+      setContent(data.artifact?.contentJson ?? JSON.stringify(getFixedCourseFramework(lv === "detailed" ? "DETAILED" : "CONCISE"), null, 2));
+    } catch {
+      setContent(JSON.stringify(getFixedCourseFramework(lv === "detailed" ? "DETAILED" : "CONCISE"), null, 2));
+    }
   }
 
   useEffect(() => {
