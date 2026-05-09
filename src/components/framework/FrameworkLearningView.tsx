@@ -202,7 +202,7 @@ function formatChapterTabLabel(chapter: FrameworkChapter, index: number) {
   return `${formatChapterNumber(index)} ${stripChapterPrefix(chapter.chapterTitle)}`;
 }
 
-function FrameworkNodeCard({ node, blocks }: { node: FrameworkNode; blocks?: unknown[] }) {
+function FrameworkNodeCard({ node }: { node: FrameworkNode }) {
   return (
     <div className="rounded-2xl border border-zinc-200 bg-white p-4">
       <p className="font-semibold leading-7 text-zinc-950">{node.name}</p>
@@ -216,6 +216,14 @@ function FrameworkNodeCard({ node, blocks }: { node: FrameworkNode; blocks?: unk
           ))}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function ConceptNodeBlock({ node, blocks }: { node: FrameworkNode; blocks?: unknown[] }) {
+  return (
+    <div className="space-y-3">
+      <FrameworkNodeCard node={node} />
       {blocks?.length ? <VisualBlockRenderer blocks={blocks} showHeading={false} /> : null}
     </div>
   );
@@ -273,7 +281,7 @@ function ChapterGuide({ chapter, guideNodes }: { chapter: FrameworkChapter; guid
 function ChapterTabs({ chapters, activeIndex, onChange }: { chapters: FrameworkChapter[]; activeIndex: number; onChange: (index: number) => void }) {
   return (
     <div className="sticky top-0 z-20 border-b border-zinc-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl gap-1.5 overflow-x-auto px-6 py-2.5 [scrollbar-width:thin]">
+      <div className="mx-auto flex w-full max-w-screen-2xl gap-1.5 overflow-x-auto px-6 py-2.5 [scrollbar-width:thin]">
         {chapters.map((chapter, index) => (
           <button
             key={`${chapter.chapterTitle ?? "chapter"}-${index}`}
@@ -312,7 +320,7 @@ function ChapterOutline({
   const chartCount = countByTypes(blocks, ["payoff_chart", "line_chart", "curve_chart", "chart_explanation", "cashflow_diagram", "decision_tree", "timeline", "process_flow"]);
 
   return (
-    <aside className="sticky top-20 rounded-2xl border border-zinc-200 bg-white p-4">
+    <aside className="sticky top-20 self-start rounded-2xl border border-zinc-200 bg-white p-4">
       <p className="text-xs font-medium text-zinc-500">第 {activeIndex + 1} / {total} 章</p>
       <h3 className="mt-1.5 text-base font-semibold leading-7 text-zinc-950">{stripChapterPrefix(chapter.chapterTitle)}</h3>
       <p className="mt-1 text-xs text-zinc-500">当前模式：{modeMeta[mode].label}</p>
@@ -388,7 +396,7 @@ export default function FrameworkLearningView({
   return (
     <main className="min-h-screen bg-white">
       <div className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-4">
+        <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-6 px-6 py-4">
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-3 text-sm text-zinc-500">
               <span className="font-medium text-zinc-700">{courseName}</span>
@@ -438,16 +446,16 @@ export default function FrameworkLearningView({
 
       <ChapterTabs chapters={chapters} activeIndex={activeChapterIndex} onChange={setActiveChapterIndex} />
 
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_270px] gap-5 px-6 py-5">
-        <div className="space-y-5">
+      <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-[minmax(0,1fr)_300px] gap-6 px-6 py-5">
+        <div className="min-w-0 space-y-5">
           <ChapterGuide chapter={activeChapter} guideNodes={guideNodes} />
 
           {(conceptNodes.length || grouped.concept.length) ? (
             <Section id="concepts" title="关键概念" description="只保留本章真正的知识对象，导读性内容已前置到本章导读。">
               {conceptNodes.length ? (
-                <div className="grid gap-3 xl:grid-cols-2">
+                <div className="space-y-4">
                   {conceptNodes.map((node, index) => (
-                    <FrameworkNodeCard key={`${node.name ?? "node"}-${index}`} node={node} blocks={attached.get(node)} />
+                    <ConceptNodeBlock key={`${node.name ?? "node"}-${index}`} node={node} blocks={attached.get(node)} />
                   ))}
                 </div>
               ) : null}

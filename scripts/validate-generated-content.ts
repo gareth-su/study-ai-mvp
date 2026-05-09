@@ -3,7 +3,28 @@ import path from "node:path";
 import { z } from "zod";
 import { FrameworkSchema, parseFrameworkJson } from "../src/lib/ai/framework-schema";
 
-const generatedDir = path.join(process.cwd(), "data", "generated", "ysjrgj");
+const variantDirMap = {
+  sample: "sample",
+  full: "full",
+} as const;
+
+type ContentVariant = keyof typeof variantDirMap;
+
+function getGeneratedDir() {
+  const baseDir = path.join(process.cwd(), "data", "generated", "ysjrgj");
+  const variant = process.env.CONTENT_VARIANT?.trim();
+
+  if (!variant) return { dir: baseDir, label: "root" };
+
+  if (variant === "sample" || variant === "full") {
+    const contentVariant: ContentVariant = variant;
+    return { dir: path.join(baseDir, variantDirMap[contentVariant]), label: contentVariant };
+  }
+
+  throw new Error(`CONTENT_VARIANT 仅支持 sample 或 full，当前值：${variant}`);
+}
+
+const generatedTarget = getGeneratedDir();
 
 const MaterialInputSchema = z.object({
   id: z.string().trim().min(1),
@@ -33,7 +54,7 @@ type ValidationResult = {
 };
 
 async function readJsonText(fileName: string) {
-  return readFile(path.join(generatedDir, fileName), "utf8");
+  return readFile(path.join(generatedTarget.dir, fileName), "utf8");
 }
 
 function formatZodError(error: z.ZodError) {
@@ -76,6 +97,7 @@ async function main() {
   try {
     const result = await validateGeneratedContent();
     console.log("离线生成内容校验通过");
+    console.log(`target: data/generated/ysjrgj/${generatedTarget.label === "root" ? "" : `${generatedTarget.label}/`}`);
     console.log(`materials: ${result.materials.length}`);
     console.log(`chunks: ${result.chunks.length}`);
     console.log(`framework concise chapters: ${result.conciseFramework.chapters.length}`);

@@ -118,4 +118,6 @@ npm run build
 npm run validate:content
 ```
 
+`npm run validate:content` 默认校验 `data/generated/ysjrgj/`。可以用 `CONTENT_VARIANT=sample` 校验 `data/generated/ysjrgj/sample/`，或用 `CONTENT_VARIANT=full` 校验 `data/generated/ysjrgj/full/`。
+
 每次涉及页面结构、schema、content validation 相关代码时，建议至少运行以上三条命令。

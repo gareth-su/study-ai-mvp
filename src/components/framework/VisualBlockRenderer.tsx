@@ -31,8 +31,8 @@ function renderLatex(latex: string, displayMode: boolean): string | null {
 
 function LatexBlock({ latex, fallback }: { latex: string; fallback: string }) {
   const html = renderLatex(latex, true);
-  if (!html) return <p className="font-mono text-sm leading-7 text-white">{fallback}</p>;
-  return <div className="text-center" dangerouslySetInnerHTML={{ __html: html }} />;
+  if (!html) return <p className="font-mono text-sm leading-7 text-violet-950">{fallback}</p>;
+  return <div className="overflow-x-auto text-center text-violet-950 [&_.katex-display]:my-0" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 function LatexInline({ latex, fallback }: { latex: string; fallback: string }) {
@@ -303,7 +303,7 @@ function ComparisonTableView({ block }: { block: ComparisonTableBlock }) {
   return (
     <BlockCard title={block.title} type={block.type}>
       <div className="-mx-1 overflow-x-auto">
-        <table className="w-full min-w-[480px] border-collapse text-sm">
+        <table className="w-full min-w-[640px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-zinc-200 bg-zinc-50">
               {block.headers.map((header, i) => (
@@ -512,7 +512,7 @@ function DataTableView({ block }: { block: DataTableBlock }) {
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
       <div className="-mx-1 overflow-x-auto">
-        <table className="w-full min-w-[480px] border-collapse text-sm">
+        <table className="w-full min-w-[640px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-zinc-200 bg-zinc-50">
               {block.headers.map((header, i) => (
@@ -743,7 +743,7 @@ function PayoffChartView({ block }: { block: PayoffChartBlock }) {
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
       <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[360px]" style={{ height: 280 }}>
+        <div className="min-w-[720px]" style={{ height: 320 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
@@ -915,7 +915,7 @@ function LineChartView({ block }: { block: LineChartBlock }) {
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
       <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[360px]" style={{ height: 280 }}>
+        <div className="min-w-[720px]" style={{ height: 320 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
@@ -1005,7 +1005,7 @@ function CurveChartView({ block }: { block: CurveChartBlock }) {
         )}
       </div>
       <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[360px]" style={{ height: 280 }}>
+        <div className="min-w-[720px]" style={{ height: 320 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
@@ -1125,7 +1125,7 @@ function CashflowDiagramView({ block }: { block: CashflowDiagramBlock }) {
               const phaseEdges = block.edges.filter((e) => phase.edgeIds.includes(e.id));
               if (!phaseEdges.length) return null;
               return (
-                <div key={`phase-${pi}`} className="mb-3 min-w-[360px]">
+                <div key={`phase-${pi}`} className="mb-3 min-w-[720px]">
                   <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-zinc-500">{phase.title}</p>
                   {phaseEdges.map((edge) => (
                     <CashflowEdgeRow
@@ -1139,7 +1139,7 @@ function CashflowDiagramView({ block }: { block: CashflowDiagramBlock }) {
               );
             })
           : block.edges.map((edge) => (
-              <div key={edge.id} className="min-w-[360px]">
+              <div key={edge.id} className="min-w-[720px]">
                 <CashflowEdgeRow
                   edge={edge}
                   fromLabel={nodeMap.get(edge.from)?.label ?? edge.from}
@@ -1194,34 +1194,36 @@ function DecisionTreeView({ block }: { block: DecisionTreeBlock }) {
         </div>
       </div>
 
-      <div className="relative mt-4">
-        <div className="absolute left-1/2 top-0 hidden h-4 w-px -translate-x-1/2 bg-zinc-200 sm:block" />
-        <div className="grid gap-3 pt-4 sm:grid-cols-2 lg:grid-cols-3">
-          {block.root.branches.map((branch, bi) => {
-            const targetNode = nodeMap.get(branch.target);
-            return (
-              <div key={`br-${bi}`} className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
-                <div className="absolute -top-4 left-1/2 hidden h-4 w-px -translate-x-1/2 bg-zinc-200 sm:block" />
-                <div className="mb-3 inline-flex rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">
-                  条件：<MathText text={branch.condition} />
-                </div>
-                {targetNode ? (
-                  <div className="rounded-xl border border-zinc-100 bg-zinc-50/70 px-3 py-3">
-                    <p className="text-sm font-semibold text-zinc-950">
-                      结果：<MathText text={targetNode.label} />
-                    </p>
-                    {targetNode.content ? (
-                      <p className="mt-2 text-sm leading-7 text-zinc-600">
-                        <MathText text={targetNode.content} />
-                      </p>
-                    ) : null}
+      <div className="relative mt-4 overflow-x-auto overscroll-x-contain">
+        <div className="min-w-[720px]">
+          <div className="absolute left-1/2 top-0 h-4 w-px -translate-x-1/2 bg-zinc-200" />
+          <div className="grid gap-3 pt-4 sm:grid-cols-2 lg:grid-cols-3">
+            {block.root.branches.map((branch, bi) => {
+              const targetNode = nodeMap.get(branch.target);
+              return (
+                <div key={`br-${bi}`} className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+                  <div className="absolute -top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-zinc-200" />
+                  <div className="mb-3 inline-flex rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">
+                    条件：<MathText text={branch.condition} />
                   </div>
-                ) : (
-                  <p className="text-sm text-zinc-500">未找到目标节点：{branch.target}</p>
-                )}
-              </div>
-            );
-          })}
+                  {targetNode ? (
+                    <div className="rounded-xl border border-zinc-100 bg-zinc-50/70 px-3 py-3">
+                      <p className="text-sm font-semibold text-zinc-950">
+                        结果：<MathText text={targetNode.label} />
+                      </p>
+                      {targetNode.content ? (
+                        <p className="mt-2 text-sm leading-7 text-zinc-600">
+                          <MathText text={targetNode.content} />
+                        </p>
+                      ) : null}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-zinc-500">未找到目标节点：{branch.target}</p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 

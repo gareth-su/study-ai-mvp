@@ -82,7 +82,7 @@ import-summary.md
 
 ## 如何校验 JSON
 
-运行：
+默认校验根目录：
 
 ```bash
 npm run validate:content
@@ -94,6 +94,25 @@ npm run validate:content
 - `chunks.json`
 - `framework-concise.json`
 - `framework-detailed.json`
+
+可以通过 `CONTENT_VARIANT` 指定校验目录：
+
+```powershell
+$env:CONTENT_VARIANT="full"
+npm run validate:content
+
+$env:CONTENT_VARIANT="sample"
+npm run validate:content
+
+Remove-Item Env:CONTENT_VARIANT
+npm run validate:content
+```
+
+对应目录：
+
+- 未设置：`data/generated/ysjrgj/`
+- `CONTENT_VARIANT=sample`：`data/generated/ysjrgj/sample/`
+- `CONTENT_VARIANT=full`：`data/generated/ysjrgj/full/`
 
 校验失败时会输出具体错误。该脚本不连接 AI，不调用任何模型。
 
