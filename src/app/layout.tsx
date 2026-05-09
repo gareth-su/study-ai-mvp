@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-zinc-50 text-zinc-900">
+      <body suppressHydrationWarning className="min-h-full bg-zinc-50 text-zinc-900">
         <header className="sticky top-0 z-20 border-b border-zinc-200 bg-white/95 backdrop-blur">
           <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-3">
             <Link href="/" className="text-sm font-semibold text-zinc-900">

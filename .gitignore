@@ -34,7 +34,14 @@ yarn-error.log*
 .env*
 
 # local uploaded source files
+/source-materials/
 /uploads
+
+# local database
+/prisma/dev.db
+
+# generated full course content
+/data/generated/ysjrgj/full/
 
 # vercel
 .vercel
