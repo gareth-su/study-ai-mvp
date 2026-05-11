@@ -1,0 +1,301 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第 4 章 债券定价（一）",
+  "objective": "完整保留债券定价核心内容，同时按期末复习价值把公式、例题和无套利机制放入主学习路径，把市场链接、截图和未系统展开内容降为拓展。",
+  "modules": [
+    {
+      "title": "国债定价的现金流贴现逻辑",
+      "priority": "P0",
+      "reason": "债券定价的底层方法是把未来现金流按相应贴现率折现；不会现金流贴现就无法理解传统估值、无套利估值和公司债估值。",
+      "action": "keep-main"
+    },
+    {
+      "title": "传统估值法及其局限",
+      "priority": "P0",
+      "reason": "传统估值法是基础计算题入口，同时其局限引出即期利率逐期贴现。",
+      "action": "keep-main"
+    },
+    {
+      "title": "无套利估值法与即期利率贴现",
+      "priority": "P0",
+      "reason": "无套利估值法是本章最核心的定价逻辑，直接关联即期利率、零息债券和附息债券定价例题。",
+      "action": "keep-main"
+    },
+    {
+      "title": "一价定律、分离套利与重构套利",
+      "priority": "P0",
+      "reason": "一价定律解释为什么复制现金流必须同价，分离套利和重构套利是无套利定价的典型判断路径。",
+      "action": "keep-main"
+    },
+    {
+      "title": "非利息支付日定价：全价、净价与应计利息",
+      "priority": "P0",
+      "reason": "全价、净价和应计利息是债券报价与成交价的高频易混点，配有明确公式和计算例题。",
+      "action": "keep-main"
+    },
+    {
+      "title": "收益利差及其影响因素",
+      "priority": "P1",
+      "reason": "收益利差是从国债定价过渡到非国债估值的关键桥梁，服务公司债估值和信用风险理解。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "信用利差与经济周期",
+      "priority": "P1",
+      "reason": "信用利差随经济周期变化帮助解释公司债风险补偿，是不含权公司债估值的重要机制背景。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "不含权公司债估值",
+      "priority": "P1",
+      "reason": "不含权公司债估值把基准利率曲线和利差加总为贴现率，是国债定价向信用债定价的应用。",
+      "action": "keep-main-supporting"
+    }
+  ],
+  "visualBlocks": [
+    {
+      "title": "国债定价的现金流贴现公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "reason": "本章所有债券现值计算的总公式。",
+      "action": "keep-main"
+    },
+    {
+      "title": "国债定价：零息债券定价公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "reason": "零息债券是即期利率和无套利估值的基础。",
+      "action": "keep-main"
+    },
+    {
+      "title": "国债定价：附息债券现金流贴现公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "reason": "附息债券定价是核心计算题结构。",
+      "action": "keep-main"
+    },
+    {
+      "title": "国债定价的现金流贴现流程",
+      "type": "process_flow",
+      "priority": "P0",
+      "reason": "把识别现金流、选择贴现率、折现求和串成解题路径。",
+      "action": "keep-main"
+    },
+    {
+      "title": "国债定价：10 年期 8% 国债现金流时间线",
+      "type": "timeline",
+      "priority": "P0",
+      "reason": "帮助识别附息债券每期票息和到期本金。",
+      "action": "keep-main"
+    },
+    {
+      "title": "国债定价：附息债券现金流结构",
+      "type": "cashflow_diagram",
+      "priority": "P0",
+      "reason": "表达投资者持有债券时的票息与本金现金流。",
+      "action": "keep-main"
+    },
+    {
+      "title": "传统估值法例题：10 年期 8% 国债估值",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "典型附息债券估值例题。",
+      "action": "keep-main"
+    },
+    {
+      "title": "传统估值法局限：价格与收益率反向关系",
+      "type": "curve_chart",
+      "priority": "P1",
+      "reason": "辅助理解单一收益率贴现和价格敏感性。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "无套利估值法：即期利率逐期贴现公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "reason": "无套利估值的核心公式。",
+      "action": "keep-main"
+    },
+    {
+      "title": "无套利估值法与即期利率贴现流程",
+      "type": "process_flow",
+      "priority": "P0",
+      "reason": "表达无套利估值的标准操作路径。",
+      "action": "keep-main"
+    },
+    {
+      "title": "无套利估值法例题：3 年期 10% 半年付息债券",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "即期利率逐期贴现的代表性计算例题。",
+      "action": "keep-main"
+    },
+    {
+      "title": "无套利估值法例题：3 年期 6% 债券购买判断",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "把理论价值与市场价格比较，训练投资决策判断。",
+      "action": "keep-main"
+    },
+    {
+      "title": "一价定律：分离套利与重构套利方向对照",
+      "type": "data_table",
+      "priority": "P0",
+      "reason": "把套利方向和现金流复制关系结构化。",
+      "action": "keep-main"
+    },
+    {
+      "title": "一价定律：A、B、C 债券复制现金流矩阵",
+      "type": "data_table",
+      "priority": "P0",
+      "reason": "重建分离套利与重构套利的关键现金流关系。",
+      "action": "keep-main"
+    },
+    {
+      "title": "非利息支付日定价：全价、净价与应计利息关系",
+      "type": "comparison_table",
+      "priority": "P0",
+      "reason": "报价、成交价和应计利息是高频易混点。",
+      "action": "keep-main"
+    },
+    {
+      "title": "非利息支付日定价：应计利息计算公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "reason": "用于非付息日定价计算。",
+      "action": "keep-main"
+    },
+    {
+      "title": "非利息支付日定价例题：净价计算",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "直接训练全价、净价与应计利息转换。",
+      "action": "keep-main"
+    },
+    {
+      "title": "收益利差及其影响因素：绝对收益利差公式",
+      "type": "formula_card",
+      "priority": "P1",
+      "reason": "收益利差分析的基础表达。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "收益利差及其影响因素：信用、期权、流动性与税收",
+      "type": "comparison_table",
+      "priority": "P1",
+      "reason": "服务公司债利差构成理解。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "信用利差与经济周期：经济周期变化示意",
+      "type": "curve_chart",
+      "priority": "P1",
+      "reason": "解释经济周期与信用利差方向。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "不含权公司债估值流程",
+      "type": "process_flow",
+      "priority": "P1",
+      "reason": "把基准曲线、利差和现金流贴现连接为应用步骤。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "不含权公司债估值例题：8% 10 年期非国债判断",
+      "type": "example_box",
+      "priority": "P1",
+      "reason": "国债定价方法迁移到非国债估值的应用例题。",
+      "action": "keep-main-supporting"
+    },
+    {
+      "title": "中证估值应用的学习含义",
+      "type": "chart_explanation",
+      "priority": "P3",
+      "reason": "属于机构实践截图，不应占用主视觉。",
+      "action": "remove-visual-demote-text"
+    },
+    {
+      "title": "一价定律：用 A、B、C 附息债券复制 1 年期零息债券",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "连续页完整应用题，训练现金流复制、一价定律和无套利定价路径。",
+      "action": "add-example-box-and-keep-data-table"
+    },
+    {
+      "title": "一价定律：10 年期 8% 国债分离套利例题",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "用具体数值训练套利方向和套利收益判断。",
+      "action": "add-example-box"
+    },
+    {
+      "title": "一价定律：10 年期 4.8% 国债重构套利例题",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "用具体数值训练套利方向和套利收益判断。",
+      "action": "add-example-box"
+    },
+    {
+      "title": "收益利差及其影响因素：10 年期工业债券利差例题",
+      "type": "example_box",
+      "priority": "P0",
+      "reason": "把收益利差公式转成数值计算路径，适合期末复习。",
+      "action": "add-example-box-and-keep-formula-card"
+    }
+  ],
+  "extensionMaterials": [
+    {
+      "title": "中证估值应用实例",
+      "priority": "P3",
+      "reason": "机构实践截图，能提供场景感，但不是核心公式或计算题。",
+      "action": "extension"
+    },
+    {
+      "title": "中国债券市场新闻链接",
+      "priority": "P3",
+      "reason": "阅读链接和市场背景，正文没有系统展开为定价方法。",
+      "action": "extension"
+    },
+    {
+      "title": "行业利差数据库与研究报告链接",
+      "priority": "P3",
+      "reason": "实践资源索引，不应与收益利差公式和估值例题等权。",
+      "action": "extension"
+    },
+    {
+      "title": "公司债如何定价链接",
+      "priority": "P3",
+      "reason": "延伸阅读链接，保留为拓展而非主模块。",
+      "action": "extension"
+    },
+    {
+      "title": "含嵌入期权债券定价",
+      "priority": "P3",
+      "reason": "目录中提到但未系统展开，不能扩写为本章主学习模块。",
+      "action": "extension-note"
+    }
+  ],
+  "demotions": [
+    {
+      "item": "中证估值应用实例",
+      "from": "standalone chart_explanation visualBlock",
+      "to": "不含权公司债估值模块末尾的拓展材料文字节点",
+      "reason": "该内容属于机构实践截图，不能与核心估值公式、例题和流程等权展示。"
+    },
+    {
+      "item": "新闻链接、数据库链接、研究报告链接",
+      "from": "可能与核心内容并列展示的补充信息",
+      "to": "对应模块末尾的拓展材料节点",
+      "reason": "保留资料覆盖，但降低期末复习主路径权重。"
+    }
+  ],
+  "checks": {
+    "mainPathUsesOnlyP0P1": true,
+    "p2p3KeptAtModuleTail": true,
+    "coreFormulasExamplesChartsDeleted": false,
+    "noNewSchemaFieldsRequired": true,
+    "applicationExamplesPreserved": true,
+    "abcReplicationPromotedToP0": true,
+    "noExampleDowngradedForExtractionGap": true
+  }
+}

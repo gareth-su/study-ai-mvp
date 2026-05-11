@@ -1,0 +1,1015 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第三章：债券收益率",
+  "sourceFile": "source-materials/gdsyzq/3.债券收益率(2).pptx",
+  "slideCount": 55,
+  "generatedAt": "2026-05-10",
+  "inventory": [
+    {
+      "page": 1,
+      "title": "第三讲标题页",
+      "textSummary": "课程标题页，标明本讲主题为债券收益率。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "确认本章主题和课程归属。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "标题页。"
+    },
+    {
+      "page": 2,
+      "title": "第三讲过渡页",
+      "textSummary": "章节过渡页，仅出现第三讲债券收益率标题。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "用于章节进入。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "过渡页。"
+    },
+    {
+      "page": 3,
+      "title": "第三讲过渡页",
+      "textSummary": "章节过渡页，重复本讲主题。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "用于章节进入。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "过渡页。"
+    },
+    {
+      "page": 4,
+      "title": "目录",
+      "textSummary": "目录列出三个部分：收益率衡量指标、利率期限结构构造、利率期限结构理论。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "本章主线可分成收益率指标、曲线构造、期限结构理论。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "作为模块划分依据。"
+    },
+    {
+      "page": 5,
+      "title": "目录",
+      "textSummary": "重复目录页，确认三段式结构。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "收益率衡量指标、利率期限结构构造、利率期限结构理论。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "重复目录页。"
+    },
+    {
+      "page": 6,
+      "title": "收益率衡量指标导入",
+      "textSummary": "提出如何衡量债券收益率。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "收益率指标是本章第一部分。"
+      ],
+      "candidateModule": "债券收益来源",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "导入页。"
+    },
+    {
+      "page": 7,
+      "title": "收益率衡量指标知识目标",
+      "textSummary": "要求掌握收益来源，并熟悉当期收益率、到期收益率、再投资风险、即期收益率等指标。",
+      "contentTypes": [
+        "definition",
+        "summary"
+      ],
+      "keyPoints": [
+        "收益来源包括利息支付、资本利得或损失、再投资收益。",
+        "收益率指标之间需要比较边界。"
+      ],
+      "candidateModule": "债券收益来源",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "用于模块目标。"
+    },
+    {
+      "page": 8,
+      "title": "收益来源的重要性",
+      "textSummary": "说明衡量固定收益证券潜在收益时，应先考虑收益来源。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "收益率指标不是孤立公式，而是对收益来源的度量。"
+      ],
+      "candidateModule": "债券收益来源",
+      "candidateVisualBlocks": [
+        "concept_map"
+      ],
+      "importance": "medium",
+      "notes": "可转为学习模块说明。"
+    },
+    {
+      "page": 9,
+      "title": "固定收益证券三种收益来源",
+      "textSummary": "列出利息支付、资本利得或损失、再投资收益，并提出三种收益率指标是否考虑这些来源。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "利息支付是最常见收益来源。",
+        "资本利得或损失发生在到期、赎回或出售时。",
+        "再投资收益来自中期现金流再投资。"
+      ],
+      "candidateModule": "债券收益来源",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应重建为三类收益来源对比表。"
+    },
+    {
+      "page": 10,
+      "title": "当期收益率",
+      "textSummary": "定义当期收益率为票面利息和债券价格的比率，并给出 7% 票息、价格 94.17 的计算例子。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "当期收益率只看票息收入相对价格。",
+        "折价债券的当期收益率高于票面利率。",
+        "局限是忽略资本利得或损失和再投资收益。"
+      ],
+      "candidateModule": "当期收益率",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "应保留公式和数值例子。"
+    },
+    {
+      "page": 11,
+      "title": "到期收益率定义与债券等值收益率",
+      "textSummary": "定义 YTM 为使现金流现值等于市场价值与应计利息之和的折现率，给出 8 年期 7% 国债、半年 YTM 4%、BEY 8% 的例子。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "YTM 是现金流折现方程的内含收益率。",
+        "半年付息债券可转换为债券等值收益率。"
+      ],
+      "candidateModule": "到期收益率",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "PPT 中该页含图形对象，核心可用公式与例题表达。"
+    },
+    {
+      "page": 12,
+      "title": "到期收益率比较应用",
+      "textSummary": "给出两个 3 年期国债：5% 票息价格 94.75，7% 票息价格 101.32，计算 YTM 分别为 7% 和 6.5%。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "comparison"
+      ],
+      "keyPoints": [
+        "YTM 可用于比较其他条件相同债券。",
+        "第一只债券 YTM 更高。"
+      ],
+      "candidateModule": "到期收益率",
+      "candidateVisualBlocks": [
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "应重建为例题和比较表。"
+    },
+    {
+      "page": 13,
+      "title": "到期收益率局限性",
+      "textSummary": "说明 YTM 考虑利息、资本利得或损失、再投资收入，但依赖持有到期和以 YTM 再投资假设。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "YTM 不是保证收益。",
+        "YTM 依赖持有到期和再投资假设。"
+      ],
+      "candidateModule": "到期收益率",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "适合作为易混点和模块知识点。"
+    },
+    {
+      "page": 14,
+      "title": "YTM 收益来源分解",
+      "textSummary": "以 94.17 购买 8 年期 7% 债券，分解票面利息 56、资本利得 5.83、再投资收益 20.38、总收益 82.21。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "data"
+      ],
+      "keyPoints": [
+        "总收益由票息、资本利得、再投资收益构成。",
+        "再投资收益占比达到 25%。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "data_table",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "应保留数据分解。"
+    },
+    {
+      "page": 15,
+      "title": "再投资收益计算",
+      "textSummary": "说明每半年 3.5 元利息按 4% 半年收益率再投资，并给出再投资收益求和逻辑。",
+      "contentTypes": [
+        "formula",
+        "calculation"
+      ],
+      "keyPoints": [
+        "每期息票未来价值与原息票之差构成再投资收益。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "图片细节不硬提取，公式可重建。"
+    },
+    {
+      "page": 16,
+      "title": "再投资风险定义",
+      "textSummary": "说明使用 YTM 时需要持有至到期且利息按 YTM 再投资，未来利率低于购买时 YTM 会带来再投资风险。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "再投资风险来自未来再投资利率不确定。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "可纳入模块说明。"
+    },
+    {
+      "page": 17,
+      "title": "再投资收益占比比较",
+      "textSummary": "比较 8 年期 7% 债券和 15 年期 8% 债券的票息、资本利得、再投资收益与总收益。",
+      "contentTypes": [
+        "data",
+        "calculation",
+        "comparison"
+      ],
+      "keyPoints": [
+        "8 年期债券再投资收益占比 25%。",
+        "15 年期债券再投资收益占比 46.5%。",
+        "期限越长、票息越高，再投资收益占比可能越高。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "data_table",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应转为数据表。"
+    },
+    {
+      "page": 18,
+      "title": "再投资风险影响因素提问",
+      "textSummary": "提出影响再投资风险的因素。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "需要从期限和票面利率分析再投资风险。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "提问不生成题库，转为知识点。"
+    },
+    {
+      "page": 19,
+      "title": "再投资风险影响因素",
+      "textSummary": "说明到期时间越长、票面利率越高，达到购买时 YTM 越依赖再投资收益。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "期限越长，再投资收益越重要。",
+        "票息越高，再投资收益越重要。"
+      ],
+      "candidateModule": "再投资收益与再投资风险",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应明确为影响因素表。"
+    },
+    {
+      "page": 20,
+      "title": "无再投资风险的债券",
+      "textSummary": "提出哪类债券没有再投资风险。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "零息债券没有中期现金流，持有到期无再投资风险。"
+      ],
+      "candidateModule": "即期收益率与即期利率曲线",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "与下一页合并。"
+    },
+    {
+      "page": 21,
+      "title": "即期收益率",
+      "textSummary": "说明零息债券没有再投资收益，持有到期没有再投资风险；即期收益率/即期利率是零息票国债到期收益率。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "即期收益率即零息票国债 YTM。",
+        "零息债券没有再投资风险。"
+      ],
+      "candidateModule": "即期收益率与即期利率曲线",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应形成即期收益率模块。"
+    },
+    {
+      "page": 22,
+      "title": "收益率衡量指标回顾",
+      "textSummary": "总结收益来源、当期收益率、到期收益率、再投资风险和即期收益率。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "当期收益率只考虑票息。",
+        "YTM 考虑三类收益但依赖再投资假设。",
+        "即期收益率对应零息国债。"
+      ],
+      "candidateModule": "收益率指标综合比较",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "作为指标对比表来源。"
+    },
+    {
+      "page": 23,
+      "title": "目录过渡",
+      "textSummary": "进入利率期限结构构造部分。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "下一模块为利率期限结构构造。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "过渡页。"
+    },
+    {
+      "page": 24,
+      "title": "利率期限结构构造知识目标",
+      "textSummary": "要求掌握到期收益率曲线、即期利率曲线概念，了解构造方法并掌握基本计算。",
+      "contentTypes": [
+        "summary",
+        "definition"
+      ],
+      "keyPoints": [
+        "曲线概念和曲线构造是本部分重点。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "medium",
+      "notes": "模块目标。"
+    },
+    {
+      "page": 25,
+      "title": "到期收益率曲线",
+      "textSummary": "定义到期收益率曲线，并列出向上倾斜、向下倾斜、平坦、拱形四种形状。",
+      "contentTypes": [
+        "definition",
+        "chart"
+      ],
+      "keyPoints": [
+        "收益率曲线表达到期收益率与到期期限的关系。",
+        "四种形态需要能识别。"
+      ],
+      "candidateModule": "收益率曲线形态",
+      "candidateVisualBlocks": [
+        "curve_chart"
+      ],
+      "importance": "high",
+      "notes": "图片可用 curve_chart 等效重建。"
+    },
+    {
+      "page": 26,
+      "title": "即期收益率曲线",
+      "textSummary": "定义利率期限结构为零息票国债到期收益率曲线。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "即期收益率曲线又称利率期限结构。"
+      ],
+      "candidateModule": "即期收益率与即期利率曲线",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "适合和 YTM 曲线对比。"
+    },
+    {
+      "page": 27,
+      "title": "即期收益率曲线在定价中的作用",
+      "textSummary": "说明债券定价贴现率使用国债即期利率曲线，并说明零息国债无再投资风险、无违约风险、流动性较好，附息国债可由零息债券组合复制。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "即期利率曲线是债券定价的贴现率基础。",
+        "附息国债可以用零息债券组合复制。"
+      ],
+      "candidateModule": "即期收益率与即期利率曲线",
+      "candidateVisualBlocks": [
+        "concept_map",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "可转为模块知识点。"
+    },
+    {
+      "page": 28,
+      "title": "期限结构构造方法",
+      "textSummary": "列出随机利率模型、数量拟合方法、插值法、Nelson-Siegel 法和自展法。",
+      "contentTypes": [
+        "comparison",
+        "process"
+      ],
+      "keyPoints": [
+        "插值法从关键期限点拟合曲线。",
+        "自展法利用债券价格和息票率逐期构造即期利率。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应重建方法对比表。"
+    },
+    {
+      "page": 29,
+      "title": "插值法示例",
+      "textSummary": "说明中债收益率曲线模型和美联储国债收益率曲线作为插值/曲线模型示例。",
+      "contentTypes": [
+        "chart",
+        "summary"
+      ],
+      "keyPoints": [
+        "插值法的学习重点是从有限关键期限点估算曲线。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "medium",
+      "notes": "未抽取具体图值，转为图表说明。"
+    },
+    {
+      "page": 30,
+      "title": "自展法原理",
+      "textSummary": "说明利用已有债券价格与息票率构造其他期限即期收益率，短期国债可视为零息国债，并逐步计算 1.5 年、2 年、2.5 年、3 年等即期收益率。",
+      "contentTypes": [
+        "process",
+        "calculation"
+      ],
+      "keyPoints": [
+        "自展法从短端开始逐步向长期推进。",
+        "已知短端即期利率用于贴现前期息票。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "应重建为流程图。"
+    },
+    {
+      "page": 31,
+      "title": "1.5 年即期收益率自展例题",
+      "textSummary": "给出 6 个月即期收益率 3%、1 年即期收益率 3.3%，1.5 年期 3.5% 附息国债平价出售，求 1.5 年即期收益率 z=3.5053%。",
+      "contentTypes": [
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "三笔现金流分别为 1.75、1.75、101.75。",
+        "未知 z 通过价格等于贴现现金流求解。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "必须保留。"
+    },
+    {
+      "page": 32,
+      "title": "自展法例题延续",
+      "textSummary": "重复 6 个月、1 年即期收益率和附息国债平价出售条件，用于继续计算各期限即期收益率。",
+      "contentTypes": [
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "与上一页合并表达，不单独生成新例题。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "medium",
+      "notes": "图示细节未可靠抽取，合并入自展例题。"
+    },
+    {
+      "page": 33,
+      "title": "YTM 与即期收益率对比",
+      "textSummary": "对比到期收益率和即期利率的含义、作用与局限：YTM 依赖具体债券，多用于报价；即期利率只与期限相关，可作为定价标准。",
+      "contentTypes": [
+        "comparison"
+      ],
+      "keyPoints": [
+        "YTM 让不同债券具有可比性。",
+        "即期利率可为确定现金流定价。"
+      ],
+      "candidateModule": "即期收益率与即期利率曲线",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应保留为核心对比表。"
+    },
+    {
+      "page": 34,
+      "title": "利率期限结构构造回顾",
+      "textSummary": "回顾 YTM 曲线、即期利率曲线和自展法。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "巩固第二部分主线。"
+      ],
+      "candidateModule": "利率期限结构构造：插值法与自展法",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "作为复习路径来源。"
+    },
+    {
+      "page": 35,
+      "title": "目录过渡",
+      "textSummary": "进入利率期限结构理论部分。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "下一部分讨论期限结构理论。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "过渡页。"
+    },
+    {
+      "page": 36,
+      "title": "期限结构理论知识目标",
+      "textSummary": "要求熟悉远期利率，掌握纯预期理论、流动性偏好理论、偏好理论和市场分割理论。",
+      "contentTypes": [
+        "summary",
+        "definition"
+      ],
+      "keyPoints": [
+        "理论模块围绕远期利率和收益率曲线解释展开。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "模块目标。"
+    },
+    {
+      "page": 37,
+      "title": "远期利率定义",
+      "textSummary": "说明即期利率从现在开始，远期利率是从未来某一时点到另一时点的利率。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "远期利率是未来期间的隐含利率。"
+      ],
+      "candidateModule": "远期利率",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应与即期利率区分。"
+    },
+    {
+      "page": 38,
+      "title": "远期利率两期公式",
+      "textSummary": "通过一年投资的两种选择推导半年远期利率，使购买一年期国债与先买半年期再滚动投资收益相等。",
+      "contentTypes": [
+        "formula",
+        "calculation",
+        "process"
+      ],
+      "keyPoints": [
+        "远期利率由无套利关系推出。",
+        "公式为 (f=(1+z_2)^2/(1+z_1)-1)。"
+      ],
+      "candidateModule": "远期利率",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "应保留公式。"
+    },
+    {
+      "page": 39,
+      "title": "远期利率推广与数据表",
+      "textSummary": "给出多期远期利率与即期利率关系，并列出 1–10 期即期利率和 f0–f9 远期利率。",
+      "contentTypes": [
+        "formula",
+        "table",
+        "data",
+        "calculation"
+      ],
+      "keyPoints": [
+        "多期远期利率可由相邻期限即期利率推出。",
+        "表格给出即期利率和远期利率数值。"
+      ],
+      "candidateModule": "远期利率",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "data_table",
+        "line_chart"
+      ],
+      "importance": "high",
+      "notes": "表格数值可重建，图形可用曲线示意。"
+    },
+    {
+      "page": 40,
+      "title": "远期利率关系图示",
+      "textSummary": "图示远期利率与即期利率之间的关系。",
+      "contentTypes": [
+        "chart"
+      ],
+      "keyPoints": [
+        "图示学习价值是理解远期利率由相邻即期利率隐含推出。"
+      ],
+      "candidateModule": "远期利率",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "medium",
+      "notes": "原图无法精确结构化，仅保留关系解释。"
+    },
+    {
+      "page": 41,
+      "title": "由远期利率反推即期利率",
+      "textSummary": "给出 1 年期利率 3%，1 年后和 2 年后的 1 年期远期利率分别为 5% 和 7%，要求计算当前 3 年期即期利率。",
+      "contentTypes": [
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "三年总收益因子等于三个一年期因子相乘。"
+      ],
+      "candidateModule": "远期利率",
+      "candidateVisualBlocks": [
+        "example_box",
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "应转为例题。"
+    },
+    {
+      "page": 42,
+      "title": "收益率曲线形态",
+      "textSummary": "说明曲线坡度反映长期国债收益率与短期国债收益率差额，并列出正常、负陡度、平坦、拱形四种形态。",
+      "contentTypes": [
+        "chart",
+        "definition"
+      ],
+      "keyPoints": [
+        "收益率曲线形状是期限结构理论解释对象。"
+      ],
+      "candidateModule": "收益率曲线形态",
+      "candidateVisualBlocks": [
+        "curve_chart",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应重建四种形态曲线。"
+    },
+    {
+      "page": 43,
+      "title": "期限结构理论要解释的事实",
+      "textSummary": "列出三条事实：不同到期债券利率共同变动、短期利率水平与曲线斜率有关、收益率曲线通常向上倾斜；并列出理论分类。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "期限结构理论需要解释三类经验事实。",
+        "理论包括纯预期、有偏预期、流动性偏好、偏好理论、市场分割。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table",
+        "concept_map"
+      ],
+      "importance": "high",
+      "notes": "适合作为理论总表。"
+    },
+    {
+      "page": 44,
+      "title": "纯预期理论",
+      "textSummary": "说明纯预期理论前提、长期收益率等于当期短期利率和预期短期利率几何平均，远期利率完全代表预期未来短期利率，并列出曲线形态解释。",
+      "contentTypes": [
+        "formula",
+        "table",
+        "comparison"
+      ],
+      "keyPoints": [
+        "纯预期理论认为期限差异来自未来短期利率预期。",
+        "长期收益率是短期利率路径的几何平均。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "应保留公式和形态表。"
+    },
+    {
+      "page": 45,
+      "title": "期限结构理论图示页",
+      "textSummary": "该页文字较少，主要作为理论部分图示或过渡。",
+      "contentTypes": [
+        "chart"
+      ],
+      "keyPoints": [
+        "无法从文本确认图示细节。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "low",
+      "notes": "不硬造图示，必要时列为人工核对。"
+    },
+    {
+      "page": 46,
+      "title": "纯预期理论解释事实 1 与事实 2",
+      "textSummary": "说明短期利率上升会提高未来短期利率预期，从而带动长期利率同向运动；短期利率低时曲线倾向向上，短期利率高时曲线通常向下。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "纯预期理论能解释利率共同变动和短期利率水平与曲线斜率关系。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "转为理论解释流程。"
+    },
+    {
+      "page": 47,
+      "title": "纯预期理论无法解释事实 3",
+      "textSummary": "说明由于未来短期利率可能上升或下降，纯预期理论下典型曲线应更接近平坦，无法解释收益率曲线通常向上倾斜。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "纯预期理论忽略长期债券风险补偿。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "纳入理论对比。"
+    },
+    {
+      "page": 48,
+      "title": "纯预期理论缺陷",
+      "textSummary": "说明远期利率不是未来利率的完美预测，未来利率不确定会影响债券未来价格和持有期收益。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "未来利率不确定性使远期利率不能等同未来短期利率。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "纳入理论局限。"
+    },
+    {
+      "page": 49,
+      "title": "流动性偏好理论",
+      "textSummary": "说明投资者偏好短期债券，长期债券需要利率风险补偿，远期利率包含流动性溢价，并列出曲线形态解释。",
+      "contentTypes": [
+        "definition",
+        "table",
+        "comparison"
+      ],
+      "keyPoints": [
+        "流动性溢价随期限增加。",
+        "即使预期短期利率不变，长期利率也可能更高。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "data_table",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应重建表格。"
+    },
+    {
+      "page": 50,
+      "title": "流动性偏好理论图示页",
+      "textSummary": "文字较少，可能为理论图示或过渡。",
+      "contentTypes": [
+        "chart"
+      ],
+      "keyPoints": [
+        "无法从文本确认具体图形。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "low",
+      "notes": "不硬造具体图形。"
+    },
+    {
+      "page": 51,
+      "title": "流动性偏好理论解释三事实",
+      "textSummary": "说明流动性偏好理论可以解释利率共同变动、短期利率水平与曲线斜率关系，以及收益率曲线通常向上倾斜。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "流动性溢价帮助解释曲线通常向上倾斜。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "纳入理论比较。"
+    },
+    {
+      "page": 52,
+      "title": "偏好理论",
+      "textSummary": "说明偏好理论认为供求不平衡会使投资者和借款人偏离偏好期限区间；风险溢价不必随期限一致上升。",
+      "contentTypes": [
+        "definition",
+        "table",
+        "comparison"
+      ],
+      "keyPoints": [
+        "偏好理论强调风险溢价可大可小。",
+        "可解释任意曲线形态。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "应纳入理论对比。"
+    },
+    {
+      "page": 53,
+      "title": "市场分割理论",
+      "textSummary": "说明不同期限债券不能任意替代，不同投资者有首选期限区间，短期和长期市场参与者不同。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "不同期限市场由各自供求决定利率。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "应保留参与者和期限偏好。"
+    },
+    {
+      "page": 54,
+      "title": "市场分割理论解释事实 3",
+      "textSummary": "说明每个期限区间是独立市场，长期债券需求通常较少，价格较低、利率较高，因此典型曲线向上倾斜。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "市场分割理论用供求解释长期利率较高。"
+      ],
+      "candidateModule": "利率期限结构理论",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "纳入理论对比和易混点。"
+    },
+    {
+      "page": 55,
+      "title": "期限结构理论回顾",
+      "textSummary": "回顾远期利率与即期利率、纯预期理论、有偏预期理论和市场分割理论。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "远期利率、风险溢价和市场分割是理论复习主线。"
+      ],
+      "candidateModule": "复习路径",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "用于复习路径。"
+    }
+  ]
+}

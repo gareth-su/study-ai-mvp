@@ -1,0 +1,1228 @@
+[
+  {
+    "page": 1,
+    "title": "第四讲标题页",
+    "textSummary": "课程、教师、学期与第四讲“债券定价（一）”标题页。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "本讲主题是债券定价（一）。"
+    ],
+    "candidateNodes": [
+      "章节总览"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "标题页，只作为章节定位。"
+  },
+  {
+    "page": 2,
+    "title": "债券定价过渡页",
+    "textSummary": "第四讲债券定价的过渡页。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "进入债券定价主题。"
+    ],
+    "candidateNodes": [
+      "章节总览"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "过渡页。"
+  },
+  {
+    "page": 3,
+    "title": "本讲目录",
+    "textSummary": "目录包含国债定价、不含嵌入期权的非国债定价、含嵌入期权的债券定价。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "本讲以国债定价为起点，再过渡到非国债和含权债券定价。"
+    ],
+    "candidateNodes": [
+      "章节主线",
+      "定价内容边界"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow"
+    ],
+    "importance": "medium",
+    "notes": "本轮第 4 章主要增强国债定价和不含嵌入期权的非国债定价；含嵌入期权债券在后续章节继续展开。"
+  },
+  {
+    "page": 4,
+    "title": "国债定价目录定位",
+    "textSummary": "强调本部分进入国债定价。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "国债定价是本章的第一条主线。"
+    ],
+    "candidateNodes": [
+      "国债定价"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "目录页。"
+  },
+  {
+    "page": 5,
+    "title": "国债定价知识目标",
+    "textSummary": "要求掌握国债定价方法及应用，包括传统现金流贴现法、无套利估值法、非利息支付日的债券定价。",
+    "contentTypes": [
+      "summary",
+      "process"
+    ],
+    "keyPoints": [
+      "传统现金流贴现法",
+      "无套利估值法",
+      "非利息支付日定价"
+    ],
+    "candidateNodes": [
+      "国债定价学习目标",
+      "定价方法分类"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow"
+    ],
+    "importance": "high",
+    "notes": "决定本章核心结构。"
+  },
+  {
+    "page": 6,
+    "title": "传统现金流贴现法：一般原则",
+    "textSummary": "金融资产价格等于预期现金流的现值。传统估值法具有主观性，投资者的价值判断体现在要求达到的到期收益率。估值步骤为估计现金流、确定贴现率、折现。",
+    "contentTypes": [
+      "definition",
+      "formula",
+      "process"
+    ],
+    "keyPoints": [
+      "金融资产价值等于预期现金流现值",
+      "传统法用要求收益率体现主观估值",
+      "估值三步骤"
+    ],
+    "candidateNodes": [
+      "金融资产估值原则",
+      "传统现金流贴现法",
+      "估值步骤"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "process_flow"
+    ],
+    "importance": "high",
+    "notes": "页面中有公式图形，文本提取不完整，需要用公式卡重建。"
+  },
+  {
+    "page": 7,
+    "title": "现金流量估算",
+    "textSummary": "固定收益证券现金流是每期利息和本金偿付的总和。不可赎回国债现金流通常确定，但可赎回、可回售、MBS、ABS、浮动利率债、可转换债等现金流估算可能复杂。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "现金流包含利息和本金",
+      "不可赎回国债现金流确定",
+      "含权或浮动类债券现金流难估计"
+    ],
+    "candidateNodes": [
+      "现金流量估算",
+      "确定现金流与不确定现金流"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "连接后续含权债券和资产证券化章节。"
+  },
+  {
+    "page": 8,
+    "title": "贴现率选择",
+    "textSummary": "贴现率是融资方资金使用成本或投资者要求报酬率。国债使用无违约风险利率，非国债证券定价通常使用国债利率加收益率溢价。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "贴现率含义",
+      "国债利率是无违约风险现金流的最低要求利率",
+      "非国债贴现率包含风险溢价"
+    ],
+    "candidateNodes": [
+      "贴现率",
+      "国债利率",
+      "收益率溢价"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "为后半部分收益利差和信用利差铺垫。"
+  },
+  {
+    "page": 9,
+    "title": "预期现金流折现",
+    "textSummary": "逐期计算现金流现值，再将所有预期现金流现值加总。",
+    "contentTypes": [
+      "process",
+      "calculation"
+    ],
+    "keyPoints": [
+      "每期现金流单独折现",
+      "债券价值是所有现值之和"
+    ],
+    "candidateNodes": [
+      "逐期折现",
+      "现值汇总"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow"
+    ],
+    "importance": "medium",
+    "notes": "适合合并到债券估值流程。"
+  },
+  {
+    "page": 10,
+    "title": "10 年期 8% 国债传统估值例子",
+    "textSummary": "10 年期、票息率 8%、面值 100 的国债，半年付息一次，每期现金流 4，最后一期 104，使用 6% 贴现率得到总价值 114.8775。",
+    "contentTypes": [
+      "example",
+      "table",
+      "calculation"
+    ],
+    "keyPoints": [
+      "10 年期 8% 国债传统估值",
+      "每半年现金流 4",
+      "最后一期现金流 104",
+      "总现值 114.8775",
+      "传统法缺陷是所有现金流使用同一贴现率"
+    ],
+    "candidateNodes": [
+      "传统估值例题",
+      "传统法局限"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "表格很长，framework 中重建关键行和总计，避免塞完整长表。"
+  },
+  {
+    "page": 11,
+    "title": "无套利估值法：一般原则",
+    "textSummary": "传统估值将未来现金流按给定到期收益率贴现；无套利估值以即期利率贴现，利用市场已有产品即期利率和无套利原理得到目标债券价格，具有客观性。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "无套利价值",
+      "即期利率",
+      "客观性定价",
+      "与传统法的主观性区分"
+    ],
+    "candidateNodes": [
+      "无套利估值法",
+      "即期利率",
+      "传统法与无套利法"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "核心概念页。"
+  },
+  {
+    "page": 12,
+    "title": "无套利估值步骤",
+    "textSummary": "无套利估值步骤包括估计现金流、确定 t 期即期利率、对预期现金流折现。",
+    "contentTypes": [
+      "process",
+      "formula"
+    ],
+    "keyPoints": [
+      "确定各期即期利率",
+      "逐期用对应期限利率折现"
+    ],
+    "candidateNodes": [
+      "无套利估值步骤"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "与传统估值流程对照。"
+  },
+  {
+    "page": 13,
+    "title": "3 年期半年付息债券无套利估值例子",
+    "textSummary": "给出 0.5 年到 3 年的即期利率曲线，要求计算票面利率 10%、期限 3 年、半年付息一次债券价格。",
+    "contentTypes": [
+      "example",
+      "table",
+      "calculation"
+    ],
+    "keyPoints": [
+      "即期利率表：0.5 年 1.5%、1 年 2%、1.5 年 2.5%、2 年 2.8%、2.5 年 3.2%、3 年 3.5%",
+      "票面利率 10%",
+      "半年付息"
+    ],
+    "candidateNodes": [
+      "即期利率曲线应用",
+      "半年付息债券无套利估值"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "应重建即期利率表和计算例题。"
+  },
+  {
+    "page": 14,
+    "title": "3 年期半年付息债券例子重复页",
+    "textSummary": "继续展示同一 3 年期 10% 半年付息债券的即期利率表和定价问题。",
+    "contentTypes": [
+      "example",
+      "table",
+      "calculation"
+    ],
+    "keyPoints": [
+      "延续第 13 页例题"
+    ],
+    "candidateNodes": [
+      "即期利率曲线应用"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box"
+    ],
+    "importance": "medium",
+    "notes": "与第 13 页合并表达。"
+  },
+  {
+    "page": 15,
+    "title": "3 年期 6% 债券购买判断",
+    "textSummary": "给出 3 年期、息票率 6%、每年付息一次、到期收益率 3.2%、市场价格 107.50，以及 1/2/3 年即期利率 2%、2.8%、3.5%，要求判断是否值得购买。",
+    "contentTypes": [
+      "example",
+      "table",
+      "calculation"
+    ],
+    "keyPoints": [
+      "市场价格 107.50",
+      "即期利率曲线用于客观估值",
+      "选择题答案在后续页给出为 B"
+    ],
+    "candidateNodes": [
+      "购买判断例题",
+      "到期收益率不参与客观估值"
+    ],
+    "candidateVisualBlocks": [
+      "example_box",
+      "data_table"
+    ],
+    "importance": "high",
+    "notes": "可以重建为例题，但不生成题库；用“判断任务”表达。"
+  },
+  {
+    "page": 16,
+    "title": "购买判断答案与 YTM 说明",
+    "textSummary": "答案为 B。到期收益率没有起到作用，因为其与市场价格一一对应，代表市场要求回报；应通过其他债券即期利率确定债券客观价格，从而判断便宜或昂贵。",
+    "contentTypes": [
+      "example",
+      "calculation",
+      "summary"
+    ],
+    "keyPoints": [
+      "答案 B",
+      "YTM 与市场价格一一对应",
+      "即期利率曲线给出客观性价格"
+    ],
+    "candidateNodes": [
+      "到期收益率的作用边界",
+      "相对便宜或昂贵判断"
+    ],
+    "candidateVisualBlocks": [
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "与第 15 页合并为完整例题。"
+  },
+  {
+    "page": 17,
+    "title": "为什么即期曲线定价是公允价格",
+    "textSummary": "追问为什么采用即期利率曲线定价就是公允价格，以及投资者不按该价格买卖会怎样。",
+    "contentTypes": [
+      "example",
+      "process",
+      "summary"
+    ],
+    "keyPoints": [
+      "即期利率曲线定价与无套利、公允价格相关",
+      "价格偏离意味着套利机会"
+    ],
+    "candidateNodes": [
+      "公允价格",
+      "价格偏离与套利"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow"
+    ],
+    "importance": "medium",
+    "notes": "并入无套利估值逻辑。"
+  },
+  {
+    "page": 18,
+    "title": "一价定律与自展法",
+    "textSummary": "一价定律：未来损益完全相同的资产组合价格应相同。自展法构建利率期限结构的原则是付息国债价值等于其现金流所复制零息国债组合价值之和；价格不同则存在套利。",
+    "contentTypes": [
+      "definition",
+      "process"
+    ],
+    "keyPoints": [
+      "一价定律",
+      "自展法",
+      "复制零息国债组合",
+      "套利机会"
+    ],
+    "candidateNodes": [
+      "一价定律",
+      "自展法",
+      "复制组合"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow",
+      "cashflow_diagram"
+    ],
+    "importance": "high",
+    "notes": "是无套利估值的理论基础。"
+  },
+  {
+    "page": 19,
+    "title": "10 年期 8% 国债的零息债券视角",
+    "textSummary": "将利率 8%、10 年期、面值 100、到期收益率 6% 的国债视为 20 个零息债券；传统法看 19 次利息和最后一次本息，无套利法看每期现金流对应的零息债券。",
+    "contentTypes": [
+      "comparison",
+      "process"
+    ],
+    "keyPoints": [
+      "20 个零息债券",
+      "每个现金流支付日单独定价"
+    ],
+    "candidateNodes": [
+      "零息债券组合视角",
+      "附息债券拆分"
+    ],
+    "candidateVisualBlocks": [
+      "timeline",
+      "cashflow_diagram"
+    ],
+    "importance": "high",
+    "notes": "适合时间线和现金流图。"
+  },
+  {
+    "page": 20,
+    "title": "分离、重构与套利",
+    "textSummary": "若附息国债市场价低于无套利价格，交易商买入附息国债并分离成零息债券卖出；若附息国债市场价高于无套利价格，交易商买入零息债券并重构为附息国债卖出。",
+    "contentTypes": [
+      "process",
+      "comparison"
+    ],
+    "keyPoints": [
+      "分离套利",
+      "重构套利",
+      "无套利定价不允许通过分离和重构获利",
+      "相同风险和期限现金流使用相同贴现率"
+    ],
+    "candidateNodes": [
+      "分离套利",
+      "重构套利",
+      "无套利约束"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow",
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "需要做成操作流程或对照表。"
+  },
+  {
+    "page": 21,
+    "title": "10 年期 8% 国债分离套利表",
+    "textSummary": "长表比较无套利价值 115.2621 与传统估值 114.8775，并给出分离套利总收益 0.3846。",
+    "contentTypes": [
+      "table",
+      "calculation",
+      "example"
+    ],
+    "keyPoints": [
+      "无套利价值 115.2621",
+      "传统估值 114.8775",
+      "分离套利收益 0.3846"
+    ],
+    "candidateNodes": [
+      "分离套利例题"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "长表可摘要为关键指标表。"
+  },
+  {
+    "page": 22,
+    "title": "10 年期 4.8% 国债重构套利表",
+    "textSummary": "长表比较无套利价值 90.843 与传统估值 91.0735，并给出重构套利总收益 0.2305。",
+    "contentTypes": [
+      "table",
+      "calculation",
+      "example"
+    ],
+    "keyPoints": [
+      "无套利价值 90.843",
+      "传统估值 91.0735",
+      "重构套利收益 0.2305"
+    ],
+    "candidateNodes": [
+      "重构套利例题"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "与第 21 页合并为套利方向对照。"
+  },
+  {
+    "page": 23,
+    "title": "用附息债券现金流构建零息债券",
+    "textSummary": "给出债券 A、B、C 在时间 0、1、2、3 的现金流，要求构建 1 年期面值 100 的零息债券并求公允价值。",
+    "contentTypes": [
+      "example",
+      "table",
+      "calculation"
+    ],
+    "keyPoints": [
+      "债券 A/B/C 现金流矩阵",
+      "通过组合复制零息债券",
+      "按一价原则求公允价值"
+    ],
+    "candidateNodes": [
+      "联立复制零息债券"
+    ],
+    "candidateVisualBlocks": [
+      "data_table",
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "公式/权重在文本抽取中缺失，应保守表达方法，不编造权重。"
+  },
+  {
+    "page": 24,
+    "title": "构建零息债券的联立方程",
+    "textSummary": "继续第 23 页，设购买 A、B、C 的数量并求解组合权重；文本抽取未得到完整权重数字。",
+    "contentTypes": [
+      "example",
+      "calculation"
+    ],
+    "keyPoints": [
+      "设组合权重",
+      "使第 2、3 期现金流抵消",
+      "第 1 期现金流等于 100"
+    ],
+    "candidateNodes": [
+      "复制组合权重求解"
+    ],
+    "candidateVisualBlocks": [
+      "example_box"
+    ],
+    "importance": "medium",
+    "notes": "具体权重需人工核对，framework 中不写无法确认的数值。"
+  },
+  {
+    "page": 25,
+    "title": "零息债券公允价值求解",
+    "textSummary": "继续第 23 页，利用已求组合权重和 A/B/C 初始价格计算目标零息债券公允价值；文本抽取未得到完整公式和结果。",
+    "contentTypes": [
+      "example",
+      "calculation"
+    ],
+    "keyPoints": [
+      "一价原则",
+      "目标现金流可由组合复制时价格也应相同"
+    ],
+    "candidateNodes": [
+      "复制组合公允价值"
+    ],
+    "candidateVisualBlocks": [
+      "example_box"
+    ],
+    "importance": "medium",
+    "notes": "结果数字需人工核对。"
+  },
+  {
+    "page": 26,
+    "title": "非利息支付日定价：全价、净价、应计利息",
+    "textSummary": "定义应计利息、全价、净价；强调净价报价、全价结算；净价更真实反映债券价值变动，全价会随持有天数自然上升。",
+    "contentTypes": [
+      "definition",
+      "formula",
+      "comparison"
+    ],
+    "keyPoints": [
+      "应计利息",
+      "全价",
+      "净价",
+      "净价报价、全价结算"
+    ],
+    "candidateNodes": [
+      "应计利息",
+      "全价",
+      "净价",
+      "报价惯例"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "核心考试点。"
+  },
+  {
+    "page": 27,
+    "title": "非利息支付日定价例子",
+    "textSummary": "5 个半年的利息支付，息票率 10%，年贴现率 8%，交割日距下一付息日 78 天，计息期 182 天。应计利息 = 5 × (1 - 78/182) = 2.8570，净价 = 全价 - 应计利息 = 103.9622。",
+    "contentTypes": [
+      "example",
+      "formula",
+      "calculation"
+    ],
+    "keyPoints": [
+      "78 天/182 天",
+      "应计利息 2.8570",
+      "净价 103.9622"
+    ],
+    "candidateNodes": [
+      "应计利息计算",
+      "净价计算"
+    ],
+    "candidateVisualBlocks": [
+      "example_box",
+      "timeline",
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "需要重建为例题和时间线。"
+  },
+  {
+    "page": 28,
+    "title": "非利息支付日折现期限",
+    "textSummary": "强调关键在于现金流折现期限的确定；应计利息 = 票息 × (1 - 距下一付息日天数/计息期天数)；给出从现在开始第 t 期现金流现值的表达。",
+    "contentTypes": [
+      "formula",
+      "calculation"
+    ],
+    "keyPoints": [
+      "折现期限",
+      "应计利息公式",
+      "非整数期折现"
+    ],
+    "candidateNodes": [
+      "非付息日折现期限"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "timeline"
+    ],
+    "importance": "high",
+    "notes": "公式图形部分提取不完整，按文字可确认部分重建。"
+  },
+  {
+    "page": 29,
+    "title": "中证估值应用实例 1",
+    "textSummary": "中证估值应用实例截图页，文本只抽取到标题。",
+    "contentTypes": [
+      "chart",
+      "summary"
+    ],
+    "keyPoints": [
+      "市场第三方估值实践"
+    ],
+    "candidateNodes": [
+      "中证估值应用"
+    ],
+    "candidateVisualBlocks": [
+      "chart_explanation"
+    ],
+    "importance": "medium",
+    "notes": "截图内容未能结构化读取，不伪造数据。"
+  },
+  {
+    "page": 30,
+    "title": "中证估值应用实例 2",
+    "textSummary": "中证估值应用实例截图页，文本只抽取到标题。",
+    "contentTypes": [
+      "chart",
+      "summary"
+    ],
+    "keyPoints": [
+      "估值曲线或估值结果可能以截图形式展示"
+    ],
+    "candidateNodes": [
+      "中证估值应用"
+    ],
+    "candidateVisualBlocks": [
+      "chart_explanation"
+    ],
+    "importance": "medium",
+    "notes": "建议人工截图或人工补充具体字段。"
+  },
+  {
+    "page": 31,
+    "title": "中证估值应用实例 3",
+    "textSummary": "中证估值应用实例截图页，文本只抽取到标题。",
+    "contentTypes": [
+      "chart",
+      "summary"
+    ],
+    "keyPoints": [
+      "中证估值作为定价实践入口"
+    ],
+    "candidateNodes": [
+      "中证估值应用"
+    ],
+    "candidateVisualBlocks": [
+      "chart_explanation"
+    ],
+    "importance": "medium",
+    "notes": "不写具体截图数据。"
+  },
+  {
+    "page": 32,
+    "title": "国债定价回顾",
+    "textSummary": "回顾传统现金流贴现法、无套利估值法和非利息支付日定价。传统法使用相同贴现率；无套利法基于一价定律和即期利率；非付息日定价关注全价、净价、应计利息。",
+    "contentTypes": [
+      "summary",
+      "comparison"
+    ],
+    "keyPoints": [
+      "传统现金流贴现法",
+      "无套利估值法",
+      "分离和重构",
+      "全价、净价、应计利息"
+    ],
+    "candidateNodes": [
+      "国债定价复习路径"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "可作为本部分总结。"
+  },
+  {
+    "page": 33,
+    "title": "非国债定价目录定位",
+    "textSummary": "目录页，进入不含嵌入期权的非国债定价。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "后半部分转向非国债定价"
+    ],
+    "candidateNodes": [
+      "非国债定价"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "过渡页。"
+  },
+  {
+    "page": 34,
+    "title": "中国债券市场常见非国债类型",
+    "textSummary": "介绍企业债和公司债/企业类债券。企业债多由央企、国企或国有控股企业发行，主要在银行间市场流动；公司债由股份公司和有限公司根据经营需要发行，在交易所流动。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "企业债",
+      "公司债",
+      "银行间市场",
+      "交易所市场"
+    ],
+    "candidateNodes": [
+      "企业债",
+      "公司债",
+      "非国债类型"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "medium",
+    "notes": "外部链接不直接进入 framework，可在审核时补充。"
+  },
+  {
+    "page": 35,
+    "title": "非国债类型外部案例链接",
+    "textSummary": "展示中国债券市场相关外部链接，文本主要为链接。",
+    "contentTypes": [
+      "case",
+      "summary"
+    ],
+    "keyPoints": [
+      "中国债券市场实务材料"
+    ],
+    "candidateNodes": [
+      "非国债市场实务"
+    ],
+    "candidateVisualBlocks": [
+      "case_card"
+    ],
+    "importance": "low",
+    "notes": "链接内容未离线解析，不写具体案例细节。"
+  },
+  {
+    "page": 36,
+    "title": "中石油五年期公司债定价差异例子",
+    "textSummary": "2019 年发行中石油五年期公司债，票面利率 3.77%，每年付息一次，2024 年 1 月 9 日到期，2021 年 1 月 8 日净价 99.8956。按当日国债即期曲线估算价格为 101.2118，明显高于市场价格，引出为什么公司债价格与国债曲线估值不同。",
+    "contentTypes": [
+      "case",
+      "example",
+      "calculation"
+    ],
+    "keyPoints": [
+      "中石油五年期公司债",
+      "票面利率 3.77%",
+      "净价 99.8956",
+      "国债曲线估值 101.2118",
+      "差异来自非国债风险溢价"
+    ],
+    "candidateNodes": [
+      "公司债估值差异",
+      "收益利差"
+    ],
+    "candidateVisualBlocks": [
+      "case_card",
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "适合案例卡。"
+  },
+  {
+    "page": 37,
+    "title": "非国债定价知识目标",
+    "textSummary": "熟悉收益利差、绝对/相对收益利差、市场间/市场内收益利差、影响因素、信用利差，以及不含权公司债估值。",
+    "contentTypes": [
+      "summary",
+      "comparison"
+    ],
+    "keyPoints": [
+      "收益利差",
+      "信用利差",
+      "信用利差期限结构",
+      "基准即期利率曲线",
+      "公司债定价实例"
+    ],
+    "candidateNodes": [
+      "非国债定价学习目标"
+    ],
+    "candidateVisualBlocks": [
+      "process_flow"
+    ],
+    "importance": "high",
+    "notes": "后半章结构依据。"
+  },
+  {
+    "page": 38,
+    "title": "收益利差定义",
+    "textSummary": "国债收益率曲线一般作为非国债投资的最小利率基准，相同到期日非国债额外收益率称为收益利差。收益利差是任意两种相同到期日债券之间的收益率差别。",
+    "contentTypes": [
+      "definition",
+      "formula"
+    ],
+    "keyPoints": [
+      "国债收益率曲线是基准",
+      "收益利差是同期限债券收益率差别"
+    ],
+    "candidateNodes": [
+      "收益利差",
+      "国债收益率基准"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card"
+    ],
+    "importance": "high",
+    "notes": "核心概念。"
+  },
+  {
+    "page": 39,
+    "title": "绝对收益利差、相对收益利差和收益率比率",
+    "textSummary": "定义绝对收益利差、相对收益利差和收益率比率。例子给出 2002 年 2 月 8 日，10 年期新发行国债收益率 4.88%，10 年期 A 级工业债券收益率 6.24%。",
+    "contentTypes": [
+      "formula",
+      "example",
+      "calculation"
+    ],
+    "keyPoints": [
+      "绝对收益利差 = 债券 X 收益率 - 债券 Y 收益率",
+      "相对收益利差 = 利差 / 债券 Y 收益率",
+      "收益率比率 = X 收益率 / Y 收益率",
+      "最常用标准是绝对收益利差"
+    ],
+    "candidateNodes": [
+      "绝对收益利差",
+      "相对收益利差",
+      "收益率比率"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "example_box"
+    ],
+    "importance": "high",
+    "notes": "可计算 136bp、约27.87%、约1.2787。"
+  },
+  {
+    "page": 40,
+    "title": "市场间收益利差和市场内收益利差",
+    "textSummary": "市场间收益利差是两个不同债券市场相同到期日债券的收益利差；市场内收益利差是同一市场不同债券的收益利差。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "市场间收益利差",
+      "市场内收益利差",
+      "非国债市场与国债市场的同期限差异"
+    ],
+    "candidateNodes": [
+      "市场间收益利差",
+      "市场内收益利差"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "medium",
+    "notes": "并列概念，用对照表。"
+  },
+  {
+    "page": 41,
+    "title": "收益利差影响因素",
+    "textSummary": "收益利差受相对信用风险、嵌入期权、流动性、利息收入税收影响，并可与利率风险、信用风险、流动性风险、嵌入期权风险结合复习。",
+    "contentTypes": [
+      "comparison",
+      "summary"
+    ],
+    "keyPoints": [
+      "信用风险",
+      "嵌入期权",
+      "流动性",
+      "税收"
+    ],
+    "candidateNodes": [
+      "收益利差影响因素"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table",
+      "concept_map"
+    ],
+    "importance": "high",
+    "notes": "适合形成影响因素表。"
+  },
+  {
+    "page": 42,
+    "title": "嵌入期权对收益利差的影响",
+    "textSummary": "嵌入期权使发行人或持有人有权采取行动对抗另一方。赎回权、回售权、提前偿付权、可转换权等会影响收益利差。有利于投资者的期权会使投资者要求较小收益利差。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "嵌入期权",
+      "有利于投资者的期权降低要求利差",
+      "含投资者有利期权债券利率可能低于可比国债利率"
+    ],
+    "candidateNodes": [
+      "嵌入期权与利差"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "虽然含权债券后续章节展开，此处保留影响方向。"
+  },
+  {
+    "page": 43,
+    "title": "发行人有利期权与提前偿付风险",
+    "textSummary": "类似国债但含有有利于发行人的嵌入期权，如可赎回债券，投资者要求更高收益利差。吉利美转手债券与类似国债的收益利差主要由提前偿付风险决定，而不是信用风险。",
+    "contentTypes": [
+      "case",
+      "comparison"
+    ],
+    "keyPoints": [
+      "发行人有利期权提高收益利差",
+      "提前偿付风险影响 MBS 类债券利差"
+    ],
+    "candidateNodes": [
+      "可赎回债券利差",
+      "提前偿付风险"
+    ],
+    "candidateVisualBlocks": [
+      "case_card",
+      "comparison_table"
+    ],
+    "importance": "medium",
+    "notes": "用机制说明，不补充课件外细节。"
+  },
+  {
+    "page": 44,
+    "title": "流动性和税收对收益利差的影响",
+    "textSummary": "债券发行量越大、流动性越高，收益利差越小。旧国债和新发行国债之间存在流动性差异导致的收益差异。美国市政债券可免除利息收入税，收益率低于相同到期日国债；税率越高，免税特征越有吸引力。",
+    "contentTypes": [
+      "comparison",
+      "case"
+    ],
+    "keyPoints": [
+      "流动性越高利差越小",
+      "税收优惠降低要求收益率",
+      "免税债券与国债常用收益率比率衡量"
+    ],
+    "candidateNodes": [
+      "流动性利差",
+      "税收利差"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "medium",
+    "notes": "作为收益利差影响因素。"
+  },
+  {
+    "page": 45,
+    "title": "信用利差定义",
+    "textSummary": "信用利差或质量利差是国债与除信用评级外所有性质相同的非国债债券之间的收益利差。条件包括相同到期日且没有嵌入期权；信用等级越低，信用利差越大。",
+    "contentTypes": [
+      "definition",
+      "comparison"
+    ],
+    "keyPoints": [
+      "信用利差",
+      "相同到期日",
+      "没有嵌入期权",
+      "信用等级越低利差越大"
+    ],
+    "candidateNodes": [
+      "信用利差",
+      "信用等级"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "comparison_table"
+    ],
+    "importance": "high",
+    "notes": "核心定义。"
+  },
+  {
+    "page": 46,
+    "title": "信用利差的经济周期变化",
+    "textSummary": "公司债和国债之间的信用利差随经济波动变化：经济紧缩时变大，经济扩张时变小。紧缩中公司现金流减少、信用质量下降、风险厌恶上升，发行者需要扩大信用利差吸引投资者。",
+    "contentTypes": [
+      "chart",
+      "process"
+    ],
+    "keyPoints": [
+      "经济紧缩信用利差扩大",
+      "经济扩张信用利差缩小",
+      "现金流下降和风险厌恶共同推动利差扩大"
+    ],
+    "candidateNodes": [
+      "信用利差周期性"
+    ],
+    "candidateVisualBlocks": [
+      "curve_chart",
+      "process_flow"
+    ],
+    "importance": "high",
+    "notes": "可用概念曲线表达，不伪造市场数据。"
+  },
+  {
+    "page": 47,
+    "title": "信用利差指标资料链接 1",
+    "textSummary": "提供行业利差数据库和信用利差指标常用计算方法等外部阅读链接。",
+    "contentTypes": [
+      "quote",
+      "summary"
+    ],
+    "keyPoints": [
+      "行业利差数据库",
+      "信用利差指标计算方法"
+    ],
+    "candidateNodes": [
+      "行业利差资料"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "链接未离线解析，不写具体内容。"
+  },
+  {
+    "page": 48,
+    "title": "信用利差指标资料链接 2",
+    "textSummary": "继续提供信用利差指标相关外部阅读链接。",
+    "contentTypes": [
+      "quote",
+      "summary"
+    ],
+    "keyPoints": [
+      "中泰固收",
+      "中信证券信用利差资料"
+    ],
+    "candidateNodes": [
+      "行业利差资料"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "链接未离线解析。"
+  },
+  {
+    "page": 49,
+    "title": "行业利差投资决策思考",
+    "textSummary": "提出如何利用行业利差进行投资决策，并给出行业利差相关阅读链接。",
+    "contentTypes": [
+      "case",
+      "summary"
+    ],
+    "keyPoints": [
+      "行业利差可用于投资决策",
+      "行业利差反映风险补偿和市场定价差异"
+    ],
+    "candidateNodes": [
+      "行业利差投资应用"
+    ],
+    "candidateVisualBlocks": [
+      "case_card"
+    ],
+    "importance": "medium",
+    "notes": "不展开外部链接细节。"
+  },
+  {
+    "page": 50,
+    "title": "非国债定价回顾",
+    "textSummary": "回顾收益利差含义及影响因素、信用利差含义及宏观经济运行因素。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "绝对/相对收益利差",
+      "市场间/市场内利差",
+      "信用风险、嵌入期权、流动性、税收",
+      "宏观经济影响信用利差"
+    ],
+    "candidateNodes": [
+      "非国债定价复习"
+    ],
+    "candidateVisualBlocks": [
+      "comparison_table"
+    ],
+    "importance": "medium",
+    "notes": "作为后半部分总结。"
+  },
+  {
+    "page": 51,
+    "title": "不含权公司债估值",
+    "textSummary": "信用利差期限结构是预期信用利差与到期期限的关系。典型信用利差期限结构随期限延长而增加，不同信用级别期限结构不同，越陡信用级别越低。基准即期利率曲线等于国债即期利率曲线加上该信用级别债券市场的信用利差期限结构。",
+    "contentTypes": [
+      "definition",
+      "formula",
+      "chart"
+    ],
+    "keyPoints": [
+      "信用利差期限结构",
+      "典型利差随期限延长而增加",
+      "信用级别越低期限结构越陡",
+      "基准即期利率曲线 = 国债即期利率曲线 + 信用利差期限结构"
+    ],
+    "candidateNodes": [
+      "信用利差期限结构",
+      "基准即期利率曲线"
+    ],
+    "candidateVisualBlocks": [
+      "formula_card",
+      "curve_chart"
+    ],
+    "importance": "high",
+    "notes": "固定收益定价关键扩展。"
+  },
+  {
+    "page": 52,
+    "title": "不含权公司债估值过渡页",
+    "textSummary": "不含权公司债估值过渡页。",
+    "contentTypes": [
+      "summary"
+    ],
+    "keyPoints": [
+      "进入公司债估值实例。"
+    ],
+    "candidateNodes": [
+      "公司债估值实例"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "low",
+    "notes": "过渡页。"
+  },
+  {
+    "page": 53,
+    "title": "8% 10 年期非国债无套利价值",
+    "textSummary": "根据期限结构，8% 10 年期国债无套利价值为 115.2621；8% 10 年期非国债债券无套利价值为 108.4616。",
+    "contentTypes": [
+      "example",
+      "calculation"
+    ],
+    "keyPoints": [
+      "国债无套利价值 115.2621",
+      "非国债无套利价值 108.4616",
+      "信用利差提高贴现率并压低价格"
+    ],
+    "candidateNodes": [
+      "不含权公司债估值实例"
+    ],
+    "candidateVisualBlocks": [
+      "example_box",
+      "data_table"
+    ],
+    "importance": "high",
+    "notes": "可重建为公司债估值对照。"
+  },
+  {
+    "page": 54,
+    "title": "公司债如何定价思考",
+    "textSummary": "提出公司债如何定价的思考，并给出外部阅读链接。",
+    "contentTypes": [
+      "summary",
+      "quote"
+    ],
+    "keyPoints": [
+      "公司债定价需要从国债曲线扩展到信用利差曲线"
+    ],
+    "candidateNodes": [
+      "公司债定价复习路径"
+    ],
+    "candidateVisualBlocks": [],
+    "importance": "medium",
+    "notes": "外部链接不离线展开。"
+  }
+]

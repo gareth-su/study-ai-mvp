@@ -1,72 +1,36 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
+import { getGeneratedCourseById, getDefaultGeneratedCourse, generatedCourses } from "@/lib/courses/course-registry";
+import { loadGeneratedFramework } from "@/lib/courses/generated-framework-loader";
 import PreviewClient from "./PreviewClient";
-
-type LoadResult =
-  | { ok: true; content: string }
-  | { ok: false; error: string };
-
-async function loadJsonFile(subDir: string, level: "concise" | "detailed"): Promise<LoadResult> {
-  const filePath = path.join(
-    process.cwd(),
-    "data",
-    "generated",
-    "ysjrgj",
-    subDir,
-    `framework-${level}.json`,
-  );
-
-  try {
-    const raw = await readFile(filePath, "utf8");
-    JSON.parse(raw); // validate before passing to client
-    return { ok: true, content: raw };
-  } catch (error) {
-    if (error instanceof SyntaxError) {
-      return {
-        ok: false,
-        error: `framework-${level}.json 不是合法 JSON：${error.message}`,
-      };
-    }
-
-    const isNotFound =
-      error instanceof Error &&
-      "code" in error &&
-      (error as NodeJS.ErrnoException).code === "ENOENT";
-
-    if (isNotFound) {
-      return {
-        ok: false,
-        error: `文件不存在：data/generated/ysjrgj/${subDir}/framework-${level}.json`,
-      };
-    }
-
-    const message = error instanceof Error ? error.message : "读取文件失败";
-    return { ok: false, error: message };
-  }
-}
 
 export default async function PreviewGeneratedPage({
   searchParams,
 }: {
-  searchParams: Promise<{ variant?: string }>;
+  searchParams: Promise<{ variant?: string; course?: string; level?: string }>;
 }) {
-  const { variant } = await searchParams;
+  const { variant, course, level } = await searchParams;
+
+  const courseId = course ?? "";
+  const courseObj = getGeneratedCourseById(courseId) ?? getDefaultGeneratedCourse();
   const defaultVariant = variant === "full" ? "full" : "sample";
+  const defaultLevel = level === "concise" ? "concise" : "detailed";
 
   const [sampleConcise, sampleDetailed, fullConcise, fullDetailed] = await Promise.all([
-    loadJsonFile("sample", "concise"),
-    loadJsonFile("sample", "detailed"),
-    loadJsonFile("full", "concise"),
-    loadJsonFile("full", "detailed"),
+    loadGeneratedFramework({ courseId: courseObj.id, variant: "sample", level: "concise" }),
+    loadGeneratedFramework({ courseId: courseObj.id, variant: "sample", level: "detailed" }),
+    loadGeneratedFramework({ courseId: courseObj.id, variant: "full", level: "concise" }),
+    loadGeneratedFramework({ courseId: courseObj.id, variant: "full", level: "detailed" }),
   ]);
 
   return (
     <PreviewClient
+      courseId={courseObj.id}
       defaultVariant={defaultVariant}
+      defaultLevel={defaultLevel}
       sampleConcise={sampleConcise}
       sampleDetailed={sampleDetailed}
       fullConcise={fullConcise}
       fullDetailed={fullDetailed}
+      allCourses={generatedCourses}
     />
   );
 }

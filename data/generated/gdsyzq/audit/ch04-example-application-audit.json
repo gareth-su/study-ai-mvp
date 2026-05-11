@@ -1,0 +1,222 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "债券定价（一）",
+  "auditPurpose": "检查第 4 章中例题、应用题、推导链是否被错误降维为表格、公式或说明。",
+  "coreFinding": "第 23–25 页 A/B/C 债券复制零息债券案例原本是完整应用题，普通文本抽取漏掉 Office 数学对象，导致上一轮错误标记为数值待核对并降格为 data_table。已恢复为 example_box，并保留现金流矩阵。",
+  "items": [
+    {
+      "pages": [
+        10
+      ],
+      "title": "10 年期 8% 国债传统估值",
+      "sourceType": [
+        "example",
+        "table",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table",
+        "example_box",
+        "formula_card",
+        "timeline"
+      ],
+      "problem": "已完整表达；长表已压缩为关键现金流和计算路径。",
+      "priority": "P0",
+      "action": "keep-example-box",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        13,
+        14
+      ],
+      "title": "3 年期 10% 半年付息债券无套利估值",
+      "sourceType": [
+        "example",
+        "table",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table",
+        "example_box",
+        "formula_card"
+      ],
+      "problem": "已完整表达；即期利率表和逐期贴现路径均已保留。",
+      "priority": "P0",
+      "action": "keep-example-box",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "title": "3 年期 6% 债券购买判断",
+      "sourceType": [
+        "example",
+        "calculation",
+        "summary"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "example_box",
+        "process_flow"
+      ],
+      "problem": "已完整表达；保留市场价格、客观估值和购买判断。",
+      "priority": "P0",
+      "action": "keep-example-box",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        21
+      ],
+      "title": "10 年期 8% 国债分离套利",
+      "sourceType": [
+        "table",
+        "calculation",
+        "example"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table"
+      ],
+      "problem": "原先只有方向对照表，没有学生可直接复习的套利判断步骤。",
+      "priority": "P0",
+      "action": "add-example-box-and-keep-data-table",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        22
+      ],
+      "title": "10 年期 4.8% 国债重构套利",
+      "sourceType": [
+        "table",
+        "calculation",
+        "example"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table"
+      ],
+      "problem": "原先只有方向对照表，没有学生可直接复习的套利判断步骤。",
+      "priority": "P0",
+      "action": "add-example-box-and-keep-data-table",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        23,
+        24,
+        25
+      ],
+      "title": "A/B/C 附息债券复制 1 年期零息债券",
+      "sourceType": [
+        "example",
+        "table",
+        "calculation",
+        "continuous-derivation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table"
+      ],
+      "problem": "题目、设权重、联立方程、求解和一价定律定价过程被降维为现金流矩阵说明。误判原因是普通文本抽取漏掉 Office 数学对象中的权重和结果。",
+      "priority": "P0",
+      "action": "add-example-box-and-keep-data-table",
+      "needsManualNumberCheck": false,
+      "confirmedValues": {
+        "weights": {
+          "N_A": -57.75,
+          "N_B": 56.65,
+          "N_C": -1
+        },
+        "fairValue": 98.2
+      }
+    },
+    {
+      "pages": [
+        27,
+        28
+      ],
+      "title": "非利息支付日净价计算",
+      "sourceType": [
+        "example",
+        "formula",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "example_box",
+        "formula_card",
+        "timeline"
+      ],
+      "problem": "已完整表达；保留应计利息和净价转换。",
+      "priority": "P0",
+      "action": "keep-example-box",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        36
+      ],
+      "title": "中石油五年期公司债估值差异",
+      "sourceType": [
+        "case",
+        "example",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": false,
+      "existingRepresentation": [
+        "case_card"
+      ],
+      "problem": "更适合案例卡：重点是解释公司债市场价与国债曲线估值差异，而不是标准计算题。",
+      "priority": "P1",
+      "action": "keep-case-card",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        39
+      ],
+      "title": "10 年期工业债券收益利差计算",
+      "sourceType": [
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "formula_card"
+      ],
+      "problem": "原先只作为公式卡，没有把数值应用过程写成例题。",
+      "priority": "P0",
+      "action": "add-example-box-and-keep-formula-card",
+      "needsManualNumberCheck": false
+    },
+    {
+      "pages": [
+        53
+      ],
+      "title": "8% 10 年期非国债估值判断",
+      "sourceType": [
+        "example",
+        "calculation"
+      ],
+      "shouldHaveExampleBox": true,
+      "existingRepresentation": [
+        "data_table",
+        "example_box",
+        "process_flow"
+      ],
+      "problem": "已完整表达；保留国债与非国债价值对照和判断路径。",
+      "priority": "P1",
+      "action": "keep-example-box",
+      "needsManualNumberCheck": false
+    }
+  ]
+}
