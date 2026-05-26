@@ -1,80 +1,77 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import PrefaceModal from "@/components/landing/PrefaceModal";
+
+const PREFACE_KEY = "landing-preface-ack";
 
 export default function Home() {
-  return (
-    <main>
-      <section className="border-b border-neutral-100 bg-white">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-600">
-              结构化复习
-            </p>
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-neutral-950 md:text-5xl">
-              结构化学习，
-              <br />
-              让复杂知识变简单
-            </h1>
-            <p className="mt-5 max-w-md text-base leading-7 text-neutral-500">
-              基于课程资料构建清晰的复习路径，帮助你按章节、模块和重点层级掌握知识。
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/courses"
-                className="rounded-lg bg-red-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700"
-              >
-                开始学习
-              </Link>
-              <Link
-                href="/courses"
-                className="rounded-lg border border-neutral-200 bg-white px-6 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
-              >
-                浏览课程
-              </Link>
-            </div>
-          </div>
+  const router = useRouter();
+  const [prefaceOpen, setPrefaceOpen] = useState(false);
 
-          <div className="hidden md:block">
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-sm font-bold text-red-700">
-                    01
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900">按章节复习</p>
-                    <p className="text-xs text-neutral-500">逐章展开知识框架</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-sm font-bold text-red-700">
-                    02
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900">梳理核心概念</p>
-                    <p className="text-xs text-neutral-500">围绕重点建立复习线索</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-sm font-bold text-red-700">
-                    03
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-neutral-900">系统学习</p>
-                    <p className="text-xs text-neutral-500">进入课程后按知识模块复习</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  function handleStartLearning() {
+    if (localStorage.getItem(PREFACE_KEY) === "true") {
+      router.push("/courses");
+      return;
+    }
+
+    setPrefaceOpen(true);
+  }
+
+  function handlePrefaceConfirm() {
+    setPrefaceOpen(false);
+    router.push("/courses");
+  }
+
+  return (
+    <main className="relative min-h-dvh overflow-hidden bg-neutral-950 text-white">
+      <div className="absolute inset-0">
+        <Image
+          src="/landing/portal-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_34%),linear-gradient(135deg,rgba(8,8,10,0.3),rgba(8,8,10,0.58))]" />
+      </div>
+
+      <header className="relative z-10 flex items-start justify-between px-5 pt-5 sm:px-7 sm:pt-7">
+        <Link
+          href="/"
+          aria-label="返回首页"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+        >
+          <span className="h-3.5 w-3.5 rounded-full bg-[#E53935] shadow-[0_0_0_6px_rgba(229,57,53,0.18)]" />
+        </Link>
+      </header>
+
+      <section className="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl items-center px-6 pb-16 pt-20 sm:px-8 lg:px-12">
+        <div className="max-w-2xl">
+          <p className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-[0.28em] text-white/72 backdrop-blur-sm">
+            学习门户
+          </p>
+          <h1 className="text-5xl font-semibold tracking-tight text-white drop-shadow-[0_10px_40px_rgba(0,0,0,0.25)] sm:text-6xl lg:text-7xl">
+            <span className="text-white">超级</span>
+            <span className="text-[#E53935]">阿水</span>
+          </h1>
+          <div className="mt-10">
+            <button
+              type="button"
+              onClick={handleStartLearning}
+              className="inline-flex items-center justify-center rounded-full bg-[#E53935] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(229,57,53,0.38)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#d93430] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            >
+              开始学习
+            </button>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-neutral-100 bg-white">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8 text-sm text-neutral-400">
-          <span>STUDY.AI</span>
-          <span>结构化课程复习平台</span>
-        </div>
-      </footer>
+      <PrefaceModal open={prefaceOpen} onConfirm={handlePrefaceConfirm} />
     </main>
   );
 }

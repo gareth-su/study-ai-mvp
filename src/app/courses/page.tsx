@@ -29,6 +29,15 @@ const courses: CourseCard[] = [
     alt: "固定收益证券课程配图",
     imagePosition: "right",
   },
+  {
+    id: "jrjlx",
+    title: "金融计量学",
+    description:
+      "围绕 Stata、回归表、数据集结构与实证复现路径，帮助你建立金融计量学的考试复习和实证操作框架。",
+    cover: "/course-covers/jrjlx-cover.png",
+    alt: "金融计量学课程配图",
+    imagePosition: "left",
+  },
 ];
 
 export default function CoursesPage() {
@@ -37,7 +46,8 @@ export default function CoursesPage() {
       <section className="border-b border-neutral-200 bg-white">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
           <Link href="/" className="text-lg font-bold tracking-tight text-neutral-950">
-            study-ai-mvp
+            <span className="text-neutral-950">超级</span>
+            <span className="text-red-600">阿水</span>
           </Link>
           <nav className="flex items-center gap-4 text-sm font-medium text-neutral-700 sm:gap-8 sm:text-base">
             <Link href="/" className="transition-colors hover:text-red-600">
@@ -110,7 +120,7 @@ export default function CoursesPage() {
 
       <footer className="border-t border-neutral-200 bg-white">
         <div className="mx-auto w-full max-w-6xl px-5 py-6 text-center text-sm text-neutral-500 sm:px-6">
-          © 2024 study-ai-mvp. 保留所有权利。
+          © 2024 超级阿水. 保留所有权利。
         </div>
       </footer>
     </main>
