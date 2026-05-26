@@ -1,0 +1,974 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第六章：债券定价（三）：Z 利差、OAS 与可转换债券",
+  "sourceFile": "source-materials/gdsyzq/6.债券定价 (三) 更新版.pptx",
+  "slideCount": 55,
+  "generatedAt": "2026-05-13",
+  "inventory": [
+    {
+      "page": 1,
+      "title": "标题页",
+      "textSummary": "标题页：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 2,
+      "title": "含权债券定价回顾",
+      "textSummary": "含权债券定价回顾：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 3,
+      "title": "债券定价方法回顾",
+      "textSummary": "债券定价方法回顾：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 4,
+      "title": "目录",
+      "textSummary": "目录：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 5,
+      "title": "知识目标",
+      "textSummary": "知识目标：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 6,
+      "title": "利差度量思考",
+      "textSummary": "利差度量思考：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "本章导读",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 7,
+      "title": "名义利差定义",
+      "textSummary": "名义利差定义：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "名义利差：只基于到期收益率的利差",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 8,
+      "title": "Z 利差行业方法",
+      "textSummary": "Z 利差行业方法：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "Z 利差：整条即期利率曲线上的固定利差",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 9,
+      "title": "Z 利差定义",
+      "textSummary": "Z 利差定义：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "mechanism_image"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "Z 利差：整条即期利率曲线上的固定利差",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "image"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。已提取两个局部曲线图，作为 Z 利差整条即期曲线固定加点的机制图，不是整页截图。"
+    },
+    {
+      "page": 10,
+      "title": "Z 利差定价方程",
+      "textSummary": "Z 利差定价方程：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "Z 利差：整条即期利率曲线上的固定利差",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 11,
+      "title": "3 年期公司债利差例题条件",
+      "textSummary": "3 年期公司债利差例题条件：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "名义利差与 Z 利差计算例题",
+      "candidateVisualBlocks": [
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 12,
+      "title": "名义利差解答",
+      "textSummary": "名义利差解答：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "名义利差与 Z 利差计算例题",
+      "candidateVisualBlocks": [
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 13,
+      "title": "Z 利差解答",
+      "textSummary": "Z 利差解答：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "名义利差与 Z 利差计算例题",
+      "candidateVisualBlocks": [
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 14,
+      "title": "OAS 定义与校准例题起点",
+      "textSummary": "OAS 定义与校准例题起点：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation",
+        "mechanism_image"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "OAS：含权债的期权调整利差",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box",
+        "image"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。已提取局部图 oas-model-price-gap.png，用于说明模型价格高于市场价格的 OAS 校准起点。"
+    },
+    {
+      "page": 15,
+      "title": "OAS 35 bp 校准结果",
+      "textSummary": "OAS 35 bp 校准结果：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example",
+        "calculation",
+        "mechanism_image"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "OAS：含权债的期权调整利差",
+      "candidateVisualBlocks": [
+        "example_box",
+        "image"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。已提取局部图 oas-node-spread-35bp.png，用于说明节点利率加 35bp 后模型价格匹配市场价格。"
+    },
+    {
+      "page": 16,
+      "title": "OAS 与期权成本",
+      "textSummary": "OAS 与期权成本：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "OAS：含权债的期权调整利差",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 17,
+      "title": "国债或板块基准下的利差补偿风险",
+      "textSummary": "国债或板块基准下的利差补偿风险：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "利差补偿风险：不同基准下的区别",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 18,
+      "title": "发行人基准下的利差补偿风险",
+      "textSummary": "发行人基准下的利差补偿风险：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "利差补偿风险：不同基准下的区别",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 19,
+      "title": "利差度量总结",
+      "textSummary": "利差度量总结：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "利差补偿风险：不同基准下的区别",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 20,
+      "title": "可转换债券核心条款",
+      "textSummary": "可转换债券核心条款：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "可转换债券的核心条款与利益结构",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 21,
+      "title": "转换价值计算",
+      "textSummary": "转换价值计算：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换价值、最小值与纯粹债券价值",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 22,
+      "title": "可转债最小值与套利",
+      "textSummary": "可转债最小值与套利：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换价值、最小值与纯粹债券价值",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 23,
+      "title": "可转债最小值计算",
+      "textSummary": "可转债最小值计算：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换价值、最小值与纯粹债券价值",
+      "candidateVisualBlocks": [
+        "example_box",
+        "data_table"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 24,
+      "title": "每股市场转换价格与转换溢价",
+      "textSummary": "每股市场转换价格与转换溢价：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换溢价与下行风险指标",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 25,
+      "title": "市场转换溢价比率",
+      "textSummary": "市场转换溢价比率：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换溢价与下行风险指标",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 26,
+      "title": "纯粹债券价值溢价",
+      "textSummary": "纯粹债券价值溢价：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "转换溢价与下行风险指标",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 27,
+      "title": "可转债上升潜力",
+      "textSummary": "可转债上升潜力：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "可转换债券估值框架",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 28,
+      "title": "可转债估值框架",
+      "textSummary": "可转债估值框架：根据 PPT 文本清点，属于核心定义、公式、例题或关键比较。",
+      "contentTypes": [
+        "definition",
+        "formula"
+      ],
+      "keyPoints": [
+        "进入主学习路径。",
+        "保留核心公式、计算或比较关系。"
+      ],
+      "candidateModule": "可转换债券估值框架",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 29,
+      "title": "我国可转债市场发展思考题",
+      "textSummary": "我国可转债市场发展思考题：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 30,
+      "title": "可转债是什么：固收+",
+      "textSummary": "可转债是什么：固收+：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 31,
+      "title": "可转债是什么补充页",
+      "textSummary": "可转债是什么补充页：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 32,
+      "title": "可转债发展历程问题",
+      "textSummary": "可转债发展历程问题：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 33,
+      "title": "可转债探索试行阶段",
+      "textSummary": "可转债探索试行阶段：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 34,
+      "title": "可转债规范发展阶段",
+      "textSummary": "可转债规范发展阶段：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 35,
+      "title": "可转债提质增效阶段",
+      "textSummary": "可转债提质增效阶段：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 36,
+      "title": "可转债举例问题",
+      "textSummary": "可转债举例问题：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 37,
+      "title": "可转债常用定价模型问题",
+      "textSummary": "可转债常用定价模型问题：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 38,
+      "title": "城投债定义",
+      "textSummary": "城投债定义：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 39,
+      "title": "城投债与地方债区别",
+      "textSummary": "城投债与地方债区别：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 40,
+      "title": "城投债与地方债区别表",
+      "textSummary": "城投债与地方债区别表：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "补充理解：我国可转债市场与城投债材料",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "辅助或过渡材料。"
+    },
+    {
+      "page": 41,
+      "title": "城投债拓展阅读链接",
+      "textSummary": "城投债拓展阅读链接：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 42,
+      "title": "城投债产生背景问题",
+      "textSummary": "城投债产生背景问题：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 43,
+      "title": "城投债发展历史前段",
+      "textSummary": "城投债发展历史前段：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 44,
+      "title": "城投债发展历史后段与链接",
+      "textSummary": "城投债发展历史后段与链接：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 45,
+      "title": "城投债为什么关注",
+      "textSummary": "城投债为什么关注：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 46,
+      "title": "城投债服务城镇化",
+      "textSummary": "城投债服务城镇化：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 47,
+      "title": "城投债服务城镇化截图",
+      "textSummary": "城投债服务城镇化截图：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 48,
+      "title": "城镇化案例",
+      "textSummary": "城镇化案例：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 49,
+      "title": "工业园区开发案例",
+      "textSummary": "工业园区开发案例：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 50,
+      "title": "政府隐性债务问题标题",
+      "textSummary": "政府隐性债务问题标题：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 51,
+      "title": "政府隐性债务问题截图",
+      "textSummary": "政府隐性债务问题截图：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 52,
+      "title": "城投债行研：政府相关风险",
+      "textSummary": "城投债行研：政府相关风险：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 53,
+      "title": "城投债行研：产业相关风险",
+      "textSummary": "城投债行研：产业相关风险：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 54,
+      "title": "城投债行研：其他风险",
+      "textSummary": "城投债行研：其他风险：根据 PPT 文本清点，属于重点理解或辅助复习材料。",
+      "contentTypes": [
+        "summary",
+        "comparison"
+      ],
+      "keyPoints": [
+        "压缩表达，不抢占主路径。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    },
+    {
+      "page": 55,
+      "title": "城投债行研拓展阅读",
+      "textSummary": "城投债行研拓展阅读：根据 PPT 文本清点，属于标题、目录、背景、截图或外部链接材料。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "audit 记录或极简处理。"
+      ],
+      "candidateModule": "audit-only",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "P3 或 C 类材料，默认不进入网页正文。"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第三章：债券收益率",
+  "reviewedAt": "2026-05-12",
+  "sourceFile": "source-materials/gdsyzq/3.债券收益率(2).pptx",
+  "items": [
+    {
+      "slides": [10],
+      "title": "当期收益率快算：7% 票息债券",
+      "signals": ["例", "计算", "当期收益率"],
+      "currentExpression": "formula_card + example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "kept",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [11],
+      "title": "8 年期 7% 国债半年 YTM 与 BEY",
+      "signals": ["例", "到期收益率", "债券等值收益率"],
+      "currentExpression": "formula_card + new example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "added_example_box",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [12],
+      "title": "两只 3 年期国债 YTM 比较",
+      "signals": ["例", "比较", "到期收益率"],
+      "currentExpression": "example_box + data_table",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "kept",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [14, 15],
+      "title": "8 年期 7% 债券收益来源分解",
+      "signals": ["计算", "再投资收益", "总收益"],
+      "currentExpression": "formula_card + data_table + new example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "added_example_box",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [17],
+      "title": "8 年期与 15 年期债券再投资收益占比比较",
+      "signals": ["计算", "比较", "再投资风险"],
+      "currentExpression": "data_table",
+      "needsExampleBox": false,
+      "priority": "P1",
+      "action": "kept_as_data_table",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [31, 32],
+      "title": "1.5 年期即期收益率自展",
+      "signals": ["例", "计算", "自展法", "即期收益率"],
+      "currentExpression": "formula_card + example_box + data_table",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "kept",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [38],
+      "title": "两期远期利率无套利推导",
+      "signals": ["远期利率", "推导", "计算"],
+      "currentExpression": "formula_card",
+      "needsExampleBox": false,
+      "priority": "P0",
+      "action": "kept_as_formula_card",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [39],
+      "title": "即期利率与远期利率示例表",
+      "signals": ["远期利率", "即期利率", "数据表"],
+      "currentExpression": "formula_card + data_table",
+      "needsExampleBox": false,
+      "priority": "P1",
+      "action": "kept_as_data_table",
+      "manualNumberCheck": true
+    },
+    {
+      "slides": [41],
+      "title": "由远期利率反推 3 年期即期利率",
+      "signals": ["练习", "问题", "反推", "即期利率"],
+      "currentExpression": "example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "kept",
+      "manualNumberCheck": true
+    },
+    {
+      "slides": [44],
+      "title": "纯预期理论长期即期利率公式与形态表",
+      "signals": ["公式", "表格", "收益率曲线"],
+      "currentExpression": "formula_card + data_table",
+      "needsExampleBox": false,
+      "priority": "P1",
+      "action": "kept_as_theory_formula_and_table",
+      "manualNumberCheck": false
+    }
+  ],
+  "summary": {
+    "candidateCount": 10,
+    "exampleBoxesAfterReview": 6,
+    "addedExampleBoxes": [
+      "到期收益率例子：8 年期 7% 国债的 BEY",
+      "再投资收益分解例子：8 年期 7% 债券"
+    ],
+    "downgradedMistakesFound": [
+      "第 11 页 BEY 例子原先仅由 formula_card 承载",
+      "第 14-15 页再投资收益分解原先主要由 formula_card/data_table 承载"
+    ],
+    "manualNumberChecks": [
+      "第 39 页即期利率与远期利率表建议人工核对排版对应关系",
+      "第 41 页反推 3 年期即期利率结果建议与课堂答案口径核对"
+    ]
+  }
+}

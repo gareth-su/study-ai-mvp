@@ -1,0 +1,46 @@
+{
+  "chapter": "第十一章：股票期权的性质",
+  "enhancementDate": "2026-05-14",
+  "preAuditGrade": "D",
+  "enhancementType": "Full Enhancement",
+  "status": "polished-near",
+  "confidence": "high",
+  "metrics": {
+    "nodes": 9,
+    "children": 31,
+    "avgChildSummaryChars": 185,
+    "shortChildrenUnder40Chars": 0,
+    "visualBlocks": 13,
+    "formulaCards": 4,
+    "formulaCardsFixed": 4,
+    "formulaCardsWithPriority": 4,
+    "exampleBoxes": 3,
+    "exampleBoxesWithSourceType": 3,
+    "curveCharts": 2,
+    "comparisonTables": 2,
+    "dataTables": 1,
+    "processFlows": 1
+  },
+  "fixCategories": {
+    "nodeRestructure": "6→9 teaching modules, generic template names removed",
+    "childrenExpansion": "23→31, avg 26→185 chars, 100%→0% short",
+    "jsonEscapeFix": "All e^{-rT} \\r→CR bugs fixed across 4 formula_cards and 3 example_boxes",
+    "formulaLatexFix": "2 cards with missing LaTeX now have proper formulaLatex",
+    "metadataCompletion": "4 formula_cards get priority; 3 example_boxes get sourceType+sourceNote",
+    "chartMetadataUpdate": "Call bounds chart updated to explain put symmetry",
+    "groupedConceptCoverage": "Call/put, European/American, upper/lower bounds, with/without dividends all covered"
+  },
+  "remainingNonBlockingItems": [
+    "curve_chart[1] shows only call bounds; put bounds are explained in text — a put-bounds chart could be added in future polish",
+    "comparison_table[0] (factor directions) lacks priority field — non-blocking"
+  ],
+  "selfCheck": {
+    "fullCoverageBodyFormulaChartExamples": true,
+    "chartPointsCorrectMetadataComplete": true,
+    "exampleParamsExplicitlyDecoupled": "N/A — example boxes use standalone parameters, not chart params",
+    "latexJsonEscapesCorrect": true,
+    "noEngineeringTermsExposed": true,
+    "callPutEuropeanAmericanGroupedComplete": true,
+    "allFormulasHaveApplicabilityConditions": true
+  }
+}

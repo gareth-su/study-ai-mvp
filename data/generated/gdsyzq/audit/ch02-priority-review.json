@@ -1,0 +1,75 @@
+{
+  "chapter": "ch02",
+  "title": "第二章：债券基本概念与债券市场组成",
+  "auditDate": "2026-05-13",
+  "status": "polished-near",
+  "priorityReview": {
+    "p0": {
+      "label": "必须掌握",
+      "items": [
+        "债券契约的定义和托管人角色",
+        "五个基本条款：到期期限、面值、息票率、派息频率、票面货币",
+        "四种应急条款：赎回、回售、转换、提前还款",
+        "息票金额公式：C = F × c ÷ m",
+        "浮动利率债券息票率公式：c_t = r_t + s",
+        "基点换算：1 bp = 0.01%，100 bp = 1%",
+        "基本条款（决定正常现金流）vs 应急条款（改变未来现金流）",
+        "赎回权（发行人权利）vs 回售权（投资者权利）",
+        "一级市场（发行）vs 二级市场（交易）"
+      ],
+      "examEmphasis": "条款分类识别、息票计算和基点换算为高频考点"
+    },
+    "p1": {
+      "label": "重点理解",
+      "items": [
+        "肯定性条约 vs 否定性条约的约束机制",
+        "嵌入式期权债券的现金流不确定性来源",
+        "固定利率 vs 浮动利率债券的息票计算差异",
+        "利率上限/下限对浮动利率债券息票的约束",
+        "公司债募集说明书的基本阅读框架",
+        "债券现金流生命周期：发行→存续→可能触发应急条款→到期"
+      ],
+      "examEmphasis": "侧重机制理解和条款分析"
+    },
+    "p2": {
+      "label": "辅助复习",
+      "items": [
+        "常见债券工具类型（零息、递增、递延息票、浮动利率、可赎回）的现金流特点",
+        "债券市场的托管和结算背景"
+      ],
+      "examEmphasis": "辅助理解，可能出现在选择题"
+    }
+  },
+  "visualBlockPriority": {
+    "p0": [
+      "concept_map: 债券条款概念图",
+      "comparison_table: 基本条款与应急条款对比",
+      "formula_card: 息票金额",
+      "formula_card: 浮动利率债券息票率",
+      "decision_tree: 债券条款识别路径"
+    ],
+    "p1": [
+      "timeline: 普通债券现金流生命周期",
+      "comparison_table: 常见债券工具对比",
+      "case_card: 公司债募集说明书中的条款识别"
+    ]
+  },
+  "remainingRisks": [
+    {
+      "risk": "无 ch02 slide inventory",
+      "detail": "本轮为局部增强，未做slide inventory逐页清点。可能存在PPT中有但正文未覆盖的细节。",
+      "severity": "low"
+    },
+    {
+      "risk": "concise framework仍含旧版自然语言formula",
+      "detail": "framework-concise.json ch02 VB[2] formula字段仍为自然语言，不在本轮范围。",
+      "severity": "low"
+    },
+    {
+      "risk": "债券市场组成细节偏概括",
+      "detail": "发行方式（公募/私募、承销）、托管结算流程等内容仅在node[3].children[3]中概括提及，未独立展开。如PPT中有详细内容，后续可补充。",
+      "severity": "low"
+    }
+  ],
+  "nextRecommendedStep": "post-review — 教师通读验收，确认基础概念覆盖是否满足后续第3-8章需要"
+}

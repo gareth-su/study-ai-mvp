@@ -1,0 +1,20 @@
+{
+  "chapter": "第二章：期货市场的运作机制",
+  "enhancementDate": "2026-05-14",
+  "enhancementType": "Local Enhancement (C → polished)",
+  "finalStatus": "polished",
+  "formulaCards": [
+    { "title": "期货每日盈亏计算逻辑（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true }
+  ],
+  "groupedConcepts": {
+    "longVsShort": "pass",
+    "openVsClose": "pass",
+    "initialMarginVsMaintenanceMargin": "pass",
+    "marginCallVsForcedLiquidation": "pass",
+    "deliveryVsOffset": "pass",
+    "ccpVsBilateral": "pass",
+    "forwardVsFutures": "pass",
+    "volumeVsOpenInterest": "pass",
+    "hedgerVsSpeculatorVsArbitrageur": "pass"
+  }
+}

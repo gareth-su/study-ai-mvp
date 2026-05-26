@@ -1,0 +1,165 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "ch06",
+  "generatedAt": "2026-05-13",
+  "modulePriorities": [
+    {
+      "module": "本章导读：从 Z 利差到 OAS，再到可转债估值",
+      "priority": "P0/P1",
+      "pages": "2-6"
+    },
+    {
+      "module": "名义利差：只基于到期收益率的利差",
+      "priority": "P0",
+      "pages": "7"
+    },
+    {
+      "module": "Z 利差：整条即期利率曲线上的固定利差",
+      "priority": "P0",
+      "pages": "8-10"
+    },
+    {
+      "module": "名义利差与 Z 利差计算例题",
+      "priority": "P0",
+      "pages": "11-13"
+    },
+    {
+      "module": "OAS：含权债的期权调整利差",
+      "priority": "P0/P1",
+      "pages": "14-16"
+    },
+    {
+      "module": "利差补偿风险：不同基准下的区别",
+      "priority": "P1",
+      "pages": "17-19"
+    },
+    {
+      "module": "可转换债券的核心条款与利益结构",
+      "priority": "P0/P1",
+      "pages": "20"
+    },
+    {
+      "module": "转换价值、最小值与纯粹债券价值",
+      "priority": "P0",
+      "pages": "21-23"
+    },
+    {
+      "module": "转换溢价与下行风险指标",
+      "priority": "P0",
+      "pages": "24-26"
+    },
+    {
+      "module": "可转换债券估值框架",
+      "priority": "P0/P1",
+      "pages": "27-28, 37"
+    },
+    {
+      "module": "补充理解：我国可转债市场与城投债材料",
+      "priority": "P2/P3",
+      "pages": "29-55"
+    }
+  ],
+  "visualBlockPriorities": {
+    "P0": [
+      "名义利差",
+      "Z 利差定价方程",
+      "从市场价格反推 Z 利差",
+      "3 年期公司债利差例题：已知条件与国债现金流贴现",
+      "例题 1：3 年期公司债的名义利差与 Z 利差",
+      "OAS 校准关系",
+      "例题 2：可赎回债券的 OAS 调整",
+      "期权成本",
+      "转换价值",
+      "可转换债券最小值",
+      "例题 3：转换价值与可转债最小值",
+      "每股市场转换价格",
+      "转换溢价与溢价比率",
+      "例题 4：每股市场转换溢价与溢价比率",
+      "纯粹债券价值溢价",
+      "例题 5：纯粹债券价值溢价",
+      "可转换债券价值分解"
+    ],
+    "P1": [
+      "本章定价入口：不含权 vs 含权",
+      "名义利差、Z 利差与 OAS 对比",
+      "不同基准下三种利差补偿的风险",
+      "可转换债券：投资人利益 vs 发行人利益",
+      "含赎回和回售的可转债价值",
+      "可转换债券估值框架",
+      "Z 利差：基准即期曲线上的固定加点示意（左图）",
+      "Z 利差：整条曲线平移后的贴现率关系（右图）",
+      "OAS 校准：模型价格高于市场价格的调整起点",
+      "OAS 校准：节点利率加 35bp 后匹配市场价格"
+    ],
+    "P2": [
+      "补充理解：城投债与地方债的复习边界"
+    ]
+  },
+  "exampleBoxPriorities": [
+    {
+      "title": "例题 1：3 年期公司债的名义利差与 Z 利差",
+      "priority": "P0",
+      "sourcePages": "11-13",
+      "status": "新增"
+    },
+    {
+      "title": "例题 2：可赎回债券的 OAS 调整",
+      "priority": "P0",
+      "sourcePages": "14-15",
+      "status": "修复增强"
+    },
+    {
+      "title": "例题 3：转换价值与可转债最小值",
+      "priority": "P0",
+      "sourcePages": "21-23",
+      "status": "新增"
+    },
+    {
+      "title": "例题 4：每股市场转换溢价与溢价比率",
+      "priority": "P0",
+      "sourcePages": "24-25",
+      "status": "新增"
+    },
+    {
+      "title": "例题 5：纯粹债券价值溢价",
+      "priority": "P0",
+      "sourcePages": "26",
+      "status": "新增"
+    }
+  ],
+  "p2p3Handling": {
+    "p2": "只保留可转债固收+定位、城投债/地方债区别和城投债风险分类的极简补充，不进入主路径。",
+    "p3": "外部链接、可转债市场发展长篇历史、城投债历史、城镇化案例、政府隐性债务截图和拓展阅读仅保留 audit。"
+  },
+  "downgradedMergedOrDeleted": [
+    "第 29-37 页可转债市场发展材料合并为一句固收+定位和估值框架提醒。",
+    "第 38-55 页城投债材料压缩为补充理解对比表。",
+    "第 41、44、55 页外部链接删除出正文。",
+    "第 42-51 页城投债历史、城镇化、政府隐性债务截图删除出正文。"
+  ],
+  "manualReview": [
+    "第 21 页 2013-04-04 正股价格由后续转换价值和基础股票价格 6.23 交叉确认。",
+    "第 24 页每股市场转换价格由 127006/16666.67 与后续 7.62-6.23=1.39 交叉确认。"
+  ],
+  "dataTableOrFormulaToExampleBox": [
+    "3 年期公司债名义利差和 Z 利差由表格/公式补成 example_box。",
+    "转换价值与最小值由公式补成 example_box。",
+    "转换溢价指标由公式补成 example_box。",
+    "纯粹债券价值溢价由公式补成 example_box。"
+  ],
+  "chartCheck": "第 6 章未使用 line_chart、curve_chart、payoff_chart，因此无空图风险。",
+  "imageCheck": "已新增 4 个 image visualBlock，均来自 PPT 内嵌局部图片对象，不是整页截图：/generated-assets/gdsyzq/ch06/z-spread-curve-fixed-spread-left.png、/generated-assets/gdsyzq/ch06/z-spread-curve-fixed-spread-right.png、/generated-assets/gdsyzq/ch06/oas-model-price-gap.png、/generated-assets/gdsyzq/ch06/oas-node-spread-35bp.png。",
+  "finalStats": {
+    "nodes": 11,
+    "visualBlocks": 28,
+    "formulaCards": 11,
+    "exampleBoxes": 5,
+    "dataTables": 1,
+    "comparisonTables": 5,
+    "processFlows": 2,
+    "charts": 0,
+    "images": 4
+  },
+  "latexCheck": "通过：未发现损坏的 imes；approx 仅作为合法 approx 出现在 MathText 中；未发现裸括号伪公式。",
+  "scopeCheck": "只替换 framework-detailed.json 的第 6 章对象；未修改 schema、页面代码、sample、concise 或其他章节。"
+}

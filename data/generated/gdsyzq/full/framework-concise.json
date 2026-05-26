@@ -426,8 +426,8 @@
         {
           "type": "formula_card",
           "title": "息票金额",
-          "formula": "Coupon = Face value × coupon rate / payment frequency",
-          "formulaLatex": "C = \\frac{F \\times c}{m}",
+          "formula": "C=F c/m",
+          "formulaLatex": "C=\\frac{F\\times c}{m}",
           "variables": [
             {
               "symbol": "C",
@@ -1087,7 +1087,7 @@
         {
           "type": "formula_card",
           "title": "可赎回债券价值",
-          "formula": "callable bond value = option-free bond value - call option value",
+          "formula": "V_{callable}=V_{option-free}-V_{call}",
           "formulaLatex": "V_{callable}=V_{option\\text{-}free}-V_{call}",
           "variables": [
             {
@@ -1111,7 +1111,7 @@
         {
           "type": "formula_card",
           "title": "可回售债券价值",
-          "formula": "putable bond value = option-free bond value + put option value",
+          "formula": "V_{putable}=V_{option-free}+V_{put}",
           "formulaLatex": "V_{putable}=V_{option\\text{-}free}+V_{put}",
           "variables": [
             {
@@ -1575,7 +1575,7 @@
         {
           "type": "formula_card",
           "title": "蒙特卡罗理论价值",
-          "formula": "value = average PV across paths",
+          "formula": "V_0=(1/N)\\sum_{j=1}^{N}PV_j",
           "formulaLatex": "V_0=\\frac{1}{N}\\sum_{j=1}^{N}PV_j",
           "variables": [
             {
@@ -1927,7 +1927,7 @@
         {
           "type": "formula_card",
           "title": "预期信用损失",
-          "formula": "expected loss = PD × (1 - recovery rate) × exposure",
+          "formula": "EL=PD\\times(1-RR)\\times EAD",
           "formulaLatex": "EL = PD\\times(1-RR)\\times EAD",
           "variables": [
             {
@@ -1955,7 +1955,7 @@
         {
           "type": "formula_card",
           "title": "相对VaR",
-          "formula": "relative VaR = expected value - lower percentile value",
+          "formula": "VaR_{relative}=\\bar{V}-V_q",
           "formulaLatex": "VaR_{relative}=\\bar{V}-V_{q}",
           "variables": [
             {

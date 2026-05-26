@@ -1,0 +1,77 @@
+{
+  "chapter": "ch10",
+  "title": "第十章：期权市场机制",
+  "auditDate": "2025-05-14",
+  "status": "polished-near",
+  "priorityReview": {
+    "p0": {
+      "label": "必须掌握",
+      "items": [
+        "看涨期权：买方有权以K买入标的；看跌期权：买方有权以K卖出标的",
+        "四类基本头寸：Long Call, Short Call, Long Put, Short Put的盈亏特征",
+        "四个盈亏平衡点公式：Call BE = K+c, Put BE = K-p",
+        "买方最大损失=期权费；卖方最大收益=期权费",
+        "实值(ITM)、平值(ATM)、虚值(OTM)的定义",
+        "内在价值 vs 时间价值：期权价格 = 内在价值 + 时间价值",
+        "美式期权（到期前任一天可行权）vs 欧式期权（仅到期日行权）"
+      ],
+      "examEmphasis": "头寸识别、盈亏计算和BE公式为高频考点"
+    },
+    "p1": {
+      "label": "重点理解",
+      "items": [
+        "合约标准化要素：标的、规模(100股)、K间距、到期月份循环",
+        "保证金制度：卖方需要保证金、买方不需要的逻辑",
+        "裸露期权保证金的两种计算口径",
+        "OCC充当中央对手方降低双边信用风险",
+        "股票分割的合约调整规则",
+        "认股权证与交易所期权的区别（发行人、稀释效应）"
+      ],
+      "examEmphasis": "侧重制度逻辑理解和特征辨析"
+    },
+    "p2": {
+      "label": "辅助复习",
+      "items": [
+        "佣金结构（随交易规模递减）",
+        "可转债的债性+股性双重属性",
+        "雇员股票期权的不可转让性和等待期",
+        "中国期权市场发展背景"
+      ],
+      "examEmphasis": "辅助理解，不大可能单独出大题"
+    }
+  },
+  "visualBlockPriority": {
+    "p0": [
+      "formula_card: 四类期权头寸到期收益公式",
+      "payoff_chart: 四类期权头寸到期收益图",
+      "comparison_table: 四类期权头寸到期判断对比",
+      "example_box: 期权头寸到期盈亏计算（标准化复习例题）"
+    ],
+    "p1": [
+      "comparison_table: 期权基础分类对比",
+      "comparison_table: 期权合约细节对比",
+      "comparison_table: 费用与担保机制对比",
+      "example_box: 裸露看涨期权保证金",
+      "data_table: 期权交易制度要点",
+      "process_flow: 交易所期权生命周期"
+    ],
+    "p2": [
+      "data_table: 折扣经纪人的期权佣金示例",
+      "timeline: 期权从建仓到到期",
+      "concept_map: 期权市场机制概念关系"
+    ]
+  },
+  "remainingRisks": [
+    {
+      "risk": "新增头寸盈亏example_box为标准化复习例题",
+      "detail": "使用K=60/c=6/p=5参数，非PPT原题直接还原。已在sourceType和sourceNote中明确标注。需人工确认是否接受。",
+      "severity": "low"
+    },
+    {
+      "risk": "example_box与payoff_chart参数不同",
+      "detail": "例题使用K=60, BE=66/55；payoff_chart使用K=50, BE=55/46。已明确标注，两个版本的计算逻辑一致。",
+      "severity": "low"
+    }
+  ],
+  "nextRecommendedStep": "post-review — 教师通读验收头寸解释和example_box"
+}

@@ -1,0 +1,81 @@
+{
+  "chapter": "ch12",
+  "title": "第十二章：期权交易策略",
+  "auditDate": "2025-05-13",
+  "status": "polished",
+  "priorityReview": {
+    "p0": {
+      "label": "必须掌握",
+      "items": [
+        "加法原则：逐头寸写收益再相加",
+        "保护性看跌：构造、最大损失、盈亏平衡点",
+        "备兑看涨：构造、最大收益、盈亏平衡点",
+        "牛市差价：看涨期权版构造、分段收益、最大收益/损失公式",
+        "熊市差价：与牛市差价的对称构造",
+        "盒式差价：无风险收益特征、现值定价公式 V = (K2-K1)e^{-rT}",
+        "跨式组合：V形收益、两个盈亏平衡点 K±(c+p)",
+        "宽跨式组合：宽V形、与跨式的成本-盈亏平衡权衡"
+      ],
+      "examEmphasis": "重点考查策略构造识别、收益分段计算和盈亏平衡点求解"
+    },
+    "p1": {
+      "label": "重点理解",
+      "items": [
+        "蝶式差价：三K对称构造、三角形收益、最大收益在中间执行价处",
+        "日历差价：时间衰减差异逻辑、近月θ > 远月θ",
+        "序列组合与带式组合：在跨式基础上调整看涨/看跌比例表达方向偏好",
+        "牛市差价看跌期权版与看涨期权版的等价性",
+        "策略选择流程：市场观点→策略类型→盈亏计算"
+      ],
+      "examEmphasis": "侧重策略识别和适用场景判断"
+    },
+    "p2": {
+      "label": "辅助复习",
+      "items": [
+        "序列组合(Strip)与带式组合(Strap)的具体盈亏计算",
+        "日历差价的详细盈亏分解"
+      ],
+      "examEmphasis": "辅助理解波动率策略谱系"
+    }
+  },
+  "visualBlockPriority": {
+    "p0": [
+      "comparison_table: 期权策略按市场观点分类",
+      "payoff_chart: 保护性看跌与备兑看涨收益图",
+      "data_table: 牛市差价到期收益结构",
+      "payoff_chart: 牛市差价与熊市差价收益图",
+      "formula_card: 牛市差价到期收益",
+      "example_box: 牛市差价盈亏计算例题",
+      "payoff_chart: 盒式差价固定收益图",
+      "formula_card: 盒式差价无套利定价",
+      "payoff_chart: 跨式与宽跨式组合收益图",
+      "formula_card: 跨式组合到期收益",
+      "example_box: 跨式与宽跨式盈亏平衡点比较"
+    ],
+    "p1": [
+      "concept_map: 期权策略关系图",
+      "process_flow: 期权策略选择流程",
+      "decision_tree: 期权策略选择路径",
+      "payoff_chart: 蝶式差价收益图",
+      "example_box: 保护性看跌保险成本例题",
+      "example_box: 蝶式差价构造与盈亏例题",
+      "comparison_table: 日历差价情景表现",
+      "comparison_table: 波动率策略核心对比",
+      "comparison_table: 价差策略与组合策略核心对比",
+      "comparison_table: 股票与单一期权组合对比"
+    ]
+  },
+  "remainingRisks": [
+    {
+      "risk": "日历差价无payoff_chart",
+      "detail": "日历差价的收益形状依赖时间价值衰减而非到期标的价，payoff_chart 不适合表达。当前用 comparison_table 替代，可接受。",
+      "severity": "low"
+    },
+    {
+      "risk": "序列/带式无payoff_chart",
+      "detail": "序列和带式按P2处理，简明文字+comparison_table覆盖，不需要独立payoff_chart。",
+      "severity": "low"
+    }
+  ],
+  "nextRecommendedStep": "post-review — 教师通读验收策略解释和example_box数值"
+}

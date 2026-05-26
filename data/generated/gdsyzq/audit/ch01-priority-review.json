@@ -1,0 +1,65 @@
+{
+  "chapter": "ch01",
+  "title": "第一章：概论",
+  "auditDate": "2026-05-13",
+  "status": "polished-near",
+  "priorityReview": {
+    "p0": {
+      "label": "必须掌握",
+      "items": [
+        "固定收益证券的定义：按约定时间和方式支付承诺现金流的金融工具",
+        "三类核心参与方：发行人（债务人）、投资者（债权人）、金融市场（中介平台）",
+        "固定收益证券 ≠ 债券：还包括MBS/ABS和优先股",
+        "承诺现金流 ≠ 无风险现金流：有契约承诺不等于一定能支付",
+        "四类核心风险：违约风险、利率风险、资产价格风险、流动性风险",
+        "课程四大模块：概论→条款与市场→定价（4章）→风险"
+      ],
+      "examEmphasis": "概念辨析和课程框架为高频考点"
+    },
+    "p1": {
+      "label": "重点理解",
+      "items": [
+        "金融市场资金转移的基本机制",
+        "债券市场与股权市场的功能差异",
+        "四类固定收益工具（普通债券、含权债券、MBS/ABS、优先股）的现金流来源和不确定性",
+        "硅谷银行案例中利率风险与流动性风险的叠加传导"
+      ],
+      "examEmphasis": "侧重机制理解和案例分析"
+    },
+    "p2": {
+      "label": "辅助复习",
+      "items": [
+        "中国债券市场的规模、券种结构和违约观察",
+        "次贷危机等固收相关市场事件背景"
+      ],
+      "examEmphasis": "辅助理解市场背景"
+    }
+  },
+  "visualBlockPriority": {
+    "p0": [
+      "concept_map: 固定收益证券课程地图",
+      "data_table: 课程内容模块"
+    ],
+    "p1": [
+      "comparison_table: 固定收益证券主要类型对比",
+      "process_flow: 金融市场中的资金流动机制",
+      "case_card: 硅谷银行与债券资产风险"
+    ],
+    "p2": [
+      "chart_explanation: 中国债券市场规模与违约观察"
+    ]
+  },
+  "remainingRisks": [
+    {
+      "risk": "无ch01 slide inventory",
+      "detail": "本轮为局部增强，未做slide inventory逐页清点。PPT第1章可能有额外细节未覆盖。",
+      "severity": "low"
+    },
+    {
+      "risk": "chart_explanation无对应图表",
+      "detail": "VB[5] chart_explanation的chartType为'other'，内容为文本型关键结论而非图表解读。对概论章可接受，后续若接入对应市场数据图可提升价值。",
+      "severity": "low"
+    }
+  ],
+  "nextRecommendedStep": "post-review — 教师通读验收，确认概论章作为课程导入的完整性"
+}

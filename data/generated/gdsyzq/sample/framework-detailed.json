@@ -527,8 +527,8 @@
         {
           "type": "formula_card",
           "title": "息票金额",
-          "formula": "Coupon = Face value × coupon rate / payment frequency",
-          "formulaLatex": "C = \\frac{F \\times c}{m}",
+          "formula": "C=F c/m",
+          "formulaLatex": "C=\\frac{F\\times c}{m}",
           "variables": [
             {
               "symbol": "C",

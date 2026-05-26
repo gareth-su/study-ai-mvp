@@ -1,0 +1,32 @@
+{
+  "chapter": "第四章：利率",
+  "enhancementDate": "2026-05-14",
+  "enhancementType": "Full Enhancement",
+  "finalStatus": "polished",
+  "formulaCards": [
+    { "title": "复利与连续复利换算（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true },
+    { "title": "远期利率：由零息曲线推导（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true },
+    { "title": "债券定价与久期（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true },
+    { "title": "久期近似与凸性修正（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true },
+    { "title": "FRA现金流与价值（P1）", "priority": "P1", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true },
+    { "title": "零息债券定价与剥离法（P1）", "priority": "P1", "naturalLanguage": false, "hasLatex": true, "conditionsStated": true }
+  ],
+  "groupedConcepts": {
+    "discreteVsContinuousCompounding": "pass",
+    "spotVsForward": "pass",
+    "zeroRateVsYTM": "pass",
+    "durationVsConvexity": "pass",
+    "fraLongVsShort": "pass",
+    "liborVsOIS": "pass"
+  },
+  "selfCheck": {
+    "bodyCompleteButFormulaChartExampleIncomplete": false,
+    "chartPointsCorrectButMetadataMissing": false,
+    "exampleParamsDifferentFromChartWithoutNote": false,
+    "latexJsonEscapingIssue": false,
+    "nonMathFormulaFields": false,
+    "allFormulaConditionsStated": true,
+    "engineeringTermsExposed": false,
+    "anyReasonNotPolished": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "ch07",
+  "auditDate": "2026-05-13",
+  "sourceFile": "7.债券定价 (四)(3).pptx",
+  "slideCount": 30,
+  "exampleChains": [
+    {
+      "id": "mc-mbs-valuation-chain",
+      "title": "Monte Carlo MBS 估值例题链",
+      "sourceSlides": "13–20",
+      "steps": [
+        "利率路径生成（slide 13）",
+        "再融资利率路径（slide 14）",
+        "现金流计算（slides 15–16）",
+        "路径现值计算（slides 17–19）",
+        "多路径平均理论价值 + OAS 校准（slide 20）"
+      ],
+      "enhancedAs": [
+        { "type": "example_box", "title": "MBS Monte Carlo 估值例题链（一）：利率路径生成" },
+        { "type": "example_box", "title": "MBS Monte Carlo 估值例题链（二）：再融资利率与提前偿付" },
+        { "type": "example_box", "title": "MBS Monte Carlo 估值例题链（三）：现金流计算与路径现值" },
+        { "type": "example_box", "title": "MBS Monte Carlo 估值例题链（四）：理论价值与 OAS 校准" }
+      ],
+      "numberUncertain": true,
+      "uncertainItems": [
+        "Table 12-1 具体利率路径数值",
+        "Table 12-2 具体再融资利率数值",
+        "Table 12-3 具体每期现金流数值",
+        "最终 OAS 校准结果的具体基点数"
+      ],
+      "preservation": "完整保留题目结构、公式、变量定义和解题步骤，标注\"需人工核对\"。"
+    }
+  ],
+  "standaloneApplications": [
+    {
+      "sourceSlide": "25",
+      "title": "OAS 校准条件",
+      "enhancedAs": "formula_card: OAS 校准条件"
+    },
+    {
+      "sourceSlide": "28–29",
+      "title": "ABS 三种估值情形",
+      "enhancedAs": "comparison_table: ABS 估值方法选择"
+    }
+  ],
+  "deletedItems": [
+    {
+      "original": "case_card: 案例 1：建行首只 MBS 定价思路",
+      "reason": "来自 slide 6 外部链接，非课程正文。替换为 CMO 组别估值要点 case_card。"
+    }
+  ]
+}

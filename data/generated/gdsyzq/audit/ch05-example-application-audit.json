@@ -1,0 +1,143 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第五章：债券定价（二）：含嵌入期权债券定价",
+  "reviewedAt": "2026-05-12",
+  "sourceFile": "source-materials/gdsyzq/5.债券定价 (二)(4).pptx",
+  "items": [
+    {
+      "slides": [
+        15,
+        16
+      ],
+      "title": "15% 波动率节点关系计算",
+      "signals": [
+        "例",
+        "计算",
+        "波动率"
+      ],
+      "currentExpression": "new example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "added_example_box",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [
+        18,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "title": "用新发行国债构建 2 年期利率树",
+      "signals": [
+        "例",
+        "问",
+        "计算",
+        "利率树"
+      ],
+      "currentExpression": "data_table + process_flow + formula_card + example_box",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "added_full_chain",
+      "manualNumberCheck": true
+    },
+    {
+      "slides": [
+        34,
+        35
+      ],
+      "title": "基准债券估值校准示例",
+      "signals": [
+        "例",
+        "估值",
+        "迭代"
+      ],
+      "currentExpression": "formula_card + audit only for incomplete image details",
+      "needsExampleBox": false,
+      "priority": "P1",
+      "action": "kept_as_formula_and_audit",
+      "manualNumberCheck": true
+    },
+    {
+      "slides": [
+        38,
+        39,
+        40
+      ],
+      "title": "4 年期 6.5% 可赎回债券估值",
+      "signals": [
+        "例",
+        "估值",
+        "赎回权"
+      ],
+      "currentExpression": "example_box + data_table",
+      "needsExampleBox": true,
+      "priority": "P0",
+      "action": "added_example_box",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [
+        41,
+        42,
+        43
+      ],
+      "title": "4 年期 6.5% 可回售债券行权判断",
+      "signals": [
+        "例",
+        "判断",
+        "回售权"
+      ],
+      "currentExpression": "example_box",
+      "needsExampleBox": true,
+      "priority": "P1",
+      "action": "added_example_box",
+      "manualNumberCheck": false
+    },
+    {
+      "slides": [
+        45
+      ],
+      "title": "有上限浮动利率债券节点估值",
+      "signals": [
+        "例如",
+        "估值",
+        "计算"
+      ],
+      "currentExpression": "example_box",
+      "needsExampleBox": true,
+      "priority": "P1",
+      "action": "added_example_box",
+      "manualNumberCheck": true
+    },
+    {
+      "slides": [
+        37
+      ],
+      "title": "16 怀仁估值差异思考",
+      "signals": [
+        "思考"
+      ],
+      "currentExpression": "audit only",
+      "needsExampleBox": false,
+      "priority": "P3",
+      "action": "excluded_from_body",
+      "manualNumberCheck": false
+    }
+  ],
+  "summary": {
+    "candidateCount": 7,
+    "addedExampleBoxes": 5,
+    "addedOrRebuiltDataTables": 3,
+    "manualNumberChecks": [
+      "第 32 页树图节点价值对应位置",
+      "第 34-35 页基准债券估值图",
+      "第 45 页有上限浮息债券完整树"
+    ]
+  }
+}

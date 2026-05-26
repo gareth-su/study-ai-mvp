@@ -1,0 +1,16 @@
+{
+  "chapter": "第一章：导言",
+  "enhancementDate": "2026-05-14",
+  "enhancementType": "Local Enhancement (C → polished)",
+  "finalStatus": "polished",
+  "formulaCards": [
+    { "title": "无收益资产远期价格（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true },
+    { "title": "期权到期收益（P0）", "priority": "P0", "naturalLanguage": false, "hasLatex": true }
+  ],
+  "groupedConcepts": {
+    "forwardFuturesOptionSwap": "pass",
+    "hedgerSpeculatorArbitrageur": "pass",
+    "exchangeVsOTC": "pass",
+    "longVsShort": "pass"
+  }
+}

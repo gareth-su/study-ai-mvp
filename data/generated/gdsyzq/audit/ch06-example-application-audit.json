@@ -1,0 +1,125 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "ch06",
+  "generatedAt": "2026-05-13",
+  "sourceFile": "source-materials/gdsyzq/6.债券定价 (三) 更新版.pptx",
+  "findings": [
+    {
+      "pages": "11-13",
+      "title": "3 年期公司债名义利差和 Z 利差",
+      "signals": [
+        "例",
+        "问",
+        "解答",
+        "Excel",
+        "单变量求解",
+        "名义利差",
+        "Z 利差"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": true,
+      "action": "新增完整 example_box，并保留即期利率/现金流/现值 data_table",
+      "numbersStatus": "已确认：价格 98.5175、国债价格 106.3398、国债 YTM 2.769%、公司债 YTM 5.55%、名义利差 2.781%、Z 利差 2.783%。"
+    },
+    {
+      "pages": "14-15",
+      "title": "4 年期 6.5% 可赎回债券 OAS 调整",
+      "signals": [
+        "例",
+        "OAS",
+        "市场价格",
+        "理论价格",
+        "35 个基点"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": true,
+      "action": "增强 example_box，加入 OAS 校准流程",
+      "numbersStatus": "已确认：市场价 102.218、理论价 102.899、高估 0.681、OAS 35 bp。"
+    },
+    {
+      "pages": "16",
+      "title": "期权成本公式",
+      "signals": [
+        "期权成本",
+        "Z 利差",
+        "OAS"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": false,
+      "action": "formula_card + 对比表",
+      "numbersStatus": "公式已确认。"
+    },
+    {
+      "pages": "21-23",
+      "title": "转换价值与可转债最小值计算",
+      "signals": [
+        "转换价值",
+        "最小值",
+        "套利机会"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": true,
+      "action": "新增转换价值/最小值 example_box，保留公式卡",
+      "numbersStatus": "已确认：4.58、16666.67、76333.33、103833.33、107523.95、100000。"
+    },
+    {
+      "pages": "24-25",
+      "title": "每股市场转换价格、转换溢价与溢价比率",
+      "signals": [
+        "每股市场转换价格",
+        "每股市场转换溢价",
+        "市场转换溢价比率"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": true,
+      "action": "新增溢价指标 example_box；溢价比率由 PPT 数值 1.39/6.23 计算并标注为按 PPT 条件计算。",
+      "numbersStatus": "已确认：转换价格 7.62、股票价 6.23、溢价 1.39；溢价率按已给数值计算约 22.31%。"
+    },
+    {
+      "pages": "26",
+      "title": "纯粹债券价值溢价",
+      "signals": [
+        "纯粹债券价值溢价",
+        "下行风险"
+      ],
+      "priority": "P0",
+      "shouldBeExampleBox": true,
+      "action": "新增纯债溢价 example_box",
+      "numbersStatus": "已确认：127006、107523.95、18.11%。"
+    },
+    {
+      "pages": "28",
+      "title": "可转换债券估值框架",
+      "signals": [
+        "估值",
+        "无套利框架",
+        "利率树",
+        "逆向归纳"
+      ],
+      "priority": "P0/P1",
+      "shouldBeExampleBox": false,
+      "action": "formula_card + process_flow",
+      "numbersStatus": "无数值。"
+    }
+  ],
+  "summary": {
+    "candidateChains": 7,
+    "exampleBoxRequired": 5,
+    "formulaOrProcessOnly": 2,
+    "manualReview": [
+      "第 21 页 2013-04-04 正股价格未在文本中直接以独立字段出现，但由后续转换价值 103833.33 和溢价计算中的 6.23 一致支撑。",
+      "第 24 页每股市场转换价格等于 127006/16666.67，PPT 空格处未直接显示算式结果但后续给出 7.62。"
+    ]
+  },
+  "imageSupportNotes": [
+    {
+      "sourcePages": "14-15",
+      "relatedExample": "例题 2：可赎回债券的 OAS 调整",
+      "images": [
+        "/generated-assets/gdsyzq/ch06/oas-model-price-gap.png",
+        "/generated-assets/gdsyzq/ch06/oas-node-spread-35bp.png"
+      ],
+      "role": "辅助理解 OAS 校准前后的模型价差和节点加点动作，不替代 example_box。"
+    }
+  ]
+}

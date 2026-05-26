@@ -1,0 +1,212 @@
+{
+  "auditDate": "2026-05-14",
+  "scope": "ysjrgj remaining chapters: ch01, ch02, ch03, ch04, ch05, ch07",
+  "mode": "read-only diagnosis, no framework-detailed.json modifications",
+  "baselineReference": "ch10/ch11/ch12 post-enhancement polished standard",
+  "chapters": {
+    "ch01": {
+      "title": "第一章：导言",
+      "grade": "C",
+      "nodes": 6,
+      "children": 22,
+      "shortChildren": 19,
+      "shortPercent": 86,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/6",
+      "visualBlocks": 10,
+      "formulaCards": 2,
+      "formulaIssues": {
+        "naturalLanguageCount": 2,
+        "missingPriorityCount": 2,
+        "latexNoCommandsCount": 1
+      },
+      "exampleBoxesIssues": {
+        "total": 1,
+        "missingSourceType": 1,
+        "missingSourceNote": 1
+      },
+      "curveCharts": 0,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "导言章可接受较短内容，但 node 仍为通用模板，formula 全部自然语言，example 缺来源标注。"
+    },
+    "ch02": {
+      "title": "第二章：期货市场的运作机制",
+      "grade": "C",
+      "nodes": 7,
+      "children": 32,
+      "shortChildren": 25,
+      "shortPercent": 78,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/7",
+      "visualBlocks": 17,
+      "formulaCards": 1,
+      "formulaIssues": {
+        "naturalLanguageCount": 0,
+        "missingPriorityCount": 1,
+        "latexNoCommandsCount": 0
+      },
+      "exampleBoxesIssues": {
+        "total": 1,
+        "missingSourceType": 1,
+        "missingSourceNote": 1
+      },
+      "curveCharts": 0,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "章节总览和核心机制已部分展开，有 2 个非模板 node。但 78% children 仍短，4 个 node 为纯模板。"
+    },
+    "ch03": {
+      "title": "第三章：利用期货的对冲策略",
+      "grade": "D",
+      "nodes": 6,
+      "children": 22,
+      "shortChildren": 22,
+      "shortPercent": 100,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/6",
+      "visualBlocks": 15,
+      "formulaCards": 4,
+      "formulaIssues": {
+        "naturalLanguageCount": 4,
+        "missingPriorityCount": 4,
+        "latexNoCommandsCount": 0
+      },
+      "exampleBoxesIssues": {
+        "total": 4,
+        "missingSourceType": 4,
+        "missingSourceNote": 4
+      },
+      "curveCharts": 1,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "100% children <40 chars。与 ch10 增强前完全一致。4 formula_cards 全部自然语言。4 example_boxes 全部缺来源。需 full enhancement 重组为对冲教学模块。"
+    },
+    "ch04": {
+      "title": "第四章：利率",
+      "grade": "D",
+      "nodes": 6,
+      "children": 23,
+      "shortChildren": 21,
+      "shortPercent": 91,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/6",
+      "visualBlocks": 15,
+      "formulaCards": 6,
+      "formulaIssues": {
+        "naturalLanguageCount": 4,
+        "missingPriorityCount": 6,
+        "latexNoCommandsCount": 0
+      },
+      "exampleBoxesIssues": {
+        "total": 2,
+        "missingSourceType": 2,
+        "missingSourceNote": 2
+      },
+      "curveCharts": 1,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "91% children <40 chars。模板 node。6 formula_cards 中 4 个自然语言且全部缺 priority。是远期和互换的前置基础章，必须高质量。需 full enhancement。"
+    },
+    "ch05": {
+      "title": "第五章：确定远期和期货价格",
+      "grade": "D",
+      "nodes": 6,
+      "children": 24,
+      "shortChildren": 24,
+      "shortPercent": 100,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/6",
+      "visualBlocks": 17,
+      "formulaCards": 5,
+      "formulaIssues": {
+        "naturalLanguageCount": 5,
+        "missingPriorityCount": 5,
+        "latexNoCommandsCount": 3
+      },
+      "exampleBoxesIssues": {
+        "total": 3,
+        "missingSourceType": 3,
+        "missingSourceNote": 3
+      },
+      "curveCharts": 1,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "100% children <40 chars。模板 node。5 formula_cards 全部自然语言，3/5 formulaLatex 无 LaTeX。核心定价章，课程核心。需 full enhancement。"
+    },
+    "ch07": {
+      "title": "第七章：互换",
+      "grade": "D",
+      "nodes": 6,
+      "children": 23,
+      "shortChildren": 23,
+      "shortPercent": 100,
+      "templateNodeCount": 5,
+      "templateNodeRatio": "5/6",
+      "visualBlocks": 18,
+      "formulaCards": 2,
+      "formulaIssues": {
+        "naturalLanguageCount": 1,
+        "missingPriorityCount": 2,
+        "latexNoCommandsCount": 0
+      },
+      "exampleBoxesIssues": {
+        "total": 1,
+        "missingSourceType": 1,
+        "missingSourceNote": 1
+      },
+      "curveCharts": 0,
+      "engineeringTermsFound": false,
+      "reasonsForGrade": "100% children <40 chars。模板 node。VB 基础最强（18），但 children 全部提纲化。需 full enhancement 重组成互换定价与应用教学模块。"
+    }
+  },
+  "summary": {
+    "totalChaptersAudited": 6,
+    "gradeDCount": 4,
+    "gradeCCount": 2,
+    "gradeDChapters": ["ch03", "ch04", "ch05", "ch07"],
+    "gradeCChapters": ["ch01", "ch02"],
+    "totalFormulaCards": 20,
+    "naturalLanguageFormulaCards": 16,
+    "totalExampleBoxes": 12,
+    "missingSourceExampleBoxes": 12,
+    "totalCurveChartsAudited": 3,
+    "emptyCharts": 0,
+    "unsupportedVisualBlockTypes": 0,
+    "chaptersWithEngineeringTerms": 0
+  },
+  "recommendedOrder": [
+    {
+      "order": 1,
+      "chapter": "ch04 利率",
+      "grade": "D",
+      "reason": "利率是所有后续定价章的前置基础，公式数量最多(6)且质量最差(4/6自然语言)。"
+    },
+    {
+      "order": 2,
+      "chapter": "ch05 远期和期货价格",
+      "grade": "D",
+      "reason": "核心定价章，依赖 ch04 利率内容。5 个自然语言公式需全部重写为 LaTeX。"
+    },
+    {
+      "order": 3,
+      "chapter": "ch07 互换",
+      "grade": "D",
+      "reason": "应用定价章，依赖 ch04 利率和 ch05 远期定价成果。VB 基础最强(18)可大量复用。"
+    },
+    {
+      "order": 4,
+      "chapter": "ch03 对冲策略",
+      "grade": "D",
+      "reason": "应用章，依赖 ch02 和 ch05。4 个 formula_cards 全部自然语言，4 个 example_boxes 全部缺来源。"
+    },
+    {
+      "order": 5,
+      "chapter": "ch02 期货运作",
+      "grade": "C",
+      "reason": "已部分展开，只需局部增强。排在 D 级章之后。"
+    },
+    {
+      "order": 6,
+      "chapter": "ch01 导言",
+      "grade": "C",
+      "reason": "导言章内容量小，可接受较短内容。排在最后以串联各章。"
+    }
+  ],
+  "nextChapter": "ch04 利率"
+}

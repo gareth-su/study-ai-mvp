@@ -1,0 +1,87 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "ch07",
+  "status": "polished",
+  "generatedAt": "2026-05-13",
+  "postReviewedAt": "2026-05-13",
+  "modulePriorities": [
+    { "module": "章节导读：MBS / ABS 为什么不一样", "priority": "P0", "role": "建立本章定位和学习地图" },
+    { "module": "MBS / ABS 基础结构与现金流传递", "priority": "P0", "role": "核心定义、证券化参与方、现金流传递逻辑、分层与信用增级" },
+    { "module": "MBS 的核心难点：提前偿付与路径依赖", "priority": "P0", "role": "提前偿付经济逻辑、路径依赖定义、与普通含权债的区别" },
+    { "module": "Monte Carlo 估值流程", "priority": "P0", "role": "估值五步、关键变量（折现率/再融资率）、连续例题链" },
+    { "module": "OAS 在 MBS/ABS 中的应用", "priority": "P0/P1", "role": "OAS 校准、经济含义、与 Z-spread 关系" },
+    { "module": "ABS 估值方法选择", "priority": "P0", "role": "三种情形、Z-spread vs OAS 选择规则" },
+    { "module": "估值方法总览与易混点", "priority": "P1", "role": "全书估值方法串联、易混点分辨" }
+  ],
+  "visualBlockPriorities": {
+    "P0": [
+      { "type": "process_flow", "title": "证券化流程" },
+      { "type": "cashflow_diagram", "title": "MBS 现金流传递" },
+      { "type": "process_flow", "title": "MBS/ABS Monte Carlo + OAS 估值五步" },
+      { "type": "formula_card", "title": "Monte Carlo 单路径现值公式" },
+      { "type": "formula_card", "title": "多路径平均理论价值" },
+      { "type": "formula_card", "title": "OAS 校准条件" },
+      { "type": "example_box", "title": "例题链（一）：利率路径生成" },
+      { "type": "example_box", "title": "例题链（二）：再融资利率与提前偿付" },
+      { "type": "example_box", "title": "例题链（三）：现金流计算与路径现值" },
+      { "type": "example_box", "title": "例题链（四）：理论价值与 OAS 校准" },
+      { "type": "comparison_table", "title": "ABS 估值方法选择" },
+      { "type": "comparison_table", "title": "Z-spread 与 OAS 关键区别" },
+      { "type": "image", "title": "配套表格：模拟再融资率路径（Table 12-2）" },
+      { "type": "image", "title": "配套表格：每期现金流路径矩阵（Table 12-3）" }
+    ],
+    "P1": [
+      { "type": "comparison_table", "title": "MBS、ABS 与普通含权债券估值对比" },
+      { "type": "chart_explanation", "title": "Monte Carlo 路径依赖示意图解" },
+      { "type": "formula_card", "title": "名义利差、Z-spread 与 OAS 的关系" },
+      { "type": "case_card", "title": "CMO 组别估值要点" },
+      { "type": "data_table", "title": "第 7 章估值方法速查表" }
+    ],
+    "P2": []
+  },
+  "exampleBoxPriorities": [
+    { "example": "利率路径生成", "priority": "P0", "sourceSlides": "13" },
+    { "example": "再融资利率与提前偿付", "priority": "P0", "sourceSlides": "14–15" },
+    { "example": "现金流计算与路径现值", "priority": "P0", "sourceSlides": "16–19" },
+    { "example": "理论价值与 OAS 校准", "priority": "P0", "sourceSlides": "20, 25" }
+  ],
+  "p2p3Handling": {
+    "p2Compressed": ["提前偿付季节性/老化效应", "路径数选择", "第三方供应商模型"],
+    "p3DeletedOrAuditOnly": [
+      "外部阅读链接（slides 6/7/21）",
+      "讨论：对 ABS 市场的理解（slide 30）",
+      "建行首只 MBS 定价思路（外部链接衍生）"
+    ]
+  },
+  "downgradedMergedOrDeleted": [
+    { "item": "case_card: 建行首只 MBS 定价思路", "action": "删除", "reason": "来自外部链接，非课程正文" },
+    { "item": "timeline: MBS现金流估值时间线", "action": "删除", "reason": "被 process_flow + example_box 覆盖" }
+  ],
+  "dataTableOrFormulaToExampleBox": [
+    "slides 13–20 连续例题链 → 4 个 example_box"
+  ],
+  "chartCheck": "未生成 line_chart/curve_chart/payoff_chart。唯一 chart 相关是 chart_explanation，concept points 仅用于方向示意，已标注为概念说明。",
+  "imageCheck": "新增 2 个 image visualBlock：/generated-assets/gdsyzq/ch07/refinancing-rate-paths.png（slide 14, 127KB）、/generated-assets/gdsyzq/ch07/cashflow-matrix.png（slide 16, 70KB）。两个图片文件均已确认存在，来自 PPT 内嵌图片对象局部提取。按 Section 7.1 原则接入，作为例题链（二）（三）的配套'已知条件'图片。",
+  "imageHandlingPrinciple": "本轮触发了 docs/content-generation-standard.md Section 7.1（例题输入数据表与概念分类表的视觉边界）的新增。slides 14/16 的矩阵型表格被首次识别为'data_table 文本渲染无法等价传达规模感和路径并列直观'的图像候选。",
+  "finalStats": {
+    "nodes": 7,
+    "totalRecursiveNodes": 45,
+    "visualBlocks": 19,
+    "processFlows": 2,
+    "cashflowDiagrams": 1,
+    "comparisonTables": 3,
+    "formulaCards": 4,
+    "chartExplanations": 1,
+    "exampleBoxes": 4,
+    "caseCards": 1,
+    "dataTables": 1,
+    "images": 2
+  },
+  "latexCheck": "所有 formula 字段已用 LaTeX 表达式，跨行和行内公式已用 MathText 可识别格式。已搜索确认不存在 imes、裸 approx、(N_ 等损坏痕迹。",
+  "scopeCheck": "仅修改 Chapter 7 对象、ch07 audit 文件和 docs/content-generation-standard.md。未碰其他章节、concise.json、前端代码、schema、source-materials 和 package 文件。",
+  "imagePathStatus": "2 个 image 路径均已确认文件存在：/generated-assets/gdsyzq/ch07/refinancing-rate-paths.png 和 /generated-assets/gdsyzq/ch07/cashflow-matrix.png。",
+  "remainingIssues": [
+    "例题链中 Table 12-1/12-2/12-3 的具体数值为 PPT 内嵌表格对象，文本抽取无法稳定获得，已标注\"需人工核对\"。已提取的 2 张图片可部分缓解此问题（学生可从图片中看到原始表格数字）。",
+    "framework-concise.json 未同步，后续 concise_sync 见 ch07-editorial-consolidation.md。"
+  ]
+}

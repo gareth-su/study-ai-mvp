@@ -1,7 +1,7 @@
 {
   "courseId": "gdsyzq",
   "chapter": "第 4 章 债券定价（一）",
-  "objective": "完整保留债券定价核心内容，同时按期末复习价值把公式、例题和无套利机制放入主学习路径，把市场链接、截图和未系统展开内容降为拓展。",
+  "objective": "完整保留债券定价核心内容，同时按期末复习价值把公式、例题和无套利机制放入主学习路径；市场链接、截图、数据库和未系统展开内容不进入网页正文，仅在 audit 中留痕。",
   "modules": [
     {
       "title": "国债定价的现金流贴现逻辑",
@@ -156,7 +156,7 @@
       "type": "comparison_table",
       "priority": "P0",
       "reason": "报价、成交价和应计利息是高频易混点。",
-      "action": "keep-main"
+      "action": "merge-duplicate-comparison-table"
     },
     {
       "title": "非利息支付日定价：应计利息计算公式",
@@ -211,8 +211,8 @@
       "title": "中证估值应用的学习含义",
       "type": "chart_explanation",
       "priority": "P3",
-      "reason": "属于机构实践截图，不应占用主视觉。",
-      "action": "remove-visual-demote-text"
+      "reason": "属于机构实践截图，截图数据不可结构化，且不直接服务 P0/P1。",
+      "action": "remove-body-audit-only"
     },
     {
       "title": "一价定律：用 A、B、C 附息债券复制 1 年期零息债券",
@@ -241,52 +241,79 @@
       "priority": "P0",
       "reason": "把收益利差公式转成数值计算路径，适合期末复习。",
       "action": "add-example-box-and-keep-formula-card"
+    },
+    {
+      "title": "无套利估值法补充理解：中证收益率曲线实践图",
+      "type": "image",
+      "priority": "P2",
+      "reason": "局部曲线图帮助理解即期利率期限结构如何进入逐期贴现，不替代核心例题。",
+      "action": "included-image"
+    },
+    {
+      "title": "信用利差与经济周期补充理解：经济衰退期利差变化图",
+      "type": "image",
+      "priority": "P1",
+      "reason": "历史图示直接服务经济紧缩时信用利差扩大的核心机制。",
+      "action": "included-image"
+    },
+    {
+      "title": "不含权公司债估值补充理解：国债与企业债收益率曲线实践图",
+      "type": "image",
+      "priority": "P1",
+      "reason": "实践曲线帮助理解国债曲线加信用利差期限结构得到公司债基准曲线。",
+      "action": "included-image"
     }
   ],
   "extensionMaterials": [
     {
       "title": "中证估值应用实例",
       "priority": "P3",
-      "reason": "机构实践截图，能提供场景感，但不是核心公式或计算题。",
-      "action": "extension"
+      "reason": "第 30 页收益率曲线局部作为强 P2 image 接入；第 29、31 页入口/行情背景仅保留 audit。",
+      "action": "partial-image-included-rest-audit-only"
     },
     {
       "title": "中国债券市场新闻链接",
       "priority": "P3",
-      "reason": "阅读链接和市场背景，正文没有系统展开为定价方法。",
-      "action": "extension"
+      "reason": "阅读链接和市场背景，正文没有系统展开为定价方法。 本轮最小取舍版编辑后不进入网页正文。",
+      "action": "audit-only"
     },
     {
       "title": "行业利差数据库与研究报告链接",
       "priority": "P3",
-      "reason": "实践资源索引，不应与收益利差公式和估值例题等权。",
-      "action": "extension"
+      "reason": "实践资源索引，不应与收益利差公式和估值例题等权。 本轮最小取舍版编辑后不进入网页正文。",
+      "action": "audit-only"
     },
     {
       "title": "公司债如何定价链接",
       "priority": "P3",
-      "reason": "延伸阅读链接，保留为拓展而非主模块。",
-      "action": "extension"
+      "reason": "延伸阅读链接，保留为拓展而非主模块。 本轮最小取舍版编辑后不进入网页正文。",
+      "action": "audit-only"
     },
     {
       "title": "含嵌入期权债券定价",
       "priority": "P3",
-      "reason": "目录中提到但未系统展开，不能扩写为本章主学习模块。",
-      "action": "extension-note"
+      "reason": "目录中提到但未系统展开；本章仅保留其对收益利差方向的影响。",
+      "action": "mechanism-note-only"
     }
   ],
   "demotions": [
     {
       "item": "中证估值应用实例",
-      "from": "standalone chart_explanation visualBlock",
-      "to": "不含权公司债估值模块末尾的拓展材料文字节点",
-      "reason": "该内容属于机构实践截图，不能与核心估值公式、例题和流程等权展示。"
+      "from": "standalone chart_explanation visualBlock 或拓展材料文字节点",
+      "to": "删除网页正文，仅在 ch04-editorial-consolidation.md 中记录",
+      "reason": "机构实践截图数据未可靠结构化，且不直接服务 P0/P1。"
     },
     {
-      "item": "新闻链接、数据库链接、研究报告链接",
-      "from": "可能与核心内容并列展示的补充信息",
-      "to": "对应模块末尾的拓展材料节点",
-      "reason": "保留资料覆盖，但降低期末复习主路径权重。"
+      "item": "新闻链接、数据库链接、研究报告链接、公司债外部阅读链接",
+      "from": "对应模块末尾的拓展材料节点",
+      "to": "删除网页正文，仅在 ch04-editorial-consolidation.md 中记录",
+      "reason": "外部链接未离线解析，不能转成可验证公式、例题、表格、机制链或可绘制图表。"
+    },
+    {
+      "item": "市场间与市场内收益利差、非国债类型、行业利差应用",
+      "from": "可能与核心利差计算并列表达",
+      "to": "补充理解节点或机制说明",
+      "reason": "保留理解价值，但低于绝对/相对利差和收益率比率计算。"
     }
   ],
   "checks": {
@@ -296,6 +323,13 @@
     "noNewSchemaFieldsRequired": true,
     "applicationExamplesPreserved": true,
     "abcReplicationPromotedToP0": true,
-    "noExampleDowngradedForExtractionGap": true
+    "noExampleDowngradedForExtractionGap": true,
+    "p3LinksRemovedFromBody": true,
+    "noEmptyScreenshotPlaceholderText": true,
+    "duplicateVisualBlocksMerged": true,
+    "numericFormulaCardMergedIntoExample": true,
+    "imageBlocksUseExistingPublicAssets": true,
+    "noFullSlideScreenshotImages": true,
+    "imageCropAuditCreated": true
   }
 }

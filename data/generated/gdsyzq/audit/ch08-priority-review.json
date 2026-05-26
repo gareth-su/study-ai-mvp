@@ -1,0 +1,115 @@
+{
+  "chapter": "ch08",
+  "title": "第八章：债券投资风险（一）：信用风险与风险衡量",
+  "auditDate": "2026-05-13",
+  "status": "polished",
+  "priorityReview": {
+    "p0": {
+      "label": "必须掌握",
+      "items": [
+        "债券主要风险类型：利率风险、收益率曲线风险、再投资风险、赎回/提前偿付风险、信用风险、流动性风险",
+        "利率风险基本机制：市场利率上升 → 折现率上升 → 债券价格下降",
+        "收益率曲线风险：平行移动、非平行移动、斜率变化和曲率变化对组合价值的影响",
+        "信用风险三分法：违约风险、降级风险、信用利差风险",
+        "预期信用损失公式：EL = PD × LGD × EAD，以及变量含义",
+        "相对 VaR 公式：VaR_relative = V_bar − V_q，以及与预期损失的区别",
+        "CreditMetrics 基本链条：当前评级 → 迁移概率 → 各状态估值 → 价值分布 → 信用 VaR",
+        "CreditMetrics 例题链：BBB债券、面值100、票息6%、价值分布和相对VaR计算",
+        "Altman Z 值风险区间：Z>3.0安全、1.8<Z<2.7关注、Z<1.8高危",
+        "泰禾案例的信用风险传导链：行业下行→回款放缓→流动性压力→利差扩大→评级下调→违约"
+      ],
+      "examEmphasis": "重点考查信用风险识别、EL/VaR计算和CreditMetrics链条理解"
+    },
+    "p1": {
+      "label": "重点理解",
+      "items": [
+        "再投资风险与零息债无再投资风险的关系",
+        "赎回风险、提前偿付风险与利率下降环境的联系",
+        "利率波动性风险对含权债券价值的影响机制",
+        "信用评级、评级观察、评级展望三者的时间维度和信号强度差异",
+        "传统4C信用分析：Capacity（经营能力）、Collateral（抵押保障）、Covenants（契约约束）、Character（管理层品格）",
+        "依赖信用评级的五方面风险：评级会变化、可能滞后、可能出错、难以捕捉事件、利益冲突",
+        "Altman Z值与ZETA模型的区别：变量数量、预测期、模型代际",
+        "信用评分模型五方面局限：会计数据依赖、理论基础有限、线性假设、表外风险、行业适用性",
+        "预期信用损失与VaR的应用场景差异：拨备计提 vs 风险限额和资本计量"
+      ],
+      "examEmphasis": "侧重概念辨析和应用场景判断"
+    },
+    "p2": {
+      "label": "辅助复习",
+      "items": [
+        "汇率风险、通胀风险和事件风险的基本概念",
+        "流动性风险的买卖价差和机构投资者估值影响",
+        "评级机构发展背景（了解即可，不要求细节）",
+        "房地产市场信用风险环境（通过泰禾案例理解行业传导机制即可）"
+      ],
+      "examEmphasis": "辅助理解，不大可能单独出大题"
+    },
+    "p3": {
+      "label": "拓展材料（不进入考试范围）",
+      "items": [
+        "债券基金外部阅读链接",
+        "评级机构官网和方法库链接",
+        "房地产市场截图和新闻材料",
+        "事件风险新闻和外部报道"
+      ],
+      "examEmphasis": "课堂延伸，不纳入考核"
+    }
+  },
+  "visualBlockPriority": {
+    "p0": [
+      "concept_map: 风险类型总览：债券投资风险地图",
+      "comparison_table: 风险类型总览：债券主要风险对比",
+      "curve_chart: 收益率曲线风险：平行移动与非平行移动示意",
+      "chart_explanation: 二类收益率曲线风险图的阅读方法",
+      "comparison_table: 收益率曲线风险的复习判断",
+      "comparison_table: 信用风险与信用评级：信用风险三分法",
+      "formula_card: 预期信用损失与VaR：预期信用损失",
+      "formula_card: 预期信用损失与VaR：相对VaR",
+      "comparison_table: 预期信用损失与VaR：预期损失和尾部风险对比",
+      "process_flow: CreditMetrics信用风险模型：计算流程",
+      "data_table: CreditMetrics信用风险模型：模型输入与输出",
+      "data_table: CreditMetrics信用风险模型：例题链可确认数值节点",
+      "example_box: CreditMetrics信用风险模型：BBB债券相对VaR计算例题",
+      "data_table: Altman/ZETA模型：Altman Z值风险区间"
+    ],
+    "p1": [
+      "formula_card: 风险类型总览：含权债券价格与利率波动性风险",
+      "process_flow: 信用风险与信用评级：评级信息如何进入投资判断",
+      "comparison_table: 4C信用分析：传统信用分析框架",
+      "example_box: 预期信用损失与VaR：预期信用损失数值算例",
+      "formula_card: Altman/ZETA模型：信用评分模型的线性判别形式",
+      "comparison_table: Altman/ZETA模型：Altman Z值与ZETA模型对比",
+      "case_card: 案例与整合复习：泰禾与房地产信用债违约",
+      "data_table: 案例与整合复习：第8章复习清单"
+    ]
+  },
+  "remainingRisks": [
+    {
+      "risk": "CreditMetrics均值数字已确认",
+      "detail": "课件第59-60页文字处107.90系笔误，正确均值为107.09。正文已统一使用107.09，计算链条107.09−83.64=23.45已确认。",
+      "severity": "resolved",
+      "postReviewAction": "已修正为107.09，三处差异标注已移除"
+    },
+    {
+      "risk": "Altman Z精确系数来自PPT图片对象",
+      "detail": "正文使用线性判别通式Z=∑w_kX_k表达模型结构，pitfalls标注需人工核对。阈值区间（Z>3.0安全/Z<1.8高危）来自课件第49页，可确认。",
+      "severity": "low",
+      "postReviewAction": "已确认无伪造，保持placeholder"
+    },
+    {
+      "risk": "EL算例非课件原题",
+      "detail": "PPT第18页有公式框架无数值算例，正文PD=2%/RR=40%/EAD=100万为教学假设。已在scenario前缀和note字段明确标注为教学示例。",
+      "severity": "low",
+      "postReviewAction": "已显式标注"
+    },
+    {
+      "risk": "concise framework仍含旧版自然语言formula",
+      "detail": "framework-concise.json ch08未修改，存有enhancement前的natural-language formula（EL和VaR）。该文件不在本轮范围。",
+      "severity": "low",
+      "postReviewAction": "不修改，另行处理"
+    }
+  ],
+  "nextRecommendedStep": "complete — 第8章已完成local-enhancement + post-review，可标记为polished。建议教师通读验收CreditMetrics均值数字。",
+  "postReviewDate": "2026-05-13"
+}

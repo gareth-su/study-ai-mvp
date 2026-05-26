@@ -1,0 +1,67 @@
+{
+  "courseId": "ysjrgj",
+  "chapter": "第十二章：期权交易策略",
+  "reviewDate": "2026-05-14",
+  "reviewer": "Codex independent audit",
+  "finalStatus": "polished-near",
+  "summary": "DeepSeek full enhancement is broadly credible. Chapter 12 now has learning-module structure, complete core strategy coverage, valid payoff_chart data points including a newly added calendar spread chart, and no ch12-specific validate warning. Codex fixed several clear small issues but did not perform a large rewrite.",
+  "changedScope": {
+    "frameworkDetailed": "chapter 12 only",
+    "otherYsjrgjChapters": false,
+    "gdsyzq": false,
+    "frameworkConcise": false,
+    "sourceMaterials": false,
+    "frontend": false,
+    "schemaOrPackage": false
+  },
+  "statistics": {
+    "nodes": 12,
+    "children": 36,
+    "visualBlocks": 25,
+    "visualBlockTypes": {
+      "comparison_table": 5,
+      "payoff_chart": 6,
+      "data_table": 2,
+      "process_flow": 1,
+      "decision_tree": 1,
+      "timeline": 1,
+      "concept_map": 1,
+      "example_box": 5,
+      "formula_card": 3
+    }
+  },
+  "fixedIssues": [
+    "Reclassified box spread as fixed-payoff/no-arbitrage strategy instead of interval strategy.",
+    "Narrowed protective put breakeven explanation to common at-the-money/out-of-the-money cases.",
+    "Added calendar spread to the strategy overview table.",
+    "Corrected strangle maximum-loss explanation: maximum loss occurs across the flat interval between strikes.",
+    "Aligned butterfly spread example values with the existing payoff_chart.",
+    "Added 宽跨式组合 to keyConcepts.",
+    "Added a structured payoff_chart for calendar spread based on PDF pages 16-17."
+  ],
+  "payoffChartAudit": {
+    "chartsChecked": 6,
+    "chartsWithRenderablePoints": 6,
+    "dataChanged": false,
+    "issuesFound": [
+      "Butterfly example text conflicted with chart points before this review; text has been fixed."
+    ]
+  },
+  "remainingRisks": [
+    "Some added example_box numbers are standardized study examples rather than fully traceable original PDF examples; recommend human acceptance check.",
+    "PDF text extraction is partially garbled due font encoding, so review relied on visual rendering of key pages."
+  ],
+  "validation": {
+    "validateContent": {
+      "status": "pass",
+      "note": "Existing warnings remain in other chapters/courses, but no ysjrgj chapter 12 detailed warning was reported."
+    },
+    "lint": {
+      "status": "pass"
+    },
+    "build": {
+      "status": "pass"
+    }
+  },
+  "nextRecommendedStep": "Manual page preview acceptance. The calendar spread visual gap has been resolved with a structured payoff_chart; remaining acceptance point is whether to keep standardized study example numbers."
+}

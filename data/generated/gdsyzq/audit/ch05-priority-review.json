@@ -1,0 +1,309 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第五章：债券定价（二）：含嵌入期权债券定价",
+  "reviewedAt": "2026-05-12",
+  "statsBefore": {
+    "topLevelNodes": 6,
+    "totalNodes": 23,
+    "formula_card": 2,
+    "example_box": 0,
+    "case_card": 0,
+    "visualBlocks": 5,
+    "visualBlockTypeDistribution": {
+      "formula_card": 2,
+      "process_flow": 1,
+      "comparison_table": 1,
+      "decision_tree": 1
+    }
+  },
+  "statsAfter": {
+    "topLevelNodes": 12,
+    "totalNodes": 51,
+    "formula_card": 5,
+    "example_box": 5,
+    "case_card": 0,
+    "visualBlocks": 28,
+    "visualBlockTypeDistribution": {
+      "comparison_table": 5,
+      "process_flow": 2,
+      "formula_card": 5,
+      "example_box": 5,
+      "data_table": 3,
+      "chart_explanation": 2,
+      "decision_tree": 1,
+      "image": 5
+    }
+  },
+  "modulePriorities": [
+    {
+      "module": "含权债券定价的核心问题",
+      "priority": "P0/P1/P3",
+      "handling": "主路径保留机制；新闻截图仅 audit。"
+    },
+    {
+      "module": "基准利率与无期权价值",
+      "priority": "P0",
+      "handling": "主路径。"
+    },
+    {
+      "module": "利率树与二叉树模型",
+      "priority": "P0/P1",
+      "handling": "主路径。"
+    },
+    {
+      "module": "利率树构建：波动率关系与市场校准",
+      "priority": "P0/P1",
+      "handling": "主路径，补足完整例题链。"
+    },
+    {
+      "module": "利率树估值：逆向归纳与无套利校准",
+      "priority": "P0/P1",
+      "handling": "主路径，图中不确定细节 audit。"
+    },
+    {
+      "module": "可赎回债券估值",
+      "priority": "P0/P1",
+      "handling": "主路径。"
+    },
+    {
+      "module": "可回售债券估值",
+      "priority": "P1",
+      "handling": "主路径，作为易混点对比。"
+    },
+    {
+      "module": "有上限浮动利率债券估值",
+      "priority": "P1",
+      "handling": "主路径保留局部节点例题。"
+    },
+    {
+      "module": "补充理解：利率模型与模型风险",
+      "priority": "P2/P3",
+      "handling": "折叠补充或 audit。"
+    }
+  ],
+  "exampleBoxes": [
+    {
+      "title": "二叉树节点关系例题：15% 波动率",
+      "priority": "P0",
+      "status": "added"
+    },
+    {
+      "title": "利率树构建例题：校准 1 年后短期利率",
+      "priority": "P0",
+      "status": "added"
+    },
+    {
+      "title": "可赎回债券估值例题：4 年期 6.5% 债券",
+      "priority": "P0",
+      "status": "added"
+    },
+    {
+      "title": "可回售债券行权判断例题：4 年期 6.5% 债券",
+      "priority": "P1",
+      "status": "added"
+    },
+    {
+      "title": "有上限浮动利率债券节点估值例子",
+      "priority": "P1",
+      "status": "added"
+    }
+  ],
+  "p2p3Handling": {
+    "support": [
+      "补充理解：利率模型类型",
+      "补充理解：模型风险与第三方估值系统"
+    ],
+    "auditOnly": [
+      "第 7 页房地产风险新闻",
+      "第 37 页 16 怀仁估值差异思考",
+      "第 6 页山东招金截图外壳"
+    ],
+    "removedEmptyNotes": true
+  },
+  "manualReviewNeeded": [
+    "第 29-32 页校准树图为基于 PPT 已确认节点数据的结构化重绘，建议人工核对节点价值与 PPT 位置对应。",
+    "第 12、38、42、45 页图片来自课件内嵌图，公开部署前需确认课件图片版权边界。"
+  ],
+  "checks": {
+    "p0p1Preserved": true,
+    "exampleBoxesComplete": true,
+    "latexSearchClean": true,
+    "chartBlocksHaveDrawablePoints": true,
+    "noLineCurvePayoffCharts": true,
+    "emptyChartFound": false,
+    "sourceChunkPageExposed": false,
+    "emptyScreenshotExplanationFound": false,
+    "imageAddedThisRound": true,
+    "modifiedSchemaOrFrontend": false
+  },
+  "visualBlocks": [
+    {
+      "title": "不含权债券与含权债券定价差异",
+      "type": "comparison_table",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "含权债券利率树估值主流程",
+      "type": "process_flow",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "基准利率来源与使用边界",
+      "type": "comparison_table",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "含权债券期权价值调整关系",
+      "type": "formula_card",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "常见含权债券行权方向对比",
+      "type": "comparison_table",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "二叉树利率节点波动关系",
+      "type": "formula_card",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "二叉树节点关系例题：15% 波动率",
+      "type": "example_box",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "利率树构建例题：新发行国债输入表",
+      "type": "data_table",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "2 年期利率树构建流程",
+      "type": "process_flow",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "第 1 期短期利率校准方程",
+      "type": "formula_card",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "利率树构建例题：校准 1 年后短期利率",
+      "type": "example_box",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "第 2 期短期利率校准关系",
+      "type": "formula_card",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "2 年期利率树校准结果",
+      "type": "data_table",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "利率树构建：2 年期校准结果树图",
+      "type": "image",
+      "priority": "P0",
+      "handling": "added_required_visual_structured_redraw"
+    },
+    {
+      "title": "利率树逆向归纳估值公式",
+      "type": "formula_card",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "二叉树利率图的阅读方法",
+      "type": "chart_explanation",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "利率树与二叉树模型：4 年期利率二叉树入门图",
+      "type": "image",
+      "priority": "P0",
+      "handling": "added_required_visual"
+    },
+    {
+      "title": "可赎回债券估值例题：4 年期 6.5% 债券",
+      "type": "example_box",
+      "priority": "P0",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "可赎回债券估值：回溯树与赎回判断",
+      "type": "image",
+      "priority": "P0",
+      "handling": "added_required_visual"
+    },
+    {
+      "title": "可赎回债券波动率影响",
+      "type": "data_table",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "可回售债券行权判断例题：4 年期 6.5% 债券",
+      "type": "example_box",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "可回售债券估值：回溯树与回售判断",
+      "type": "image",
+      "priority": "P1",
+      "handling": "added_required_visual"
+    },
+    {
+      "title": "有上限浮动利率债券节点估值例子",
+      "type": "example_box",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "有上限浮动利率债券估值：上限触发树",
+      "type": "image",
+      "priority": "P1",
+      "handling": "added_required_visual"
+    },
+    {
+      "title": "赎回权、回售权与利率波动影响",
+      "type": "comparison_table",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    },
+    {
+      "title": "补充理解：利率模型类型",
+      "type": "comparison_table",
+      "priority": "P2",
+      "handling": "downgraded_to_support"
+    },
+    {
+      "title": "补充理解：模型风险与第三方估值系统",
+      "type": "chart_explanation",
+      "priority": "P2",
+      "handling": "downgraded_to_support"
+    },
+    {
+      "title": "含权债券估值判断路径",
+      "type": "decision_tree",
+      "priority": "P1",
+      "handling": "kept_or_added_core"
+    }
+  ]
+}

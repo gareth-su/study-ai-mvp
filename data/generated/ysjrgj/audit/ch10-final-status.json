@@ -1,0 +1,51 @@
+{
+  "chapter": "第十章：期权市场机制",
+  "auditDate": "2026-05-14",
+  "status": "polished",
+  "confidence": "high",
+  "metrics": {
+    "nodes": 9,
+    "children": 31,
+    "avgChildSummaryChars": 154,
+    "shortChildrenUnder40Chars": 0,
+    "visualBlocks": 13,
+    "exampleBoxes": 2,
+    "payoffCharts": 1,
+    "formulaCards": 1
+  },
+  "selfCheck": {
+    "payoffChartExampleBoxMismatch": false,
+    "positionOrToolClassificationInaccurate": false,
+    "breakEvenApplicabilityConditionMissing": false,
+    "newExampleUntraceableAndUnlabeled": false,
+    "keyPptVisualMissingWithoutReason": false,
+    "allFormulaFieldsAreMathExpressions": true,
+    "corePositionsSelfConsistent": true
+  },
+  "fixesApplied": [
+    {
+      "file": "data/generated/ysjrgj/full/framework-detailed.json",
+      "scope": "Chapter 10 only",
+      "description": "Strengthened the second example_box sourceNote to explicitly state that it uses another standardized parameter set and does not correspond to the payoff_chart."
+    },
+    {
+      "file": "data/generated/ysjrgj/full/framework-detailed.json",
+      "scope": "Chapter 10 only",
+      "description": "Expanded the formula_card to include all four position profit formulas: Long Call, Short Call, Long Put, and Short Put."
+    },
+    {
+      "file": "data/generated/ysjrgj/full/framework-detailed.json",
+      "scope": "Chapter 10 only",
+      "description": "Added Short Call and Short Put to the payoff_chart breakEvenPoints list."
+    }
+  ],
+  "remainingRisks": [
+    "PDF visual extraction through Read failed because pdftoppm is unavailable; coverage was checked through chunks/material summaries, PDF text extraction, and framework visual block audit."
+  ],
+  "validation": {
+    "validateContent": "passed with pre-existing warnings outside Chapter 10",
+    "lint": "passed",
+    "build": "passed"
+  },
+  "nextRecommendedStep": "No further Chapter 10 changes are recommended unless new source-material reconciliation requirements are added."
+}

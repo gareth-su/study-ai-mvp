@@ -1,0 +1,853 @@
+{
+  "courseId": "gdsyzq",
+  "chapter": "第五章：债券定价（二）：含嵌入期权债券定价",
+  "sourceFile": "source-materials/gdsyzq/5.债券定价 (二)(4).pptx",
+  "slideCount": 46,
+  "generatedAt": "2026-05-12",
+  "inventory": [
+    {
+      "page": 1,
+      "title": "标题页",
+      "textSummary": "第 5 章标题页，主题为债券定价（二）。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "确认章节主题。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "标题页。"
+    },
+    {
+      "page": 2,
+      "title": "目录：债券定价三部分",
+      "textSummary": "目录列出国债定价、不含嵌入期权非国债定价和含嵌入期权债券定价。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "本章承接不含权定价并进入含权定价。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "目录页。"
+    },
+    {
+      "page": 3,
+      "title": "目录重复页",
+      "textSummary": "重复目录结构。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "用于过渡。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "过渡页。"
+    },
+    {
+      "page": 4,
+      "title": "不含权债券定价回顾：国债定价",
+      "textSummary": "回顾传统现金流贴现法、无套利估值法和非付息日定价。",
+      "contentTypes": [
+        "formula",
+        "summary"
+      ],
+      "keyPoints": [
+        "传统法使用相同贴现率。",
+        "无套利法使用即期利率逐期贴现。"
+      ],
+      "candidateModule": "含权债券定价的核心问题",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "作为前置回顾，不重复展开第 4 章。"
+    },
+    {
+      "page": 5,
+      "title": "不含权非国债定价回顾",
+      "textSummary": "说明无期权债券利率变动不改变现金流大小和时间，AA 企业即期曲线可由国债即期曲线加信用利差期限结构得到。",
+      "contentTypes": [
+        "formula",
+        "summary"
+      ],
+      "keyPoints": [
+        "不含权非国债可用即期利率加信用利差逐期贴现。"
+      ],
+      "candidateModule": "含权债券定价的核心问题",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "medium",
+      "notes": "作为含权定价对照。"
+    },
+    {
+      "page": 6,
+      "title": "含权债券现实导入：可续期债",
+      "textSummary": "提出现实含权债券越来越多，并以可续期公司债条款为例。",
+      "contentTypes": [
+        "case",
+        "summary"
+      ],
+      "keyPoints": [
+        "可续期、递延利息、赎回选择权会改变现金流。"
+      ],
+      "candidateModule": "含权债券定价的核心问题",
+      "candidateVisualBlocks": [
+        "case_card"
+      ],
+      "importance": "medium",
+      "notes": "不保留具体截图。"
+    },
+    {
+      "page": 7,
+      "title": "含权债券现实导入：房地产风险新闻",
+      "textSummary": "以房地产债务风险新闻引出含权债券和风险环境。",
+      "contentTypes": [
+        "quote",
+        "summary"
+      ],
+      "keyPoints": [
+        "新闻只用于课堂导入，不直接服务公式例题。"
+      ],
+      "candidateModule": "含权债券定价的核心问题",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "新闻链接/截图类 P3，仅 audit。"
+    },
+    {
+      "page": 8,
+      "title": "为什么需要利率二叉树",
+      "textSummary": "说明未来利率变化会影响期权行权可能性，从而影响现金流，需要利率二叉树估值。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "含权债券现金流随行权变化。",
+        "利率树用于同时处理利率路径和现金流路径。"
+      ],
+      "candidateModule": "含权债券定价的核心问题",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "本章核心转折页。"
+    },
+    {
+      "page": 9,
+      "title": "含嵌入期权债券定价知识目标",
+      "textSummary": "要求了解基准利率选取，掌握利率树构建及估值，掌握可赎回、可回售和有上限浮动利率债券估值。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "基准利率、利率树、含权债券估值是主线。"
+      ],
+      "candidateModule": "章节总览",
+      "candidateVisualBlocks": [
+        "process_flow",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "模块规划依据。"
+    },
+    {
+      "page": 10,
+      "title": "确定基准利率",
+      "textSummary": "说明基准利率三个潜在市场，以及根据无套利原则使新发行债券估价等于市场观测价格。",
+      "contentTypes": [
+        "definition",
+        "formula",
+        "example"
+      ],
+      "keyPoints": [
+        "基准利率可来自国债市场、债券市场某板块或发行人证券市场。",
+        "可赎回债券价值等于无期权债券价值减赎回权价值。"
+      ],
+      "candidateModule": "基准利率与无期权价值",
+      "candidateVisualBlocks": [
+        "comparison_table",
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 11,
+      "title": "利率树定义与二叉树模型",
+      "textSummary": "定义利率树、利率模型和二叉树利率模型。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "利率树是未来利率可能值的形象化表示。",
+        "二叉树是本章重点。"
+      ],
+      "candidateModule": "利率树与二叉树模型",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 12,
+      "title": "4 年期利率二叉树示意",
+      "textSummary": "展示 4 年期利率二叉树示例。",
+      "contentTypes": [
+        "chart"
+      ],
+      "keyPoints": [
+        "图示展示未来短期利率路径。"
+      ],
+      "candidateModule": "利率树与二叉树模型",
+      "candidateVisualBlocks": [
+        "chart_explanation",
+        "image"
+      ],
+      "importance": "medium",
+      "notes": "可结构化为图表说明，暂不裁图。"
+    },
+    {
+      "page": 13,
+      "title": "节点和下标含义",
+      "textSummary": "解释节点、随机事件、高低利率下标。",
+      "contentTypes": [
+        "definition",
+        "chart"
+      ],
+      "keyPoints": [
+        "节点代表随机事件。",
+        "如 i1,H 和 i1,L 表示第 1 年后的高低利率状态。"
+      ],
+      "candidateModule": "利率树与二叉树模型",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 14,
+      "title": "二叉树模型假设与节点关系",
+      "textSummary": "说明上升/下降、对数正态、波动率不变和 iH=e^{2σ}iL。",
+      "contentTypes": [
+        "formula",
+        "definition"
+      ],
+      "keyPoints": [
+        "高低节点由波动率联系。",
+        "波动率是利率树的关键假设。"
+      ],
+      "candidateModule": "利率树与二叉树模型",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 15,
+      "title": "节点关系练习题",
+      "textSummary": "给出 σ=15%、i1,H 和 i2,HH 待求。",
+      "contentTypes": [
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "需要使用 e^{2σ} 节点关系。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "与第 16 页合并成例题。"
+    },
+    {
+      "page": 16,
+      "title": "节点关系练习答案",
+      "textSummary": "给出 i1,H=1.612%、i2,HH=1.786%。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "formula"
+      ],
+      "keyPoints": [
+        "15% 波动率下高节点可由低节点乘 e^{2σ} 得到。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0 小例题。"
+    },
+    {
+      "page": 17,
+      "title": "利率树两个问题",
+      "textSummary": "提出利率树构建和利率树估值两个问题。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "区分建树和估值。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "章节核心问题。"
+    },
+    {
+      "page": 18,
+      "title": "建树例题输入表",
+      "textSummary": "给出 1-4 年期新发行国债表，问 σ=10% 时如何构建 2 年期利率树。",
+      "contentTypes": [
+        "example",
+        "table",
+        "calculation"
+      ],
+      "keyPoints": [
+        "债券每年付息一次。",
+        "市场价格均为 100。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "data_table",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "完整应用题起点。"
+    },
+    {
+      "page": 19,
+      "title": "利率树本质和波动率估算",
+      "textSummary": "说明利率树本质是无套利定价模型，节点利率由市场债券价格校准；波动率可由历史或隐含估计。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "利率树按市场价格校准。",
+        "波动率决定未来现金流和期权价值。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 20,
+      "title": "节点关系通式",
+      "textSummary": "给出 i1,H、i2,HL、i2,HH 与低节点和波动率关系。",
+      "contentTypes": [
+        "formula"
+      ],
+      "keyPoints": [
+        "只需知道低节点即可用波动率关系推出其他节点。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 21,
+      "title": "重组树补充说明",
+      "textSummary": "说明中间利率接近从即期推出的 1 年期即期利率，重组树有助于快速计算。",
+      "contentTypes": [
+        "formula",
+        "summary"
+      ],
+      "keyPoints": [
+        "重组树减少节点数量。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "medium",
+      "notes": "P2 补充，不主展示为复杂公式。"
+    },
+    {
+      "page": 22,
+      "title": "利率模型补充：单因素和两因素",
+      "textSummary": "介绍单因素模型和两因素模型。",
+      "contentTypes": [
+        "definition",
+        "comparison"
+      ],
+      "keyPoints": [
+        "单因素只考虑短期利率，两因素同时考虑短期和长期利率。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "medium",
+      "notes": "P2。"
+    },
+    {
+      "page": 23,
+      "title": "期限结构模型分类补充",
+      "textSummary": "介绍常用期限结构模型分类。",
+      "contentTypes": [
+        "definition"
+      ],
+      "keyPoints": [
+        "模型分类属于了解内容。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [
+        "comparison_table"
+      ],
+      "importance": "low",
+      "notes": "P2/P3，压缩。"
+    },
+    {
+      "page": 24,
+      "title": "多项式利率模型补充",
+      "textSummary": "说明三项式等模型允许下一期多种利率变化。",
+      "contentTypes": [
+        "definition",
+        "chart"
+      ],
+      "keyPoints": [
+        "多项式模型是二叉树的扩展。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "low",
+      "notes": "P2，非主线。"
+    },
+    {
+      "page": 25,
+      "title": "建树例题输入表重复",
+      "textSummary": "重复第 18 页输入表。",
+      "contentTypes": [
+        "example",
+        "table"
+      ],
+      "keyPoints": [
+        "与第 18 页合并。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "data_table"
+      ],
+      "importance": "medium",
+      "notes": "合并表达。"
+    },
+    {
+      "page": 26,
+      "title": "第 1 期建树步骤 1",
+      "textSummary": "说明用 2 年期债券信息求 r1,H 和 r1,L。",
+      "contentTypes": [
+        "example",
+        "process",
+        "calculation"
+      ],
+      "keyPoints": [
+        "设 r1,H=e^{2σ}r1,L。",
+        "用价格等于 100 校准。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "process_flow",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 27,
+      "title": "第 1 期校准方程",
+      "textSummary": "给出 2 年期债券价格等于 100 的方程。",
+      "contentTypes": [
+        "example",
+        "formula",
+        "calculation"
+      ],
+      "keyPoints": [
+        "用两个状态的折现价值平均后再折回当前。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 28,
+      "title": "第 1 期迭代求解说明",
+      "textSummary": "说明可用初值和 Excel 单变量求解校准 r1,L。",
+      "contentTypes": [
+        "example",
+        "process"
+      ],
+      "keyPoints": [
+        "模型价格低于 100 表明 r1,L 初始值偏高。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 29,
+      "title": "第 1 期建树结果",
+      "textSummary": "给出 r1,H=3.8212%、r1,L=3.1285% 等结果。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "chart"
+      ],
+      "keyPoints": [
+        "得到无套利定价利率树第 1 期节点。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "data_table",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 30,
+      "title": "第 2 期建树步骤 2",
+      "textSummary": "说明用 3 年期债券信息求 r2,LL、r2,HL、r2,HH。",
+      "contentTypes": [
+        "example",
+        "formula",
+        "calculation"
+      ],
+      "keyPoints": [
+        "三节点由 r2,LL 和波动率关系绑定。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 31,
+      "title": "第 2 期末端节点价值",
+      "textSummary": "给出 P2,HH、P2,HL、P2,LL 公式。",
+      "contentTypes": [
+        "example",
+        "formula",
+        "calculation"
+      ],
+      "keyPoints": [
+        "先计算末端节点价值，再向前倒推。"
+      ],
+      "candidateModule": "利率树估值：逆向归纳与无套利校准",
+      "candidateVisualBlocks": [
+        "formula_card"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 32,
+      "title": "第 2 期建树结果",
+      "textSummary": "给出 r2,HH=4.2306%、r2,HL=3.4637%、r2,LL=2.8259% 及节点价值。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "chart"
+      ],
+      "keyPoints": [
+        "2 年期利率树校准完成。"
+      ],
+      "candidateModule": "利率树构建：波动率关系与市场校准",
+      "candidateVisualBlocks": [
+        "data_table",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 33,
+      "title": "利率树估值原则",
+      "textSummary": "说明用利率树给基准市场债券估价必须等于市场价格，即得出无套利价值。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "树的估值必须满足无套利。"
+      ],
+      "candidateModule": "利率树估值：逆向归纳与无套利校准",
+      "candidateVisualBlocks": [
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 34,
+      "title": "2 年期基准债券估值例",
+      "textSummary": "给出 i1,L=1.1943%、i1,H=1.6161% 和 2 年期 1.2% 息票债券估值示例。",
+      "contentTypes": [
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "找树中利率是迭代过程。"
+      ],
+      "candidateModule": "利率树估值：逆向归纳与无套利校准",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "medium",
+      "notes": "图中细节未完全结构化，audit 记录。"
+    },
+    {
+      "page": 35,
+      "title": "3 年期基准债券估值例",
+      "textSummary": "给出 i2,LL=0.9803%、i2,HL=1.3233% 等，并询问 V0 是否等于 100。",
+      "contentTypes": [
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "用于说明基准债券估值校准。"
+      ],
+      "candidateModule": "利率树估值：逆向归纳与无套利校准",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "medium",
+      "notes": "图中完整数值需人工核对。"
+    },
+    {
+      "page": 36,
+      "title": "实务模型风险",
+      "textSummary": "说明实践中常用第三方估值模型，理解假设重要性用于评价模型风险。",
+      "contentTypes": [
+        "summary",
+        "case"
+      ],
+      "keyPoints": [
+        "模型假设改变会产生不同估值。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [
+        "chart_explanation"
+      ],
+      "importance": "medium",
+      "notes": "P2。"
+    },
+    {
+      "page": 37,
+      "title": "16 怀仁估值差异思考",
+      "textSummary": "提出含权债估值差异和选择收益率思考。",
+      "contentTypes": [
+        "case",
+        "summary"
+      ],
+      "keyPoints": [
+        "该页没有系统展开解答。"
+      ],
+      "candidateModule": "补充理解：利率模型与模型风险",
+      "candidateVisualBlocks": [],
+      "importance": "low",
+      "notes": "只保留 audit，不写空泛正文。"
+    },
+    {
+      "page": 38,
+      "title": "可赎回债券例题条件",
+      "textSummary": "给出 4 年期 6.5% 可赎回债券，1 年后可按 100 赎回，波动率 10%。",
+      "contentTypes": [
+        "example",
+        "case"
+      ],
+      "keyPoints": [
+        "节点价值高于赎回价时发行人赎回。"
+      ],
+      "candidateModule": "可赎回债券估值",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0/P1。"
+    },
+    {
+      "page": 39,
+      "title": "可赎回债券期权价值",
+      "textSummary": "给出赎回期权价值 = 104.643 - 102.899 = 1.744。",
+      "contentTypes": [
+        "formula",
+        "example",
+        "calculation"
+      ],
+      "keyPoints": [
+        "赎回权降低投资者价值。"
+      ],
+      "candidateModule": "可赎回债券估值",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P0。"
+    },
+    {
+      "page": 40,
+      "title": "可赎回债券波动率影响",
+      "textSummary": "说明利率波动越高，嵌入期权价值越高，可赎回债券价值越低；20% 波动率例中价值 102.108、期权价值 2.535。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "comparison"
+      ],
+      "keyPoints": [
+        "波动率上升提高赎回权价值。"
+      ],
+      "candidateModule": "可赎回债券估值",
+      "candidateVisualBlocks": [
+        "data_table",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 41,
+      "title": "可回售债券定义与例题条件",
+      "textSummary": "说明债券持有人有权提前要求发行人偿清，4 年期 6.5% 可回售债券例。",
+      "contentTypes": [
+        "definition",
+        "example"
+      ],
+      "keyPoints": [
+        "节点价值低于票面价值时投资者可能回售。"
+      ],
+      "candidateModule": "可回售债券估值",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 42,
+      "title": "可回售债券行权判断",
+      "textSummary": "给出回售价 100，并要求检查节点价值是否低于回售价。",
+      "contentTypes": [
+        "example",
+        "process"
+      ],
+      "keyPoints": [
+        "节点价值低于回售价格时投资人回售。"
+      ],
+      "candidateModule": "可回售债券估值",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 43,
+      "title": "回售权价值与双权顺序",
+      "textSummary": "说明回售期权价值 = 可回售债券价值 - 无期权债券价值；若同时有赎回和回售，先判断赎回。",
+      "contentTypes": [
+        "formula",
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "回售权提高投资者价值。",
+        "双权债券先判断赎回再判断回售。"
+      ],
+      "candidateModule": "可回售债券估值",
+      "candidateVisualBlocks": [
+        "formula_card",
+        "comparison_table"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 44,
+      "title": "有上限浮动利率债券",
+      "textSummary": "说明上限是投资者给予发行人的期权，仍需二项式利率树估值，息票期初设定、期末支付。",
+      "contentTypes": [
+        "definition",
+        "process"
+      ],
+      "keyPoints": [
+        "上限限制投资者收益。",
+        "浮息债券估值时注意息票设定与支付时点。"
+      ],
+      "candidateModule": "有上限浮动利率债券估值",
+      "candidateVisualBlocks": [
+        "comparison_table",
+        "process_flow"
+      ],
+      "importance": "high",
+      "notes": "P1。"
+    },
+    {
+      "page": 45,
+      "title": "有上限浮息债券节点估值",
+      "textSummary": "给出 V2,HH 局部节点估值式，结果 99.044。",
+      "contentTypes": [
+        "example",
+        "calculation",
+        "formula"
+      ],
+      "keyPoints": [
+        "节点价值按下一期两种状态平均折现。"
+      ],
+      "candidateModule": "有上限浮动利率债券估值",
+      "candidateVisualBlocks": [
+        "example_box"
+      ],
+      "importance": "high",
+      "notes": "P1，完整树需人工核对。"
+    },
+    {
+      "page": 46,
+      "title": "章节总结",
+      "textSummary": "总结基准利率、利率树构建与估值、可赎回、可回售和有上限浮动利率债券。",
+      "contentTypes": [
+        "summary"
+      ],
+      "keyPoints": [
+        "回到本章复习路径。"
+      ],
+      "candidateModule": "复习路径",
+      "candidateVisualBlocks": [],
+      "importance": "medium",
+      "notes": "合并为复习路径。"
+    }
+  ]
+}

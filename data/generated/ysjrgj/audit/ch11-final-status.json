@@ -1,0 +1,95 @@
+{
+  "chapter": "第十一章：股票期权的性质",
+  "auditDate": "2026-05-14",
+  "finalStatus": "polished",
+  "confidence": "high",
+  "modifiedDetailedJson": true,
+  "scope": {
+    "allowedFilesModified": [
+      "data/generated/ysjrgj/full/framework-detailed.json",
+      "data/generated/ysjrgj/audit/ch11-claude-review.md",
+      "data/generated/ysjrgj/audit/ch11-claude-fix-notes.md",
+      "data/generated/ysjrgj/audit/ch11-final-status.json"
+    ],
+    "forbiddenFilesModified": false
+  },
+  "structureQuality": {
+    "status": "pass",
+    "nodes": 9,
+    "children": 31,
+    "shortChildren": 0,
+    "moduleOrderReasonable": true,
+    "outlineTemplateRemaining": false
+  },
+  "groupedConceptCompleteness": {
+    "callPut": "pass",
+    "europeanAmerican": "pass",
+    "upperLowerBounds": "pass",
+    "noDividendDividend": "pass",
+    "positiveNegativeEffects": "pass"
+  },
+  "formulaLatexJsonAudit": {
+    "status": "pass",
+    "rawCarriageReturnCount": 0,
+    "eMinusRtEscapingIssue": false,
+    "naturalLanguageFormula": false,
+    "unsupportedPseudoLatex": false,
+    "allCoreFormulaConditionsStated": true
+  },
+  "curveChartAudit": {
+    "status": "pass",
+    "chartCount": 3,
+    "emptyCharts": 0,
+    "pointsReasonable": true,
+    "metadataCompleteAfterFix": true,
+    "callPutBoundsGrouped": true
+  },
+  "exampleBoxAudit": {
+    "status": "pass",
+    "exampleBoxCount": 3,
+    "sourceTypePresent": true,
+    "sourceNotePresent": true,
+    "calculationsSelfConsistent": true,
+    "parameterDecouplingIssue": false,
+    "fakePptOriginalClaim": false
+  },
+  "pptCoverage": {
+    "status": "pass",
+    "p0P1FormulaCovered": true,
+    "dividendAdjustedBoundsCovered": true,
+    "capitalStructureParityCovered": true,
+    "earlyExerciseCovered": true,
+    "keyVisualsCoveredOrExplained": true,
+    "putBoundaryChartCovered": true
+  },
+  "webPresentationRisk": {
+    "status": "pass",
+    "engineeringTermsExposed": false,
+    "unsupportedVisualBlockTypes": false,
+    "emptyChart": false,
+    "imagePathRisk": false
+  },
+  "selfCheck": {
+    "bodyCompleteButFormulaChartExampleIncomplete": false,
+    "chartPointsCorrectButMetadataMissing": false,
+    "exampleParametersDifferFromChartWithoutDecoupling": false,
+    "latexJsonEscapingIssueEspeciallyBackslashR": false,
+    "engineeringTermsExposed": false,
+    "groupedRelationsHandled": true,
+    "formulaConditionsStated": true,
+    "pptKeyVisualMissingWithoutReason": false
+  },
+  "fixesApplied": [
+    "修正看跌上限欧式/美式表述反置。",
+    "统一无股息欧式看涨边界图 metadata 中的 c/C 符号。",
+    "补充有股息欧式上下限公式提示。",
+    "新增含股息欧式期权上下限 P1 formula_card。",
+    "新增无股息欧式看跌期权价格上下限 curve_chart。"
+  ],
+  "remainingRisks": [],
+  "validation": {
+    "validateContent": "passed with warnings: validator still reports heuristic unwrapped inline math warnings for max(...) in ysjrgj ch11 formula fields and unrelated gdsyzq warnings outside allowed scope.",
+    "lint": "passed",
+    "build": "passed"
+  }
+}

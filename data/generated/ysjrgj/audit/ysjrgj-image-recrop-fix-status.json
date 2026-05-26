@@ -1,0 +1,205 @@
+{
+  "courseId": "ysjrgj",
+  "task": "image_recrop_fix",
+  "status": "FIXED_WITH_REMAINING_RISKS",
+  "scope": "Only confirmed ysjrgj source_asset_cropped images from the previous audit list were recropped. gdsyzq was not modified.",
+  "summary": {
+    "p0Fixed": 1,
+    "p1Fixed": 6,
+    "p2Fixed": 6,
+    "totalImagesRecropped": 13,
+    "frameworkDetailedModified": false,
+    "gdsyzqModified": false
+  },
+  "images": [
+    {
+      "chapterId": "ch02",
+      "priority": "P0",
+      "path": "public/generated-assets/ysjrgj/ch02/page06_margin_marking_table.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/ch02/page_6_screenshot.png",
+      "issue": "Margin table right-side column and bottom row were cropped.",
+      "action": "Recropped full table title, all columns, all rows, borders, and margins.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch03",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch03/page12_min_variance_regression.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/03/page_12_screenshot.png",
+      "issue": "Figure 3-2 crop was too tight around notes and caption.",
+      "action": "Recropped with complete explanatory line, axes, regression scatter, variance curve, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch04",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch04/page21_forward_rate_table.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/04/page_21_screenshot.png",
+      "issue": "Forward-rate table and lower rows/context were incomplete.",
+      "action": "Recropped complete derivation context and full Table 4-6.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch11",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch11/page16_call_bounds_value_curves.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/11/page_16_screenshot.png",
+      "issue": "Left value-curve image was partially cropped.",
+      "action": "Recropped full-width local area with formula, both curves, axes, and captions.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch12",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch12/page18_straddle_payoff.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/12/page_18_screenshot.png",
+      "issue": "Straddle payoff crop was too tight vertically.",
+      "action": "Recropped full-width local area with strategy explanation, payoff, axes, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch12",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch12/page16_calendar_spread_payoff.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/12/page_16_screenshot.png",
+      "issue": "Calendar spread payoff boundaries and surrounding explanation were too tight.",
+      "action": "Recropped full-width local area with explanation, payoff graph, axes, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch12",
+      "priority": "P1",
+      "path": "public/generated-assets/ysjrgj/ch12/page20_strip_strap_payoff.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/12/page_20_screenshot.png",
+      "issue": "Strip/strap payoff caption and strategy notes were incomplete.",
+      "action": "Recropped full-width local area with both strategy notes, both payoff graphs, axes, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch04",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch04/page18_zero_stripping_source_table.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/04/page_18_screenshot.png",
+      "issue": "Zero stripping table body was visible but surrounding text was cut.",
+      "action": "Recropped full-width local area with table, notes, and first three zero-rate calculations.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch04",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch04/page35_duration_convexity_curve.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/04/page_35_screenshot.png",
+      "issue": "Duration/convexity figure had clipped surrounding text.",
+      "action": "Recropped full-width local area with clean explanation, curve, axes, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch05",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch05/page13_forward_arbitrage_cashflow.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/05/page_13_screenshot.png",
+      "issue": "Table 5-2 body was visible but upper formula/context was tight.",
+      "action": "Recropped full-width local area with setup, formula, table title, and complete cashflow table.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch07",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch07/page05_interest_swap_cashflow.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/07/page_5_screenshot.png",
+      "issue": "Interest swap cashflow figure had clipped upper text.",
+      "action": "Recropped full-width local area with example setup, cashflow diagram, and caption.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch07",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch07/page16_relative_advantage_rates.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/07/page_16_screenshot.png",
+      "issue": "Relative advantage rates table had clipped lower context.",
+      "action": "Recropped full-width local area with example setup, full Table 7-4, and explanatory sentence.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    },
+    {
+      "chapterId": "ch12",
+      "priority": "P2",
+      "path": "public/generated-assets/ysjrgj/ch12/page21_strangle_payoff_table.png",
+      "sourceRenderPage": "source-materials/ysjrgj/.renders/12/page_21_screenshot.png",
+      "issue": "Strangle payoff/table had clipped upper explanation.",
+      "action": "Recropped full-width local area with strategy note, payoff graph, caption, and complete Table 12-6.",
+      "pathChanged": false,
+      "exists": true,
+      "fileVisualCheck": "pass",
+      "frontendLightboxCheck": "needs_manual_spot_check"
+    }
+  ],
+  "verification": {
+    "jsonReferenceCheck": "pass",
+    "imageOpenCheck": "pass",
+    "frameworkPage": "loads",
+    "adminPreviewPage": "loads",
+    "perImageLightboxCheck": "needs_manual_spot_check"
+  },
+  "validation": {
+    "validateContent": "pass",
+    "lint": "pass",
+    "build": "pass"
+  },
+  "remainingRisks": [
+    "gdsyzq images were not recropped because source-materials/gdsyzq/.renders is unavailable.",
+    "Automated deep navigation to every target image/lightbox was unstable; manually spot-check the 13 images in the browser, especially ch11 and ch12 payoff/value-curve figures."
+  ],
+  "modifiedFiles": [
+    "public/generated-assets/ysjrgj/ch02/page06_margin_marking_table.png",
+    "public/generated-assets/ysjrgj/ch03/page12_min_variance_regression.png",
+    "public/generated-assets/ysjrgj/ch04/page21_forward_rate_table.png",
+    "public/generated-assets/ysjrgj/ch11/page16_call_bounds_value_curves.png",
+    "public/generated-assets/ysjrgj/ch12/page18_straddle_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page16_calendar_spread_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page20_strip_strap_payoff.png",
+    "public/generated-assets/ysjrgj/ch04/page18_zero_stripping_source_table.png",
+    "public/generated-assets/ysjrgj/ch04/page35_duration_convexity_curve.png",
+    "public/generated-assets/ysjrgj/ch05/page13_forward_arbitrage_cashflow.png",
+    "public/generated-assets/ysjrgj/ch07/page05_interest_swap_cashflow.png",
+    "public/generated-assets/ysjrgj/ch07/page16_relative_advantage_rates.png",
+    "public/generated-assets/ysjrgj/ch12/page21_strangle_payoff_table.png",
+    "data/generated/ysjrgj/audit/ysjrgj-image-recrop-fix-report.md",
+    "data/generated/ysjrgj/audit/ysjrgj-image-recrop-fix-status.json"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "reviewDate": "2026-05-14",
+  "scope": "ysjrgj framework-detailed chapters 1, 2, and 4",
+  "overallStatus": "polished_with_small_fixes",
+  "chapters": {
+    "ch01": {
+      "title": "导言",
+      "status": "polished",
+      "smallFixesApplied": 3,
+      "blockingIssues": 0,
+      "remainingRisks": [
+        "Uses limited external market/regulatory background; acceptable for导论章 but should stay bounded in future chapters.",
+        "PDF text extraction was unavailable in this environment; PPT coverage was cross-checked from rendered screenshots where available, enhancement reports, and chapter content."
+      ],
+      "checks": {
+        "structure": "pass",
+        "shortChildren": "pass",
+        "templateNodeNames": "pass",
+        "formulaLatex": "pass",
+        "exampleBoxSource": "pass",
+        "visualBlockMetadata": "fixed",
+        "groupedConcepts": "pass",
+        "pptCoverage": "pass",
+        "engineeringTerms": "pass"
+      }
+    },
+    "ch02": {
+      "title": "期货市场的运作机制",
+      "status": "polished",
+      "smallFixesApplied": 9,
+      "blockingIssues": 0,
+      "remainingRisks": [
+        "VisualBlock count is high; if webpage rhythm feels dense, future UI grouping can improve reading, but no content blocker remains.",
+        "Chapter 2 rendered screenshots were not present; PPT coverage was cross-checked from enhancement reports and chapter content."
+      ],
+      "checks": {
+        "structure": "pass",
+        "shortChildren": "pass",
+        "templateNodeNames": "pass",
+        "formulaLatex": "pass",
+        "exampleBoxSource": "pass",
+        "visualBlockMetadata": "fixed",
+        "groupedConcepts": "pass",
+        "pptCoverage": "pass",
+        "engineeringTerms": "pass"
+      }
+    },
+    "ch04": {
+      "title": "利率",
+      "status": "polished",
+      "smallFixesApplied": 3,
+      "blockingIssues": 0,
+      "remainingRisks": [
+        "Includes concise modern market context such as OIS/SOFR and LIBOR transition; useful for口径区分 but should remain limited in future PPT-driven chapters.",
+        "PDF text extraction was unavailable in this environment; PPT coverage was cross-checked from rendered screenshots where available, enhancement reports, and chapter content."
+      ],
+      "checks": {
+        "structure": "pass",
+        "shortChildren": "pass",
+        "templateNodeNames": "pass",
+        "formulaLatex": "pass",
+        "exampleBoxSource": "pass",
+        "visualBlockMetadata": "fixed",
+        "groupedConcepts": "pass",
+        "pptCoverage": "pass",
+        "engineeringTerms": "pass"
+      }
+    }
+  },
+  "modifiedAllowedFilesOnly": true,
+  "validation": {
+    "validateContent": "passed_with_existing_warnings",
+    "lint": "passed",
+    "build": "passed"
+  },
+  "validationNotes": [
+    "validate:content completed successfully; warnings remain in ysjrgj chapter 4 usage and chapter 8 plus gdsyzq existing content, none blocking validation.",
+    "lint passed.",
+    "build passed including prisma generate and next build."
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "courseId": "gdsyzq",
+  "task": "render_generation_and_image_integrity_fix",
+  "status": "FIXED_WITH_REMAINING_RISKS",
+  "summary": {
+    "sourceMaterialsFound": true,
+    "rendersGenerated": true,
+    "chaptersRendered": 8,
+    "imagesChecked": 16,
+    "p0Fixed": 0,
+    "p1Fixed": 1,
+    "p2Fixed": 0,
+    "frameworkDetailedModified": false,
+    "ysjrgjModified": false
+  },
+  "renderCoverage": {
+    "ch01": {
+      "sourceFile": "source-materials/gdsyzq/1.概论(3).pptx",
+      "pages": 32,
+      "renders": 32,
+      "match": true
+    },
+    "ch02": {
+      "sourceFile": "source-materials/gdsyzq/2.债券基本概念与债券市场组成(2).pptx",
+      "pages": 47,
+      "renders": 47,
+      "match": true
+    },
+    "ch03": {
+      "sourceFile": "source-materials/gdsyzq/3.债券收益率(2).pptx",
+      "pages": 55,
+      "renders": 55,
+      "match": true
+    },
+    "ch04": {
+      "sourceFile": "source-materials/gdsyzq/更新版 4.债券定价 (一).pptx",
+      "pages": 54,
+      "renders": 54,
+      "match": true
+    },
+    "ch05": {
+      "sourceFile": "source-materials/gdsyzq/5.债券定价 (二)(4).pptx",
+      "pages": 46,
+      "renders": 46,
+      "match": true
+    },
+    "ch06": {
+      "sourceFile": "source-materials/gdsyzq/6.债券定价 (三) 更新版.pptx",
+      "pages": 55,
+      "renders": 55,
+      "match": true
+    },
+    "ch07": {
+      "sourceFile": "source-materials/gdsyzq/7.债券定价 (四)(3).pptx",
+      "pages": 30,
+      "renders": 30,
+      "match": true
+    },
+    "ch08": {
+      "sourceFile": "source-materials/gdsyzq/8.债券投资风险（一）(2).pptx",
+      "pages": 76,
+      "renders": 76,
+      "match": true
+    }
+  },
+  "imageAudit": [
+    {
+      "chapterId": "ch01",
+      "path": "public/generated-assets/gdsyzq/ch01/image13.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch01/page_12_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch01",
+      "path": "public/generated-assets/gdsyzq/ch01/image23.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch01/page_22_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch04",
+      "path": "public/generated-assets/gdsyzq/ch04/csi-yield-curve-example-01.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch04/page_30_screenshot.png",
+      "status": "P1_FIXED",
+      "issue": "Original crop omitted the bottom legend for the three yield curves.",
+      "action": "recropped_from_render"
+    },
+    {
+      "chapterId": "ch04",
+      "path": "public/generated-assets/gdsyzq/ch04/credit-spread-economic-cycle-01.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch04/page_46_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch04",
+      "path": "public/generated-assets/gdsyzq/ch04/corporate-bond-yield-curve-practice-01.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch04/page_52_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch05",
+      "path": "public/generated-assets/gdsyzq/ch05/interest-rate-tree-basic-4y.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch05/page_12_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch05",
+      "path": "public/generated-assets/gdsyzq/ch05/interest-rate-tree-calibrated-step2.png",
+      "sourceRenderPage": "related context: source-materials/gdsyzq/.renders/ch05/page_34_screenshot.png and page_35_screenshot.png",
+      "status": "OK",
+      "issue": "Structured redraw, not a cropped PPT image.",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch05",
+      "path": "public/generated-assets/gdsyzq/ch05/callable-bond-tree-example.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch05/page_38_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch05",
+      "path": "public/generated-assets/gdsyzq/ch05/putable-bond-tree-example.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch05/page_42_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch05",
+      "path": "public/generated-assets/gdsyzq/ch05/capped-floater-tree-example.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch05/page_45_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch06",
+      "path": "public/generated-assets/gdsyzq/ch06/z-spread-curve-fixed-spread-left.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch06/page_9_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch06",
+      "path": "public/generated-assets/gdsyzq/ch06/z-spread-curve-fixed-spread-right.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch06/page_9_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch06",
+      "path": "public/generated-assets/gdsyzq/ch06/oas-model-price-gap.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch06/page_14_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch06",
+      "path": "public/generated-assets/gdsyzq/ch06/oas-node-spread-35bp.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch06/page_15_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch07",
+      "path": "public/generated-assets/gdsyzq/ch07/refinancing-rate-paths.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch07/page_14_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    },
+    {
+      "chapterId": "ch07",
+      "path": "public/generated-assets/gdsyzq/ch07/cashflow-matrix.png",
+      "sourceRenderPage": "source-materials/gdsyzq/.renders/ch07/page_16_screenshot.png",
+      "status": "OK",
+      "issue": "",
+      "action": "none"
+    }
+  ],
+  "modifiedFiles": [
+    "source-materials/gdsyzq/.renders/**",
+    "public/generated-assets/gdsyzq/ch04/csi-yield-curve-example-01.png",
+    "data/generated/gdsyzq/audit/gdsyzq-image-integrity-review.md",
+    "data/generated/gdsyzq/audit/gdsyzq-image-recrop-status.json"
+  ],
+  "validation": {
+    "validateContent": "pass",
+    "lint": "pass",
+    "build": "pass"
+  },
+  "remainingRisks": [
+    "The ch05 calibrated short-rate tree is a structured redraw rather than an original PPT screenshot; it has no crop issue but is not a slide image.",
+    "Automated page navigation did not reliably open the deep ch04 image module; the recropped file and route-level pages were verified, but one manual lightbox click on the ch04 yield-curve image is recommended."
+  ]
+}

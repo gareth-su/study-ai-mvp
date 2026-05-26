@@ -1,0 +1,274 @@
+{
+  "courseId": "ysjrgj",
+  "auditDate": "2026-05-15",
+  "acceptanceType": "content_production_acceptance_after_user_rejection",
+  "scope": [
+    "ch01",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch07",
+    "ch10",
+    "ch11",
+    "ch12"
+  ],
+  "overallRecommendation": "ACCEPTED_AFTER_REWORK",
+  "previousAcceptanceCorrection": {
+    "previousStatus": "ACCEPTED_WITH_RISKS",
+    "corrected": true,
+    "reason": "Previous acceptance over-weighted schema/validation and under-weighted student-facing table-example continuity, original slide visual value, and rendered formula/table quality."
+  },
+  "chapters": {
+    "ch01": {
+      "chapterId": "ch01",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "pass",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "Added original market-size trend image",
+        "Added gold-forward input and formula crops"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch01/page05_market_size_trend.png",
+        "/generated-assets/ysjrgj/ch01/page15_gold_forward_inputs.png",
+        "/generated-assets/ysjrgj/ch01/page16_gold_forward_formula.png"
+      ],
+      "remainingRisks": [
+        "Human reviewer may prefer different crop margins for gold-forward images."
+      ]
+    },
+    "ch02": {
+      "chapterId": "ch02",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "Added margin daily-marking data table",
+        "Added original margin table crop",
+        "Added CCP clearing structure crop"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch02/page06_margin_marking_table.png",
+        "/generated-assets/ysjrgj/ch02/page16_ccp_clearing_structure.png"
+      ],
+      "remainingRisks": []
+    },
+    "ch03": {
+      "chapterId": "ch03",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "Copper long-hedge scenario table",
+        "Yen short-hedge data table",
+        "Cross-hedge and tailing-hedge parameter table",
+        "Stock-index beta-adjustment parameter table",
+        "Original yen hedge and regression figure images"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch03/page10_yen_short_hedge_example.png",
+        "/generated-assets/ysjrgj/ch03/page12_min_variance_regression.png"
+      ],
+      "frontendPreview": "Checked ch03 table/example chains in /framework; real tables and images rendered near examples.",
+      "remainingRisks": []
+    },
+    "ch04": {
+      "chapterId": "ch04",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [
+        "Existing validate warning remains for unrelated ch04 inline math-like text; not caused by this pass."
+      ],
+      "reworkedBlocks": [
+        "Zero-stripping source crop",
+        "Zero-stripping input data table",
+        "Zero-stripping output result table",
+        "FRA parameter table",
+        "Forward-rate and duration/convexity original crops",
+        "Retargeted zero-stripping image to the correct frontend module"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch04/page18_zero_stripping_source_table.png",
+        "/generated-assets/ysjrgj/ch04/page21_forward_rate_table.png",
+        "/generated-assets/ysjrgj/ch04/page35_duration_convexity_curve.png"
+      ],
+      "frontendPreview": "Checked zero-stripping module; data tables render before/after the example with no Markdown table exposure.",
+      "remainingRisks": [
+        "Known ch04 validation warnings should be reviewed separately if a zero-warning detailed file is required."
+      ]
+    },
+    "ch05": {
+      "chapterId": "ch05",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "No-income forward arbitrage original cash-flow crop",
+        "No-income forward arbitrage data_table",
+        "Forward-pricing parameter lookup table",
+        "Known-income arbitrage original table crop"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch05/page12_no_income_forward_formula.png",
+        "/generated-assets/ysjrgj/ch05/page13_forward_arbitrage_cashflow.png",
+        "/generated-assets/ysjrgj/ch05/page16_known_income_arbitrage_table.png"
+      ],
+      "frontendPreview": "Checked ch05 no-income forward module; original image and data table render as teaching chain.",
+      "remainingRisks": []
+    },
+    "ch07": {
+      "chapterId": "ch07",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "AAA/BBB original rate table crop",
+        "AAA/BBB renderer-native data_table",
+        "Relative-advantage example scenario rewritten to reference the table",
+        "Floating-interest parameter table",
+        "Apple/Flower, intermediary, and currency-swap cash-flow crops"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch07/page05_interest_swap_cashflow.png",
+        "/generated-assets/ysjrgj/ch07/page16_relative_advantage_rates.png",
+        "/generated-assets/ysjrgj/ch07/page18_intermediated_swap_cashflow.png",
+        "/generated-assets/ysjrgj/ch07/page29_currency_swap_cashflow_table.png"
+      ],
+      "frontendPreview": "Checked ch07 relative-advantage module; crop, table, example, and cash-flow image render in order.",
+      "remainingRisks": []
+    },
+    "ch10": {
+      "chapterId": "ch10",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "pass",
+      "renderRisk": [],
+      "reworkedBlocks": [
+        "Added original call payoff crop",
+        "Added original put payoff crop",
+        "Added naked-option margin source crop"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch10/page04_call_payoff_original.png",
+        "/generated-assets/ysjrgj/ch10/page05_put_payoff_original.png",
+        "/generated-assets/ysjrgj/ch10/page16_naked_option_margin_example.png"
+      ],
+      "remainingRisks": []
+    },
+    "ch11": {
+      "chapterId": "ch11",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "pass",
+      "renderRisk": [
+        "Existing validate warnings remain for ch11 lower-bound formula fields; not newly introduced in this pass."
+      ],
+      "reworkedBlocks": [
+        "Added call lower-bound derivation crop",
+        "Added put-call parity derivation crop",
+        "Added call value/bounds curve crop"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch11/page07_call_lower_bound_derivation.png",
+        "/generated-assets/ysjrgj/ch11/page11_put_call_parity_derivation.png",
+        "/generated-assets/ysjrgj/ch11/page16_call_bounds_value_curves.png"
+      ],
+      "remainingRisks": [
+        "Known ch11 validation warnings should be handled in a separate formula-cleanup pass if required."
+      ]
+    },
+    "ch12": {
+      "chapterId": "ch12",
+      "contentProducerJudgment": "effective",
+      "tableExampleIntegrity": "fixed",
+      "renderRisk": [
+        "Frontend preview still reports chart-container warnings from the chart library, but no formula-rendering warnings remained after cleanup."
+      ],
+      "reworkedBlocks": [
+        "Protective put, bull spread, butterfly, and straddle/strangle parameter tables",
+        "Original payoff crops for major strategies",
+        "Retargeted bull-spread image to the correct frontend module",
+        "Replaced Chinese prose inside inline math with variable notation"
+      ],
+      "originalSlideImages": [
+        "/generated-assets/ysjrgj/ch12/page04_stock_option_overlay_payoffs.png",
+        "/generated-assets/ysjrgj/ch12/page06_bull_spread_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page09_bear_spread_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page12_butterfly_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page16_calendar_spread_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page18_straddle_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page20_strip_strap_payoff.png",
+        "/generated-assets/ysjrgj/ch12/page21_strangle_payoff_table.png"
+      ],
+      "frontendPreview": "Checked ch12 straddle/strangle module; payoff_chart, crops, parameter table, example, and comparison table render in order.",
+      "remainingRisks": [
+        "Human review should still scan each payoff crop for preferred crop boundaries."
+      ]
+    }
+  },
+  "structuralChecks": {
+    "jsonParse": "pass",
+    "markdownTablesInText": "pass",
+    "tableRowLengthMismatch": "pass",
+    "missingImagePaths": "pass",
+    "imageModuleAllocation": "pass",
+    "rawJsonOrArrayExposureInCheckedPreview": "pass"
+  },
+  "frontendPreview": {
+    "route": "/framework?course=ysjrgj",
+    "checkedChapters": [
+      "ch03",
+      "ch04",
+      "ch05",
+      "ch07",
+      "ch12"
+    ],
+    "result": "pass_with_minor_existing_chart_warnings",
+    "notes": [
+      "Checked high-risk table + example chains in the live preview.",
+      "No broken images, raw JSON, object arrays, or Markdown tables were observed in checked modules.",
+      "ch12 formula warnings caused by Chinese prose in math mode were fixed; remaining warnings are chart-container warnings."
+    ]
+  },
+  "validation": {
+    "validateContent": "passed with existing warnings outside this pass's confirmed fixes",
+    "lint": "passed",
+    "build": "passed"
+  },
+  "modifiedFiles": [
+    "data/generated/ysjrgj/full/framework-detailed.json",
+    "data/generated/ysjrgj/audit/codex-content-production-acceptance-report.md",
+    "data/generated/ysjrgj/audit/codex-content-production-acceptance-status.json",
+    "public/generated-assets/ysjrgj/ch01/page05_market_size_trend.png",
+    "public/generated-assets/ysjrgj/ch01/page15_gold_forward_inputs.png",
+    "public/generated-assets/ysjrgj/ch01/page16_gold_forward_formula.png",
+    "public/generated-assets/ysjrgj/ch02/page06_margin_marking_table.png",
+    "public/generated-assets/ysjrgj/ch02/page16_ccp_clearing_structure.png",
+    "public/generated-assets/ysjrgj/ch03/page10_yen_short_hedge_example.png",
+    "public/generated-assets/ysjrgj/ch03/page12_min_variance_regression.png",
+    "public/generated-assets/ysjrgj/ch04/page18_zero_stripping_source_table.png",
+    "public/generated-assets/ysjrgj/ch04/page21_forward_rate_table.png",
+    "public/generated-assets/ysjrgj/ch04/page35_duration_convexity_curve.png",
+    "public/generated-assets/ysjrgj/ch05/page12_no_income_forward_formula.png",
+    "public/generated-assets/ysjrgj/ch05/page13_forward_arbitrage_cashflow.png",
+    "public/generated-assets/ysjrgj/ch05/page16_known_income_arbitrage_table.png",
+    "public/generated-assets/ysjrgj/ch07/page05_interest_swap_cashflow.png",
+    "public/generated-assets/ysjrgj/ch07/page16_relative_advantage_rates.png",
+    "public/generated-assets/ysjrgj/ch07/page18_intermediated_swap_cashflow.png",
+    "public/generated-assets/ysjrgj/ch07/page29_currency_swap_cashflow_table.png",
+    "public/generated-assets/ysjrgj/ch10/page04_call_payoff_original.png",
+    "public/generated-assets/ysjrgj/ch10/page05_put_payoff_original.png",
+    "public/generated-assets/ysjrgj/ch10/page16_naked_option_margin_example.png",
+    "public/generated-assets/ysjrgj/ch11/page07_call_lower_bound_derivation.png",
+    "public/generated-assets/ysjrgj/ch11/page11_put_call_parity_derivation.png",
+    "public/generated-assets/ysjrgj/ch11/page16_call_bounds_value_curves.png",
+    "public/generated-assets/ysjrgj/ch12/page04_stock_option_overlay_payoffs.png",
+    "public/generated-assets/ysjrgj/ch12/page06_bull_spread_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page09_bear_spread_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page12_butterfly_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page16_calendar_spread_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page18_straddle_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page20_strip_strap_payoff.png",
+    "public/generated-assets/ysjrgj/ch12/page21_strangle_payoff_table.png"
+  ],
+  "forbiddenFilesModifiedByThisPass": false
+}
