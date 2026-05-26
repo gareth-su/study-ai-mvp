@@ -1,14 +1,13 @@
 "use client";
 
+import { generatedCourses } from "@/lib/courses/course-registry";
 import FrameworkLearningView, { type FrameworkData } from "@/components/framework/FrameworkLearningView";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 type Props = {
   initialDetailedContent: string;
-  initialConciseContent: string;
   currentCourseId: string;
   courseName: string;
-  initialMode: "concise" | "detailed";
 };
 
 function parseFramework(content: string): FrameworkData | null {
@@ -21,15 +20,10 @@ function parseFramework(content: string): FrameworkData | null {
 
 export default function FrameworkPageClient({
   initialDetailedContent,
-  initialConciseContent,
   currentCourseId,
   courseName,
-  initialMode,
 }: Props) {
-  const [level, setLevel] = useState<"concise" | "detailed">(initialMode);
-
-  const content = level === "detailed" ? initialDetailedContent : initialConciseContent;
-  const framework = useMemo(() => parseFramework(content), [content]);
+  const framework = useMemo(() => parseFramework(initialDetailedContent), [initialDetailedContent]);
 
   function switchCourse(cId: string) {
     const params = new URLSearchParams();
@@ -40,7 +34,7 @@ export default function FrameworkPageClient({
   if (!framework) {
     return (
       <main className="mx-auto w-full max-w-6xl px-6 py-8">
-        <pre className="overflow-x-auto rounded-xl border border-zinc-200 bg-white p-4 text-sm whitespace-pre-wrap">{content}</pre>
+        <pre className="overflow-x-auto rounded-xl border border-zinc-200 bg-white p-4 text-sm whitespace-pre-wrap">{initialDetailedContent}</pre>
       </main>
     );
   }
@@ -50,34 +44,26 @@ export default function FrameworkPageClient({
       <div className="mx-auto mt-8 flex w-full max-w-6xl items-center gap-3 px-6 text-sm">
         <span className="text-xs font-medium uppercase tracking-[0.15em] text-zinc-400">课程</span>
         <div className="flex gap-0.5">
-          <button
-            onClick={() => switchCourse("ysjrgj")}
-            className={`rounded-lg px-3 py-1.5 text-sm transition ${
-              currentCourseId === "ysjrgj"
-                ? "bg-zinc-900 font-medium text-white shadow-sm"
-                : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800"
-            }`}
-          >
-            衍生品
-          </button>
-          <button
-            onClick={() => switchCourse("gdsyzq")}
-            className={`rounded-lg px-3 py-1.5 text-sm transition ${
-              currentCourseId === "gdsyzq"
-                ? "bg-zinc-900 font-medium text-white shadow-sm"
-                : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800"
-            }`}
-          >
-            固收
-          </button>
+          {generatedCourses.map((course) => (
+            <button
+              key={course.id}
+              onClick={() => switchCourse(course.id)}
+              className={`rounded-lg px-3 py-1.5 text-sm transition ${
+                currentCourseId === course.id
+                  ? "bg-zinc-900 font-medium text-white shadow-sm"
+                  : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800"
+              }`}
+            >
+              {course.shortTitle}
+            </button>
+          ))}
         </div>
       </div>
 
       <FrameworkLearningView
         framework={framework}
         courseName={courseName}
-        mode={level}
-        onModeChange={setLevel}
+        mode="detailed"
         headerEyebrow="期末复习"
         headerTitle={framework.title ?? "课程知识框架"}
         headerDescription={framework.courseSummary ?? "围绕课程进行系统化梳理，帮助快速定位章节主线、核心概念、公式、案例和图表。"}

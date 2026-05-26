@@ -12,26 +12,21 @@ export default async function FrameworkPage({
   const courseId = course ?? "";
   const courseObj = getGeneratedCourseById(courseId) ?? getDefaultGeneratedCourse();
 
-  const [detailedResult, conciseResult] = await Promise.all([
-    loadGeneratedFramework({ courseId: courseObj.id, variant: "full", level: "detailed" }),
-    loadGeneratedFramework({ courseId: courseObj.id, variant: "full", level: "concise" }),
-  ]);
+  const detailedResult = await loadGeneratedFramework({
+    courseId: courseObj.id,
+    variant: "full",
+    level: "detailed",
+  });
 
   const detailedContent = detailedResult.ok
     ? detailedResult.content
     : JSON.stringify(getFixedCourseFramework("DETAILED"), null, 2);
 
-  const conciseContent = conciseResult.ok
-    ? conciseResult.content
-    : JSON.stringify(getFixedCourseFramework("CONCISE"), null, 2);
-
   return (
     <FrameworkPageClient
       initialDetailedContent={detailedContent}
-      initialConciseContent={conciseContent}
       currentCourseId={courseObj.id}
       courseName={courseObj.title}
-      initialMode="detailed"
     />
   );
 }

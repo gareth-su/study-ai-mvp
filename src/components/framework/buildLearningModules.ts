@@ -1,5 +1,96 @@
 import type { FrameworkChapter, FrameworkNode } from "./FrameworkLearningView";
 
+export type ContentTier = "core" | "support" | "extension";
+
+type TieredLike = {
+  priority?: unknown;
+  displayMode?: unknown;
+  title?: unknown;
+  name?: unknown;
+  note?: unknown;
+  description?: unknown;
+  type?: unknown;
+};
+
+export type TierStats = {
+  coreResourceCount: number;
+  supportItemCount: number;
+  extensionItemCount: number;
+  collapsedItemCount: number;
+  priorityCounts: Partial<Record<"P0" | "P1" | "P2" | "P3", number>>;
+};
+
+const extensionTitlePatterns = ["拓展", "阅读", "链接", "新闻", "市场实践", "中证估值", "数据库", "研究报告"];
+const supportTitlePatterns = ["补充", "背景", "延伸", "市场分类", "机构实践"];
+const coreBlockTypes = new Set(["formula_card", "example_box"]);
+
+function readText(value: unknown): string {
+  return typeof value === "string" ? value : "";
+}
+
+function readObject(value: unknown): TieredLike {
+  return value && typeof value === "object" ? (value as TieredLike) : {};
+}
+
+export function classifyTitleTier(title: string): ContentTier {
+  if (extensionTitlePatterns.some((pattern) => title.includes(pattern))) return "extension";
+  if (supportTitlePatterns.some((pattern) => title.includes(pattern))) return "support";
+  return "core";
+}
+
+export function classifyNodeTier(node: FrameworkNode): ContentTier {
+  return classifyTitleTier(`${node.name ?? ""} ${node.summary ?? ""}`);
+}
+
+export function classifyBlockTier(block: unknown): ContentTier {
+  const b = readObject(block);
+  const text = `${readText(b.title)} ${readText(b.description)} ${readText(b.note)}`;
+  const titleTier = classifyTitleTier(text);
+  if (titleTier !== "core") return titleTier;
+  if (coreBlockTypes.has(readText(b.type))) return "core";
+  return "core";
+}
+
+function readPriority(value: unknown): "P0" | "P1" | "P2" | "P3" | null {
+  const priority = readText(readObject(value).priority).toUpperCase();
+  return priority === "P0" || priority === "P1" || priority === "P2" || priority === "P3" ? priority : null;
+}
+
+export function buildTierStats(modules: LearningModule[], supplements: unknown[]): TierStats {
+  const stats: TierStats = {
+    coreResourceCount: 0,
+    supportItemCount: 0,
+    extensionItemCount: 0,
+    collapsedItemCount: 0,
+    priorityCounts: {},
+  };
+
+  const countTier = (tier: ContentTier) => {
+    if (tier === "core") stats.coreResourceCount++;
+    if (tier === "support") {
+      stats.supportItemCount++;
+      stats.collapsedItemCount++;
+    }
+    if (tier === "extension") {
+      stats.extensionItemCount++;
+      stats.collapsedItemCount++;
+    }
+  };
+
+  for (const mod of modules) {
+    for (const child of mod.conceptItems) countTier(classifyNodeTier(child));
+    for (const block of mod.visualBlocks) {
+      countTier(classifyBlockTier(block));
+      const priority = readPriority(block);
+      if (priority) stats.priorityCounts[priority] = (stats.priorityCounts[priority] ?? 0) + 1;
+    }
+  }
+
+  for (const block of supplements) countTier(classifyBlockTier(block));
+
+  return stats;
+}
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -25,7 +116,13 @@ export type ModuleBuildResult = {
   supplements: unknown[];
   /** Per-module matched block count for diagnostics */
   moduleBlockCounts: number[];
-  stats: { moduleCount: number; totalBlocks: number; matchedBlocks: number; unmatchedBlocks: number; unmatchedRatio: string };
+  stats: {
+    moduleCount: number;
+    totalBlocks: number;
+    matchedBlocks: number;
+    unmatchedBlocks: number;
+    unmatchedRatio: string;
+  } & TierStats;
 };
 
 /* ------------------------------------------------------------------ */
@@ -264,6 +361,100 @@ function getBlockText(block: unknown): string {
         }
       }
       break;
+    case "stata_code_block":
+      push(b.description);
+      push(b.code);
+      push(b.sourceFile);
+      if (Array.isArray(b.commands)) for (const command of b.commands) push(command);
+      if (Array.isArray(b.notes)) for (const note of b.notes) push(note);
+      break;
+    case "stata_output_block":
+      push(b.command);
+      push(b.output);
+      push(b.sourceFile);
+      if (Array.isArray(b.highlights)) {
+        for (const h of b.highlights) {
+          if (typeof h === "object" && h) { push((h as Record<string, unknown>).label); push((h as Record<string, unknown>).value); push((h as Record<string, unknown>).meaning); }
+        }
+      }
+      if (Array.isArray(b.warnings)) for (const warning of b.warnings) push(warning);
+      break;
+    case "regression_table":
+      push(b.description);
+      push(b.dependentVariable);
+      push(b.sourceFile);
+      if (Array.isArray(b.models)) {
+        for (const model of b.models) {
+          if (typeof model === "object" && model) {
+            const m = model as Record<string, unknown>;
+            push(m.name);
+            push(m.estimator);
+            push(m.clusteredBy);
+            if (Array.isArray(m.fixedEffects)) for (const fe of m.fixedEffects) push(fe);
+            if (Array.isArray(m.rows)) {
+              for (const row of m.rows) {
+                if (typeof row === "object" && row) {
+                  const r = row as Record<string, unknown>;
+                  push(r.variable); push(r.coef); push(r.stdErr); push(r.t); push(r.p); push(r.note);
+                }
+              }
+            }
+          }
+        }
+      }
+      if (Array.isArray(b.notes)) for (const note of b.notes) push(note);
+      break;
+    case "dataset_schema":
+      push(b.datasetName);
+      push(b.description);
+      push(b.panelId);
+      push(b.timeId);
+      if (Array.isArray(b.variables)) {
+        for (const variable of b.variables) {
+          if (typeof variable === "object" && variable) {
+            const v = variable as Record<string, unknown>;
+            push(v.name); push(v.label); push(v.type); push(v.role); push(v.generatedFrom);
+          }
+        }
+      }
+      if (Array.isArray(b.notes)) for (const note of b.notes) push(note);
+      break;
+    case "reproduction_steps":
+      push(b.goal);
+      push(b.finalCheck);
+      if (Array.isArray(b.sourceFiles)) for (const file of b.sourceFiles) push(file);
+      if (Array.isArray(b.steps)) {
+        for (const step of b.steps) {
+          if (typeof step === "object" && step) {
+            const s = step as Record<string, unknown>;
+            push(s.label); push(s.command); push(s.expectedOutput); push(s.check); push(s.explanation);
+          }
+        }
+      }
+      break;
+    case "exam_task":
+      push(b.prompt);
+      if (Array.isArray(b.requirements)) for (const item of b.requirements) push(item);
+      if (Array.isArray(b.answerPath)) for (const item of b.answerPath) push(item);
+      if (Array.isArray(b.scoringPoints)) for (const item of b.scoringPoints) push(item);
+      if (Array.isArray(b.commonMistakes)) for (const item of b.commonMistakes) push(item);
+      break;
+    case "interpretation_checklist":
+      if (Array.isArray(b.items)) {
+        for (const item of b.items) {
+          if (typeof item === "object" && item) {
+            const checklistItem = item as Record<string, unknown>;
+            push(checklistItem.label); push(checklistItem.question); push(checklistItem.expected); push(checklistItem.warning);
+          }
+        }
+      }
+      break;
+    case "common_stata_error":
+      push(b.message);
+      push(b.cause);
+      push(b.fix);
+      push(b.example);
+      break;
   }
 
   // Generic fields
@@ -449,6 +640,8 @@ export function buildLearningModules(
     pitfalls = pitfallsNode.children.map((c) => c.name ?? "").filter(Boolean);
   }
 
+  const tierStats = buildTierStats(modules, supplements);
+
   return {
     guide: {
       summary: chapter.summary,
@@ -463,6 +656,7 @@ export function buildLearningModules(
     supplements,
     moduleBlockCounts,
     stats: {
+      ...tierStats,
       moduleCount: modules.length,
       totalBlocks: blocks.length,
       matchedBlocks: matchedBlockIds.size,

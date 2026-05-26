@@ -2,7 +2,7 @@
 
 import "katex/dist/katex.min.css";
 import katex from "katex";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MathText from "./MathText";
 import {
   LineChart,
@@ -13,7 +13,6 @@ import {
   Tooltip,
   Legend,
   ReferenceLine,
-  ResponsiveContainer,
   ReferenceDot,
 } from "recharts";
 
@@ -21,9 +20,23 @@ import {
 /*  Safe KaTeX helpers – pure functions, safely wrapped in try/catch   */
 /* ------------------------------------------------------------------ */
 
+function repairControlEscapedLatex(text: string): string {
+  return text
+    .replace(/\beta/g, "\\beta")
+    .replace(/\text/g, "\\text")
+    .replace(/\times/g, "\\times")
+    .replace(/\tau/g, "\\tau")
+    .replace(/\frac/g, "\\frac")
+    .replace(/\rho/g, "\\rho");
+}
+
 function renderLatex(latex: string, displayMode: boolean): string | null {
   try {
-    return katex.renderToString(latex, { displayMode, throwOnError: true });
+    return katex.renderToString(repairControlEscapedLatex(latex), {
+      displayMode,
+      throwOnError: false,
+      strict: "ignore",
+    });
   } catch {
     return null;
   }
@@ -31,14 +44,14 @@ function renderLatex(latex: string, displayMode: boolean): string | null {
 
 function LatexBlock({ latex, fallback }: { latex: string; fallback: string }) {
   const html = renderLatex(latex, true);
-  if (!html) return <p className="font-mono text-sm leading-7 text-violet-950">{fallback}</p>;
-  return <div className="overflow-x-auto text-center text-violet-950 [&_.katex-display]:my-0" dangerouslySetInnerHTML={{ __html: html }} />;
+  if (!html) return <p className="overflow-x-auto font-mono text-sm leading-7 text-violet-950">{fallback}</p>;
+  return <div className="max-w-full overflow-x-auto text-center text-violet-950 [&_.katex-display]:my-0 [&_.katex-html]:min-w-max" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 function LatexInline({ latex, fallback }: { latex: string; fallback: string }) {
   const html = renderLatex(latex, false);
   if (!html) return <span className="font-mono text-xs font-semibold text-zinc-800">{fallback}</span>;
-  return <span className="[&_.katex]:text-xs [&_.katex]:leading-normal" dangerouslySetInnerHTML={{ __html: html }} />;
+  return <span className="align-baseline [&_.katex]:text-[0.92em] [&_.katex]:leading-normal" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /* ------------------------------------------------------------------ */
@@ -90,7 +103,9 @@ type ImageBlock = {
   type: "image";
   title: string;
   src: string;
+  alt?: string;
   caption?: string;
+  description?: string;
   source?: VisualBlockSource;
 };
 
@@ -210,6 +225,126 @@ type TimelineBlock = {
   keyTakeaways: string[];
 };
 
+type StataCodeBlock = {
+  type: "stata_code_block";
+  title: string;
+  description?: string;
+  code: string;
+  language?: "stata";
+  sourceFile?: string;
+  commands?: string[];
+  notes?: string[];
+};
+
+type StataOutputBlock = {
+  type: "stata_output_block";
+  title: string;
+  command?: string;
+  output: string;
+  highlights?: Array<{ label: string; value: string; meaning?: string }>;
+  annotations?: Array<{ field: string; meaning: string; howToRead: string; examUse?: string }>;
+  warnings?: string[];
+  sourceFile?: string;
+};
+
+type StataInterfaceGuideBlock = {
+  type: "stata_interface_guide";
+  title: string;
+  imageSrc?: string;
+  areas: Array<{ name: string; location?: string; purpose: string; studentAction: string; commonMistake?: string }>;
+};
+
+type TableMappingBlock = {
+  type: "table_mapping_block";
+  title: string;
+  targetTable: string;
+  mappings: Array<{
+    tableColumn: string;
+    model?: string;
+    command: string;
+    logSource?: string;
+    coefficientPath?: string;
+    stdErrPath?: string;
+    pValuePath?: string;
+    examInterpretation: string;
+    caution?: string;
+  }>;
+};
+
+type CalloutTeacherNoteBlock = {
+  type: "callout_teacher_note";
+  title: string;
+  tone?: "concept" | "exam" | "warning" | "intuition";
+  body: string;
+  example?: string;
+};
+
+type RegressionTableBlock = {
+  type: "regression_table";
+  title: string;
+  description?: string;
+  dependentVariable?: string;
+  models: Array<{
+    name: string;
+    estimator?: string;
+    fixedEffects?: string[];
+    clusteredBy?: string;
+    n?: string | number;
+    r2?: string;
+    rows: Array<{ variable: string; coef?: string; stdErr?: string; t?: string; p?: string; note?: string }>;
+  }>;
+  notes?: string[];
+  sourceFile?: string;
+};
+
+type DatasetSchemaBlock = {
+  type: "dataset_schema";
+  title: string;
+  datasetName: string;
+  description?: string;
+  observations?: string | number;
+  variablesCount?: string | number;
+  panelId?: string;
+  timeId?: string;
+  isBalancedPanel?: boolean;
+  variables: Array<{ name: string; label?: string; type?: string; role?: string; generatedFrom?: string }>;
+  notes?: string[];
+};
+
+type ReproductionStepsBlock = {
+  type: "reproduction_steps";
+  title: string;
+  goal: string;
+  steps: Array<{ label: string; command?: string; expectedOutput?: string; check?: string; explanation?: string }>;
+  finalCheck?: string;
+  sourceFiles?: string[];
+};
+
+type ExamTaskBlock = {
+  type: "exam_task";
+  title: string;
+  prompt: string;
+  requirements?: string[];
+  answerPath?: string[];
+  scoringPoints?: string[];
+  commonMistakes?: string[];
+};
+
+type InterpretationChecklistBlock = {
+  type: "interpretation_checklist";
+  title: string;
+  items: Array<{ label: string; question?: string; expected?: string; warning?: string }>;
+};
+
+type CommonStataErrorBlock = {
+  type: "common_stata_error";
+  title: string;
+  message: string;
+  cause?: string;
+  fix?: string;
+  example?: string;
+};
+
 type VisualBlock =
   | ProcessFlowBlock
   | ComparisonTableBlock
@@ -225,40 +360,112 @@ type VisualBlock =
   | CurveChartBlock
   | CashflowDiagramBlock
   | DecisionTreeBlock
-  | TimelineBlock;
+  | TimelineBlock
+  | StataCodeBlock
+  | StataOutputBlock
+  | StataInterfaceGuideBlock
+  | TableMappingBlock
+  | CalloutTeacherNoteBlock
+  | RegressionTableBlock
+  | DatasetSchemaBlock
+  | ReproductionStepsBlock
+  | ExamTaskBlock
+  | InterpretationChecklistBlock
+  | CommonStataErrorBlock;
 
 /* ------------------------------------------------------------------ */
 /*  Shared block wrapper                                               */
 /* ------------------------------------------------------------------ */
 
 const visualBlockTypeMeta: Record<string, { label: string; className: string }> = {
-  process_flow: { label: "流程图", className: "bg-slate-100 text-slate-700" },
+  process_flow: { label: "流程图", className: "bg-zinc-100 text-zinc-700" },
   comparison_table: { label: "对比表", className: "bg-zinc-100 text-zinc-700" },
-  formula_card: { label: "公式", className: "bg-violet-100 text-violet-700" },
-  concept_map: { label: "概念图", className: "bg-slate-100 text-slate-700" },
+  formula_card: { label: "公式", className: "bg-red-50 text-red-700 ring-1 ring-red-100" },
+  concept_map: { label: "概念图", className: "bg-zinc-100 text-zinc-700" },
   image: { label: "图片", className: "bg-zinc-100 text-zinc-700" },
-  case_card: { label: "案例", className: "bg-indigo-100 text-indigo-700" },
+  case_card: { label: "案例", className: "bg-zinc-100 text-zinc-700" },
   data_table: { label: "数据表", className: "bg-zinc-100 text-zinc-700" },
-  example_box: { label: "例题", className: "bg-blue-100 text-blue-700" },
-  chart_explanation: { label: "图表说明", className: "bg-emerald-100 text-emerald-700" },
-  payoff_chart: { label: "收益图", className: "bg-emerald-100 text-emerald-700" },
-  line_chart: { label: "趋势图", className: "bg-emerald-100 text-emerald-700" },
-  curve_chart: { label: "曲线图", className: "bg-emerald-100 text-emerald-700" },
-  cashflow_diagram: { label: "现金流图", className: "bg-teal-100 text-teal-700" },
-  decision_tree: { label: "判断分支", className: "bg-sky-100 text-sky-700" },
-  timeline: { label: "时间线", className: "bg-slate-100 text-slate-700" },
+  example_box: { label: "例题", className: "bg-red-50 text-red-700 ring-1 ring-red-100" },
+  chart_explanation: { label: "图表说明", className: "bg-zinc-100 text-zinc-700" },
+  payoff_chart: { label: "收益图", className: "bg-zinc-100 text-zinc-700" },
+  line_chart: { label: "趋势图", className: "bg-zinc-100 text-zinc-700" },
+  curve_chart: { label: "曲线图", className: "bg-zinc-100 text-zinc-700" },
+  cashflow_diagram: { label: "现金流图", className: "bg-zinc-100 text-zinc-700" },
+  decision_tree: { label: "判断分支", className: "bg-zinc-100 text-zinc-700" },
+  timeline: { label: "时间线", className: "bg-zinc-100 text-zinc-700" },
+  stata_code_block: { label: "Stata 代码", className: "bg-sky-50 text-sky-700 ring-1 ring-sky-100" },
+  stata_output_block: { label: "Stata 输出", className: "bg-sky-50 text-sky-700 ring-1 ring-sky-100" },
+  stata_interface_guide: { label: "Stata 界面", className: "bg-sky-50 text-sky-700 ring-1 ring-sky-100" },
+  table_mapping_block: { label: "表格映射", className: "bg-violet-50 text-violet-700 ring-1 ring-violet-100" },
+  callout_teacher_note: { label: "老师提示", className: "bg-amber-50 text-amber-700 ring-1 ring-amber-100" },
+  regression_table: { label: "回归表", className: "bg-violet-50 text-violet-700 ring-1 ring-violet-100" },
+  dataset_schema: { label: "数据集", className: "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100" },
+  reproduction_steps: { label: "复现实验", className: "bg-indigo-50 text-indigo-700 ring-1 ring-indigo-100" },
+  exam_task: { label: "考试任务", className: "bg-red-50 text-red-700 ring-1 ring-red-100" },
+  interpretation_checklist: { label: "解释清单", className: "bg-amber-50 text-amber-700 ring-1 ring-amber-100" },
+  common_stata_error: { label: "Stata 错误", className: "bg-red-50 text-red-700 ring-1 ring-red-100" },
 };
 
 function BlockCard({ title, type, children }: { title: string; type?: string; children: React.ReactNode }) {
   const meta = type ? visualBlockTypeMeta[type] : null;
 
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-5">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="min-w-0 overflow-visible rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-5">
+      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-100 pb-3">
         {meta ? <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${meta.className}`}>{meta.label}</span> : null}
-        <p className="text-sm font-semibold text-zinc-950">{title}</p>
+        <p className="text-sm font-semibold text-zinc-950"><MathText text={title} /></p>
       </div>
       <div className="mt-4">{children}</div>
+    </div>
+  );
+}
+
+function CodePanel({ code, tone = "zinc" }: { code?: string; tone?: "zinc" | "sky" | "red" }) {
+  if (!code) return null;
+  const toneClass =
+    tone === "sky"
+      ? "border-sky-100 bg-sky-950 text-sky-50"
+      : tone === "red"
+        ? "border-red-100 bg-red-950 text-red-50"
+        : "border-zinc-800 bg-zinc-950 text-zinc-50";
+  return (
+    <div className={`max-w-full overflow-x-auto overscroll-x-contain rounded-xl border ${toneClass}`}>
+      <pre className="min-w-max p-4 font-mono text-xs leading-6">
+        <code>{code}</code>
+      </pre>
+    </div>
+  );
+}
+
+function InlineMeta({ label, value }: { label: string; value?: string | number | boolean }) {
+  if (value === undefined || value === "") return null;
+  return (
+    <span className="rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-medium text-zinc-600">
+      {label}：{String(value)}
+    </span>
+  );
+}
+
+function NoteList({ title = "备注", items, tone = "zinc" }: { title?: string; items?: string[]; tone?: "zinc" | "amber" | "red" }) {
+  if (!items?.length) return null;
+  const toneClass =
+    tone === "amber"
+      ? "border-amber-100 bg-amber-50/70 text-amber-900"
+      : tone === "red"
+        ? "border-red-100 bg-red-50/70 text-red-900"
+        : "border-zinc-100 bg-zinc-50/70 text-zinc-700";
+  const titleClass = tone === "amber" ? "text-amber-800" : tone === "red" ? "text-red-800" : "text-zinc-500";
+  return (
+    <div className={`mt-4 rounded-xl border px-4 py-3 ${toneClass}`}>
+      <p className={`text-xs font-semibold ${titleClass}`}>{title}</p>
+      <ul className="mt-2 space-y-1">
+        {items.map((item, i) => (
+          <li key={`${title}-${i}`} className="flex gap-2 text-sm leading-6">
+            <span className="mt-0.5 shrink-0">•</span>
+            <span><MathText text={item} /></span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -297,29 +504,33 @@ function ProcessFlowView({ block }: { block: ProcessFlowBlock }) {
 /*  comparison_table                                                   */
 /* ------------------------------------------------------------------ */
 
-function ComparisonTableView({ block }: { block: ComparisonTableBlock }) {
+function ComparisonTableView({ block, compact = true }: { block: ComparisonTableBlock; compact?: boolean }) {
+  const [expanded, setExpanded] = useState(false);
   if (!block.headers?.length || !block.rows?.length) return null;
+
+  const shouldCompact = compact && block.rows.length > 6;
+  const visibleRows = shouldCompact && !expanded ? block.rows.slice(0, 5) : block.rows;
 
   return (
     <BlockCard title={block.title} type={block.type}>
-      <div className="-mx-1 overflow-x-auto">
-        <table className="w-full min-w-[640px] border-collapse text-sm">
+      <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+        <table className="w-full min-w-max border-collapse text-sm">
           <thead>
             <tr className="border-b border-zinc-200 bg-zinc-50">
               {block.headers.map((header, i) => (
-                <th key={`h-${i}`} className="px-3 py-2 text-left font-semibold text-zinc-900">
+                <th key={`h-${i}`} className="max-w-[18rem] px-3 py-2 text-left align-top font-semibold text-zinc-900">
                   <MathText text={header} />
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {block.rows.map((row, rowIdx) => (
+            {visibleRows.map((row, rowIdx) => (
               <tr key={`r-${rowIdx}`} className="border-b border-zinc-100 last:border-0">
                 {row.map((cell, cellIdx) => (
                   <td
                     key={`c-${rowIdx}-${cellIdx}`}
-                    className={`px-3 py-2.5 text-zinc-700 ${cellIdx === 0 ? "font-medium text-zinc-900" : ""}`}
+                    className={`max-w-[22rem] whitespace-normal break-words px-3 py-2.5 align-top text-zinc-700 ${cellIdx === 0 ? "font-medium text-zinc-900" : ""}`}
                   >
                     <MathText text={cell} />
                   </td>
@@ -329,6 +540,15 @@ function ComparisonTableView({ block }: { block: ComparisonTableBlock }) {
           </tbody>
         </table>
       </div>
+      {shouldCompact ? (
+        <button
+          type="button"
+          className="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 transition hover:border-red-200 hover:bg-red-100"
+          onClick={() => setExpanded((value) => !value)}
+        >
+          {expanded ? "收起表格" : `展开完整表格（共 ${block.rows.length} 行）`}
+        </button>
+      ) : null}
     </BlockCard>
   );
 }
@@ -349,7 +569,7 @@ function FormulaCardView({ block }: { block: FormulaCardBlock }) {
         </div>
       ) : (
         <div className="rounded-xl border border-violet-100 bg-violet-50/70 px-4 py-3">
-          <p className="font-mono text-sm leading-7 text-violet-950">{block.formula}</p>
+          <p className="font-mono text-sm leading-7 text-violet-950"><MathText text={block.formula} /></p>
         </div>
       )}
 
@@ -405,7 +625,7 @@ function ConceptMapView({ block }: { block: ConceptMapBlock }) {
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {block.concepts.map((concept, i) => (
           <div key={`concept-${i}`} className="rounded-xl border border-zinc-100 bg-zinc-50/80 p-3">
-            <p className="font-medium text-zinc-900">{concept.name}</p>
+            <p className="font-medium text-zinc-900"><MathText text={concept.name} /></p>
             {concept.description ? <p className="mt-1 text-sm leading-6 text-zinc-600"><MathText text={concept.description} /></p> : null}
           </div>
         ))}
@@ -418,7 +638,7 @@ function ConceptMapView({ block }: { block: ConceptMapBlock }) {
             {block.relations.map((rel, i) => (
               <div key={`rel-${i}`} className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-3 text-sm">
                 <p className="font-medium text-zinc-900">
-                  {rel.from} <span className="text-zinc-400">→</span> {rel.to}
+                  <MathText text={rel.from} /> <span className="text-zinc-400">→</span> <MathText text={rel.to} />
                 </p>
                 <p className="mt-1 leading-6 text-zinc-600"><MathText text={rel.relation} /></p>
               </div>
@@ -436,25 +656,96 @@ function ConceptMapView({ block }: { block: ConceptMapBlock }) {
 
 function ImageBlockView({ block }: { block: ImageBlock }) {
   const [failed, setFailed] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   if (!block.src) return null;
+  const alt = block.alt ?? block.caption ?? block.title;
 
   return (
     <BlockCard title={block.title} type={block.type}>
+      {block.description ? (
+        <p className="mb-3 text-sm leading-7 text-zinc-600">
+          <MathText text={block.description} />
+        </p>
+      ) : null}
       {failed ? (
         <div className="flex h-40 items-center justify-center rounded-xl border border-dashed border-zinc-200 bg-zinc-50 text-sm text-zinc-500">
-          图片加载失败：{block.src}
+          图片暂时无法显示
         </div>
       ) : (
-        /* eslint-disable-next-line @next/next/no-img-element */
-        <img
-          src={block.src}
-          alt={block.caption ?? block.title}
-          className="max-h-[480px] w-full rounded-xl border border-zinc-100 object-contain"
-          onError={() => setFailed(true)}
-        />
+        <div className="group relative overflow-visible rounded-2xl border border-zinc-200 bg-zinc-50 p-2">
+          <button
+            type="button"
+            className="block w-full cursor-zoom-in"
+            onClick={() => setOpen(true)}
+            aria-label={`查看大图：${alt}`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={block.src}
+              alt={alt}
+              className="mx-auto block h-auto w-auto max-w-full object-contain"
+              loading="lazy"
+              onError={() => setFailed(true)}
+            />
+          </button>
+          <button
+            type="button"
+            className="absolute right-3 top-3 rounded-full border border-zinc-200 bg-white/95 px-3 py-1 text-xs font-semibold text-zinc-700 shadow-sm transition hover:bg-zinc-50"
+            onClick={() => setOpen(true)}
+          >
+            查看大图
+          </button>
+        </div>
       )}
-      {block.caption ? <p className="mt-2 text-center text-xs text-zinc-500"><MathText text={block.caption} /></p> : null}
+      {block.caption ? <p className="mt-3 rounded-full bg-zinc-50 px-3 py-1 text-center text-xs leading-5 text-zinc-500"><MathText text={block.caption} /></p> : null}
+      {open && !failed ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 p-3 sm:p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`大图预览：${alt}`}
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="flex max-h-[94vh] w-full max-w-[96vw] flex-col rounded-2xl bg-white shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-3 border-b border-zinc-200 px-4 py-3">
+              <p className="min-w-0 truncate text-sm font-semibold text-zinc-900">{block.title}</p>
+              <button
+                type="button"
+                className="rounded-full border border-zinc-200 px-3 py-1 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50"
+                onClick={() => setOpen(false)}
+              >
+                关闭
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-auto bg-zinc-100 p-3 sm:p-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={block.src}
+                alt={alt}
+                className="mx-auto block h-auto max-h-none max-w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </BlockCard>
   );
 }
@@ -505,30 +796,34 @@ function CaseCardView({ block }: { block: CaseCardBlock }) {
 /*  data_table                                                         */
 /* ------------------------------------------------------------------ */
 
-function DataTableView({ block }: { block: DataTableBlock }) {
+function DataTableView({ block, compact = true }: { block: DataTableBlock; compact?: boolean }) {
+  const [expanded, setExpanded] = useState(false);
   if (!block.headers?.length || !block.rows?.length) return null;
+
+  const shouldCompact = compact && block.rows.length > 6;
+  const visibleRows = shouldCompact && !expanded ? block.rows.slice(0, 5) : block.rows;
 
   return (
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
-      <div className="-mx-1 overflow-x-auto">
-        <table className="w-full min-w-[640px] border-collapse text-sm">
+      <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+        <table className="w-full min-w-max border-collapse text-sm">
           <thead>
             <tr className="border-b border-zinc-200 bg-zinc-50">
               {block.headers.map((header, i) => (
-                <th key={`dh-${i}`} className="px-3 py-2 text-left font-semibold text-zinc-900">
+                <th key={`dh-${i}`} className="max-w-[18rem] px-3 py-2 text-left align-top font-semibold text-zinc-900">
                   <MathText text={header} />
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {block.rows.map((row, rowIdx) => (
+            {visibleRows.map((row, rowIdx) => (
               <tr key={`dr-${rowIdx}`} className="border-b border-zinc-100 last:border-0">
                 {row.map((cell, cellIdx) => (
                   <td
                     key={`dc-${rowIdx}-${cellIdx}`}
-                    className={`px-3 py-2.5 text-zinc-700 ${cellIdx === 0 ? "font-medium text-zinc-900" : ""}`}
+                    className={`max-w-[22rem] whitespace-normal break-words px-3 py-2.5 align-top text-zinc-700 ${cellIdx === 0 ? "font-medium text-zinc-900" : ""}`}
                   >
                     <MathText text={cell} />
                   </td>
@@ -538,6 +833,15 @@ function DataTableView({ block }: { block: DataTableBlock }) {
           </tbody>
         </table>
       </div>
+      {shouldCompact ? (
+        <button
+          type="button"
+          className="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 transition hover:border-red-200 hover:bg-red-100"
+          onClick={() => setExpanded((value) => !value)}
+        >
+          {expanded ? "收起表格" : `展开完整表格（共 ${block.rows.length} 行）`}
+        </button>
+      ) : null}
       {block.note ? (
         <p className="mt-3 text-xs leading-5 text-zinc-500">
           <span className="font-medium">备注：</span>
@@ -742,21 +1046,20 @@ function PayoffChartView({ block }: { block: PayoffChartBlock }) {
   return (
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
-      <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[720px]" style={{ height: 320 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
+      <div className="max-w-full overflow-x-auto overscroll-x-contain pb-2">
+        <div className="w-[860px] max-w-none">
+          <LineChart width={860} height={400} data={data} margin={{ top: 28, right: 64, left: 64, bottom: 76 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
               <XAxis
                 dataKey="x"
                 type="number"
                 domain={["dataMin", "dataMax"]}
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.xAxis, position: "insideBottomRight", offset: -5, fontSize: 11, fill: "#71717a" }}
+                label={{ value: block.xAxis, position: "bottom", offset: 20, fontSize: 11, fill: "#71717a" }}
               />
               <YAxis
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.yAxis, angle: -90, position: "insideLeft", offset: 10, fontSize: 11, fill: "#71717a" }}
+                label={{ value: block.yAxis, angle: -90, position: "left", offset: 18, fontSize: 11, fill: "#71717a" }}
               />
               <Tooltip
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
@@ -806,7 +1109,6 @@ function PayoffChartView({ block }: { block: PayoffChartBlock }) {
                 );
               })}
             </LineChart>
-          </ResponsiveContainer>
         </div>
       </div>
       {block.breakEvenPoints?.length ? (
@@ -914,20 +1216,26 @@ function LineChartView({ block }: { block: LineChartBlock }) {
   return (
     <BlockCard title={block.title} type={block.type}>
       {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
-      <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[720px]" style={{ height: 320 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
+      <div className="max-w-full overflow-x-auto overscroll-x-contain pb-2">
+        <div className="w-[780px] max-w-none">
+          <LineChart width={780} height={360} data={data} margin={{ top: 24, right: 56, left: 36, bottom: 42 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
               <XAxis
                 dataKey="x"
                 type={isNumericX ? "number" : "category"}
+                interval={0}
+                angle={isNumericX ? 0 : -35}
+                textAnchor={isNumericX ? "middle" : "end"}
+                height={isNumericX ? 48 : 76}
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.xAxis, position: "insideBottomRight", offset: -5, fontSize: 11, fill: "#71717a" }}
+                tickMargin={10}
+                label={{ value: block.xAxis, position: "bottom", offset: isNumericX ? 20 : 52, fontSize: 11, fill: "#71717a" }}
               />
               <YAxis
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.yAxis, angle: -90, position: "insideLeft", offset: 10, fontSize: 11, fill: "#71717a" }}
+                width={64}
+                domain={[0, "dataMax"]}
+                label={{ value: block.yAxis, angle: -90, position: "left", offset: 42, fontSize: 11, fill: "#71717a" }}
               />
               <Tooltip
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
@@ -954,7 +1262,6 @@ function LineChartView({ block }: { block: LineChartBlock }) {
                 />
               ))}
             </LineChart>
-          </ResponsiveContainer>
         </div>
       </div>
       <KeyTakeawaysList items={block.keyTakeaways} />
@@ -1004,21 +1311,20 @@ function CurveChartView({ block }: { block: CurveChartBlock }) {
           ) : null,
         )}
       </div>
-      <div className="overflow-x-auto overscroll-x-contain">
-        <div className="min-w-[720px]" style={{ height: 320 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
+      <div className="max-w-full overflow-x-auto overscroll-x-contain pb-2">
+        <div className="w-[780px] max-w-none">
+          <LineChart width={780} height={360} data={data} margin={{ top: 24, right: 56, left: 36, bottom: 42 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
               <XAxis
                 dataKey="x"
                 type="number"
                 domain={["dataMin", "dataMax"]}
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.xAxis, position: "insideBottomRight", offset: -5, fontSize: 11, fill: "#71717a" }}
+                label={{ value: block.xAxis, position: "bottom", offset: 20, fontSize: 11, fill: "#71717a" }}
               />
               <YAxis
                 tick={{ fontSize: 11, fill: "#71717a" }}
-                label={{ value: block.yAxis, angle: -90, position: "insideLeft", offset: 10, fontSize: 11, fill: "#71717a" }}
+                label={{ value: block.yAxis, angle: -90, position: "left", offset: 18, fontSize: 11, fill: "#71717a" }}
               />
               <Tooltip
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
@@ -1036,7 +1342,6 @@ function CurveChartView({ block }: { block: CurveChartBlock }) {
                 />
               ))}
             </LineChart>
-          </ResponsiveContainer>
         </div>
       </div>
       <KeyTakeawaysList items={block.keyTakeaways} />
@@ -1082,7 +1387,7 @@ function CashflowEdgeRow({
         <p className="mt-0.5 text-center text-xs font-medium text-zinc-800">
           <MathText text={edge.label} />
         </p>
-        {edge.timing ? <p className="text-center text-[10px] text-zinc-500">{edge.timing}</p> : null}
+        {edge.timing ? <p className="text-center text-[10px] text-zinc-500"><MathText text={edge.timing} /></p> : null}
       </div>
       <span className={`shrink-0 rounded-lg border px-2.5 py-1 text-xs font-semibold ${colors.bg} ${colors.text}`}>
         {toLabel}
@@ -1109,7 +1414,7 @@ function CashflowDiagramView({ block }: { block: CashflowDiagramBlock }) {
       <div className="mb-4 flex flex-wrap gap-2">
         {block.nodes.map((node) => (
           <div key={node.id} className="rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2">
-            <p className="text-sm font-semibold text-zinc-900">{node.label}</p>
+            <p className="text-sm font-semibold text-zinc-900"><MathText text={node.label} /></p>
             {node.role ? (
               <p className="mt-0.5 text-xs text-zinc-500">
                 <MathText text={node.role} />
@@ -1126,7 +1431,7 @@ function CashflowDiagramView({ block }: { block: CashflowDiagramBlock }) {
               if (!phaseEdges.length) return null;
               return (
                 <div key={`phase-${pi}`} className="mb-3 min-w-[720px]">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-zinc-500">{phase.title}</p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-zinc-500"><MathText text={phase.title} /></p>
                   {phaseEdges.map((edge) => (
                     <CashflowEdgeRow
                       key={edge.id}
@@ -1273,10 +1578,391 @@ function TimelineView({ block }: { block: TimelineBlock }) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  econometrics / Stata blocks                                        */
+/* ------------------------------------------------------------------ */
+
+function StataCodeBlockView({ block }: { block: StataCodeBlock }) {
+  if (!block.code) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
+      <div className="mb-3 flex flex-wrap gap-2">
+        <InlineMeta label="语言" value={block.language ?? "stata"} />
+        <InlineMeta label="来源" value={block.sourceFile} />
+      </div>
+      {block.commands?.length ? (
+        <div className="mb-3 flex flex-wrap gap-2">
+          {block.commands.map((command, i) => (
+            <span key={`cmd-${i}`} className="rounded-lg bg-sky-50 px-2.5 py-1 font-mono text-xs font-medium text-sky-800 ring-1 ring-sky-100">
+              {command}
+            </span>
+          ))}
+        </div>
+      ) : null}
+      <CodePanel code={block.code} tone="sky" />
+      <NoteList items={block.notes} />
+    </BlockCard>
+  );
+}
+
+function StataOutputBlockView({ block }: { block: StataOutputBlock }) {
+  if (!block.output) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="mb-3 flex flex-wrap gap-2">
+        <InlineMeta label="命令" value={block.command} />
+        <InlineMeta label="来源" value={block.sourceFile} />
+      </div>
+      <CodePanel code={block.output} />
+      {block.highlights?.length ? (
+        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          {block.highlights.map((item, i) => (
+            <div key={`hl-${i}`} className="rounded-xl border border-sky-100 bg-sky-50/60 px-4 py-3">
+              <p className="text-xs font-semibold text-sky-700"><MathText text={item.label} /></p>
+              <p className="mt-1 font-mono text-sm font-semibold text-zinc-950">{item.value}</p>
+              {item.meaning ? <p className="mt-1 text-sm leading-6 text-zinc-600"><MathText text={item.meaning} /></p> : null}
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {block.annotations?.length ? (
+        <div className="mt-4">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">输出字段怎么读</p>
+          <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+            <table className="w-full min-w-[680px] border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-zinc-200 bg-zinc-50">
+                  {['字段', '含义', '怎么看', '考试怎么用'].map((header) => (
+                    <th key={header} className="px-3 py-2 text-left align-top font-semibold text-zinc-900">{header}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.annotations.map((item, i) => (
+                  <tr key={`ann-${i}`} className="border-b border-zinc-100 last:border-0">
+                    <td className="px-3 py-2.5 align-top font-mono text-xs font-semibold text-zinc-950">{item.field}</td>
+                    <td className="max-w-64 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.meaning} /></td>
+                    <td className="max-w-72 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.howToRead} /></td>
+                    <td className="max-w-72 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.examUse ?? ""} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ) : null}
+      <NoteList title="警告 / 注意" items={block.warnings} tone="amber" />
+    </BlockCard>
+  );
+}
+
+function StataInterfaceGuideView({ block }: { block: StataInterfaceGuideBlock }) {
+  if (!block.areas?.length) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      {block.imageSrc ? (
+        <div className="mb-4 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 p-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={block.imageSrc} alt={block.title} className="mx-auto block h-auto max-w-full object-contain" loading="lazy" />
+        </div>
+      ) : null}
+      <div className="grid gap-3 md:grid-cols-2">
+        {block.areas.map((area, i) => (
+          <div key={`${area.name}-${i}`} className="rounded-2xl border border-sky-100 bg-sky-50/40 p-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-semibold text-zinc-950"><MathText text={area.name} /></p>
+              {area.location ? (
+                <span className="rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-sky-700 ring-1 ring-sky-100">
+                  <MathText text={area.location} />
+                </span>
+              ) : null}
+            </div>
+            <div className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">
+              <p><span className="font-medium text-zinc-950">用途：</span><MathText text={area.purpose} /></p>
+              <p><span className="font-medium text-zinc-950">学生动作：</span><MathText text={area.studentAction} /></p>
+              {area.commonMistake ? <p className="text-amber-800"><span className="font-medium">常见错误：</span><MathText text={area.commonMistake} /></p> : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </BlockCard>
+  );
+}
+
+function TableMappingBlockView({ block }: { block: TableMappingBlock }) {
+  if (!block.mappings?.length) return null;
+  const headers = ["表格列", "模型", "Stata 命令", "log 位置", "系数", "标准误", "p 值", "考试解释", "注意事项"];
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="mb-3 flex flex-wrap gap-2">
+        <InlineMeta label="目标表" value={block.targetTable} />
+      </div>
+      <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+        <table className="w-full min-w-[1040px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-zinc-200 bg-zinc-50">
+              {headers.map((header) => (
+                <th key={header} className="px-3 py-2 text-left align-top font-semibold text-zinc-900">{header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.mappings.map((item, i) => (
+              <tr key={`${item.tableColumn}-${i}`} className="border-b border-zinc-100 last:border-0">
+                <td className="max-w-40 px-3 py-2.5 align-top font-semibold text-zinc-950"><MathText text={item.tableColumn} /></td>
+                <td className="max-w-36 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.model ?? ""} /></td>
+                <td className="max-w-64 whitespace-pre-wrap break-words px-3 py-2.5 align-top font-mono text-xs text-sky-900">{item.command}</td>
+                <td className="max-w-52 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.logSource ?? ""} /></td>
+                <td className="max-w-44 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.coefficientPath ?? ""} /></td>
+                <td className="max-w-44 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.stdErrPath ?? ""} /></td>
+                <td className="max-w-44 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.pValuePath ?? ""} /></td>
+                <td className="max-w-80 px-3 py-2.5 align-top text-zinc-700"><MathText text={item.examInterpretation} /></td>
+                <td className="max-w-72 px-3 py-2.5 align-top text-amber-800"><MathText text={item.caution ?? ""} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </BlockCard>
+  );
+}
+
+const teacherNoteToneMeta: Record<NonNullable<CalloutTeacherNoteBlock["tone"]>, { label: string; className: string }> = {
+  concept: { label: "概念提示", className: "border-sky-100 bg-sky-50/70 text-sky-900" },
+  exam: { label: "考试提醒", className: "border-red-100 bg-red-50/70 text-red-900" },
+  warning: { label: "误区提醒", className: "border-amber-100 bg-amber-50/70 text-amber-900" },
+  intuition: { label: "直觉理解", className: "border-emerald-100 bg-emerald-50/70 text-emerald-900" },
+};
+
+function CalloutTeacherNoteView({ block }: { block: CalloutTeacherNoteBlock }) {
+  if (!block.body) return null;
+  const tone = teacherNoteToneMeta[block.tone ?? "concept"];
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className={`rounded-2xl border px-4 py-3 ${tone.className}`}>
+        <p className="text-xs font-semibold">{tone.label}</p>
+        <div className="mt-2 space-y-2 text-sm leading-7">
+          {block.body.split("\n").map((line, i) => (
+            <p key={`body-${i}`}><MathText text={line} /></p>
+          ))}
+        </div>
+      </div>
+      {block.example ? (
+        <div className="mt-3 rounded-xl border border-zinc-100 bg-zinc-50/70 px-4 py-3">
+          <p className="text-xs font-semibold text-zinc-500">例子</p>
+          <p className="mt-1 text-sm leading-7 text-zinc-800"><MathText text={block.example} /></p>
+        </div>
+      ) : null}
+    </BlockCard>
+  );
+}
+
+function RegressionTableView({ block }: { block: RegressionTableBlock }) {
+  if (!block.models?.length) return null;
+  const variables = Array.from(new Set(block.models.flatMap((model) => model.rows?.map((row) => row.variable) ?? [])));
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
+      <div className="mb-3 flex flex-wrap gap-2">
+        <InlineMeta label="被解释变量" value={block.dependentVariable} />
+        <InlineMeta label="来源" value={block.sourceFile} />
+      </div>
+      <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+        <table className="w-full min-w-[760px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-zinc-200 bg-zinc-50">
+              <th className="w-44 px-3 py-2 text-left align-top font-semibold text-zinc-900">变量</th>
+              {block.models.map((model, i) => (
+                <th key={`model-${i}`} className="min-w-44 px-3 py-2 text-left align-top font-semibold text-zinc-900">
+                  <MathText text={model.name} />
+                  <div className="mt-1 space-y-0.5 text-[11px] font-normal leading-5 text-zinc-500">
+                    {model.estimator ? <p><MathText text={model.estimator} /></p> : null}
+                    {model.fixedEffects?.length ? <p>FE: {model.fixedEffects.join(" + ")}</p> : null}
+                    {model.clusteredBy ? <p>Cluster: {model.clusteredBy}</p> : null}
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {variables.map((variable) => (
+              <tr key={variable} className="border-b border-zinc-100 last:border-0">
+                <td className="px-3 py-3 align-top font-medium text-zinc-900"><MathText text={variable} /></td>
+                {block.models.map((model, i) => {
+                  const row = model.rows.find((item) => item.variable === variable);
+                  return (
+                    <td key={`${variable}-${i}`} className="px-3 py-3 align-top text-zinc-700">
+                      {row ? (
+                        <div className="space-y-1">
+                          {row.coef ? <p className="font-mono text-sm font-semibold text-zinc-950">{row.coef}</p> : null}
+                          {row.stdErr ? <p className="font-mono text-xs text-zinc-500">({row.stdErr})</p> : null}
+                          <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-zinc-500">
+                            {row.t ? <span>t={row.t}</span> : null}
+                            {row.p ? <span>p={row.p}</span> : null}
+                          </div>
+                          {row.note ? <p className="text-xs leading-5 text-amber-700"><MathText text={row.note} /></p> : null}
+                        </div>
+                      ) : <span className="text-zinc-300">—</span>}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+            <tr className="border-t border-zinc-200 bg-zinc-50/70">
+              <td className="px-3 py-2 font-medium text-zinc-700">N</td>
+              {block.models.map((model, i) => <td key={`n-${i}`} className="px-3 py-2 font-mono text-xs text-zinc-700">{model.n ?? "—"}</td>)}
+            </tr>
+            <tr className="bg-zinc-50/70">
+              <td className="px-3 py-2 font-medium text-zinc-700">R²</td>
+              {block.models.map((model, i) => <td key={`r2-${i}`} className="px-3 py-2 font-mono text-xs text-zinc-700">{model.r2 ?? "—"}</td>)}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <NoteList items={block.notes} />
+    </BlockCard>
+  );
+}
+
+function DatasetSchemaView({ block }: { block: DatasetSchemaBlock }) {
+  if (!block.variables?.length) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      {block.description ? <p className="mb-3 text-sm leading-7 text-zinc-600"><MathText text={block.description} /></p> : null}
+      <div className="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="rounded-xl border border-emerald-100 bg-emerald-50/60 px-4 py-3">
+          <p className="text-xs font-semibold text-emerald-700">数据集</p>
+          <p className="mt-1 font-mono text-sm font-semibold text-zinc-950">{block.datasetName}</p>
+        </div>
+        <InlineMeta label="观测值" value={block.observations} />
+        <InlineMeta label="变量数" value={block.variablesCount} />
+        <InlineMeta label="平衡面板" value={block.isBalancedPanel === undefined ? undefined : block.isBalancedPanel ? "是" : "否"} />
+      </div>
+      <div className="mb-3 flex flex-wrap gap-2">
+        <InlineMeta label="Panel ID" value={block.panelId} />
+        <InlineMeta label="Time ID" value={block.timeId} />
+      </div>
+      <div className="-mx-1 max-w-full overflow-x-auto overscroll-x-contain rounded-xl border border-zinc-100">
+        <table className="w-full min-w-[680px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-zinc-200 bg-zinc-50">
+              {['变量名', '标签', '类型', '角色', '生成来源'].map((header) => (
+                <th key={header} className="px-3 py-2 text-left align-top font-semibold text-zinc-900">{header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.variables.map((variable, i) => (
+              <tr key={`${variable.name}-${i}`} className="border-b border-zinc-100 last:border-0">
+                <td className="px-3 py-2 align-top font-mono text-xs font-semibold text-zinc-950">{variable.name}</td>
+                <td className="max-w-64 px-3 py-2 align-top text-zinc-700"><MathText text={variable.label ?? ""} /></td>
+                <td className="px-3 py-2 align-top font-mono text-xs text-zinc-600">{variable.type ?? "—"}</td>
+                <td className="px-3 py-2 align-top text-zinc-700"><MathText text={variable.role ?? ""} /></td>
+                <td className="max-w-56 px-3 py-2 align-top text-zinc-600"><MathText text={variable.generatedFrom ?? ""} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <NoteList items={block.notes} />
+    </BlockCard>
+  );
+}
+
+function ReproductionStepsView({ block }: { block: ReproductionStepsBlock }) {
+  if (!block.steps?.length) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="mb-4 rounded-xl border border-indigo-100 bg-indigo-50/60 px-4 py-3">
+        <p className="text-xs font-semibold text-indigo-700">复现目标</p>
+        <p className="mt-1 text-sm leading-7 text-zinc-800"><MathText text={block.goal} /></p>
+      </div>
+      <ol className="space-y-3">
+        {block.steps.map((step, i) => (
+          <li key={`rep-${i}`} className="rounded-2xl border border-zinc-100 bg-zinc-50/60 p-4">
+            <div className="flex items-start gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-xs font-semibold text-white">{i + 1}</span>
+              <div className="min-w-0 flex-1">
+                <p className="font-medium leading-7 text-zinc-900"><MathText text={step.label} /></p>
+                {step.explanation ? <p className="mt-1 text-sm leading-6 text-zinc-600"><MathText text={step.explanation} /></p> : null}
+                {step.command ? <div className="mt-3"><CodePanel code={step.command} tone="sky" /></div> : null}
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {step.expectedOutput ? <div className="rounded-xl bg-white px-3 py-2 text-sm leading-6 text-zinc-700"><span className="font-medium text-zinc-900">预期输出：</span><MathText text={step.expectedOutput} /></div> : null}
+                  {step.check ? <div className="rounded-xl bg-white px-3 py-2 text-sm leading-6 text-emerald-800"><span className="font-medium">核对：</span><MathText text={step.check} /></div> : null}
+                </div>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {block.finalCheck ? <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm leading-7 text-emerald-900"><span className="font-semibold">最终核对：</span><MathText text={block.finalCheck} /></div> : null}
+      {block.sourceFiles?.length ? <NoteList title="相关文件" items={block.sourceFiles} /> : null}
+    </BlockCard>
+  );
+}
+
+function ExamTaskView({ block }: { block: ExamTaskBlock }) {
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="rounded-xl border border-red-100 bg-red-50/50 px-4 py-3">
+        <p className="text-xs font-semibold text-red-700">题目</p>
+        <p className="mt-1 text-sm leading-7 text-zinc-800"><MathText text={block.prompt} /></p>
+      </div>
+      <NoteList title="作答要求" items={block.requirements} />
+      <NoteList title="答题路径" items={block.answerPath} />
+      <NoteList title="得分点" items={block.scoringPoints} />
+      <NoteList title="常见失分" items={block.commonMistakes} tone="amber" />
+    </BlockCard>
+  );
+}
+
+function InterpretationChecklistView({ block }: { block: InterpretationChecklistBlock }) {
+  if (!block.items?.length) return null;
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="space-y-2">
+        {block.items.map((item, i) => (
+          <div key={`chk-${i}`} className="rounded-xl border border-zinc-100 bg-zinc-50/70 px-4 py-3">
+            <p className="font-medium text-zinc-900">{i + 1}. <MathText text={item.label} /></p>
+            {item.question ? <p className="mt-1 text-sm leading-6 text-zinc-600">问题：<MathText text={item.question} /></p> : null}
+            {item.expected ? <p className="mt-1 text-sm leading-6 text-emerald-800">应答：<MathText text={item.expected} /></p> : null}
+            {item.warning ? <p className="mt-1 text-sm leading-6 text-amber-800">注意：<MathText text={item.warning} /></p> : null}
+          </div>
+        ))}
+      </div>
+    </BlockCard>
+  );
+}
+
+function CommonStataErrorView({ block }: { block: CommonStataErrorBlock }) {
+  return (
+    <BlockCard title={block.title} type={block.type}>
+      <div className="rounded-xl border border-red-100 bg-red-50/70 px-4 py-3">
+        <p className="text-xs font-semibold text-red-700">错误 / 警告信息</p>
+        <p className="mt-1 font-mono text-sm font-semibold leading-6 text-red-950">{block.message}</p>
+      </div>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        {block.cause ? <div className="rounded-xl border border-amber-100 bg-amber-50/70 px-4 py-3 text-sm leading-6 text-amber-900"><p className="text-xs font-semibold text-amber-800">原因</p><p className="mt-1"><MathText text={block.cause} /></p></div> : null}
+        {block.fix ? <div className="rounded-xl border border-emerald-100 bg-emerald-50/70 px-4 py-3 text-sm leading-6 text-emerald-900"><p className="text-xs font-semibold text-emerald-800">修复</p><p className="mt-1"><MathText text={block.fix} /></p></div> : null}
+      </div>
+      {block.example ? <div className="mt-3"><CodePanel code={block.example} tone="red" /></div> : null}
+    </BlockCard>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  Main renderer                                                      */
 /* ------------------------------------------------------------------ */
 
-export default function VisualBlockRenderer({ blocks, showHeading = true }: { blocks?: unknown[]; showHeading?: boolean }) {
+export default function VisualBlockRenderer({
+  blocks,
+  showHeading = true,
+  compactTables = true,
+}: {
+  blocks?: unknown[];
+  showHeading?: boolean;
+  compactTables?: boolean;
+}) {
   if (!blocks?.length) return null;
 
   return (
@@ -1291,7 +1977,7 @@ export default function VisualBlockRenderer({ blocks, showHeading = true }: { bl
             case "process_flow":
               return <ProcessFlowView key={`vb-${index}`} block={b} />;
             case "comparison_table":
-              return <ComparisonTableView key={`vb-${index}`} block={b} />;
+              return <ComparisonTableView key={`vb-${index}`} block={b} compact={compactTables} />;
             case "formula_card":
               return <FormulaCardView key={`vb-${index}`} block={b} />;
             case "concept_map":
@@ -1301,7 +1987,7 @@ export default function VisualBlockRenderer({ blocks, showHeading = true }: { bl
             case "case_card":
               return <CaseCardView key={`vb-${index}`} block={b} />;
             case "data_table":
-              return <DataTableView key={`vb-${index}`} block={b} />;
+              return <DataTableView key={`vb-${index}`} block={b} compact={compactTables} />;
             case "example_box":
               return <ExampleBoxView key={`vb-${index}`} block={b} />;
             case "chart_explanation":
@@ -1318,6 +2004,28 @@ export default function VisualBlockRenderer({ blocks, showHeading = true }: { bl
               return <DecisionTreeView key={`vb-${index}`} block={b} />;
             case "timeline":
               return <TimelineView key={`vb-${index}`} block={b} />;
+            case "stata_code_block":
+              return <StataCodeBlockView key={`vb-${index}`} block={b} />;
+            case "stata_output_block":
+              return <StataOutputBlockView key={`vb-${index}`} block={b} />;
+            case "stata_interface_guide":
+              return <StataInterfaceGuideView key={`vb-${index}`} block={b} />;
+            case "table_mapping_block":
+              return <TableMappingBlockView key={`vb-${index}`} block={b} />;
+            case "callout_teacher_note":
+              return <CalloutTeacherNoteView key={`vb-${index}`} block={b} />;
+            case "regression_table":
+              return <RegressionTableView key={`vb-${index}`} block={b} />;
+            case "dataset_schema":
+              return <DatasetSchemaView key={`vb-${index}`} block={b} />;
+            case "reproduction_steps":
+              return <ReproductionStepsView key={`vb-${index}`} block={b} />;
+            case "exam_task":
+              return <ExamTaskView key={`vb-${index}`} block={b} />;
+            case "interpretation_checklist":
+              return <InterpretationChecklistView key={`vb-${index}`} block={b} />;
+            case "common_stata_error":
+              return <CommonStataErrorView key={`vb-${index}`} block={b} />;
             default:
               return null;
           }

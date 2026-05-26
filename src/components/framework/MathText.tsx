@@ -14,6 +14,49 @@ type Token =
   | { type: "blockLatex"; value: string };
 
 /* ------------------------------------------------------------------ */
+/*  Normalize loose inline math: (i_{1,H}) -> \(i_{1,H}\)             */
+/* ------------------------------------------------------------------ */
+
+const greekLetters = ["sigma", "alpha", "beta", "gamma", "delta", "theta", "lambda", "mu", "rho", "tau", "phi", "psi", "omega", "pi", "epsilon", "zeta", "eta", "kappa", "nu", "xi"];
+const greekPattern = new RegExp(`\\b(${greekLetters.join("|")})\\b`, "g");
+
+function looksLikeMath(inner: string): boolean {
+  if (/[_{^]/.test(inner)) return true;
+  if (/\be\^/.test(inner)) return true;
+  if (greekLetters.some((g) => inner.includes(g)) && !/^[a-zA-Z\s,.']+$/.test(inner)) return true;
+  if (/\b(sigma|alpha|beta|gamma|delta|theta|lambda|mu|rho|tau|phi|psi|omega|pi)\s*[=<>]/.test(inner)) return true;
+  return false;
+}
+
+function latexifyGreek(expr: string): string {
+  return expr.replace(greekPattern, "\\$1");
+}
+
+function latexifyPercent(expr: string): string {
+  return expr.replace(/%/g, "\\%");
+}
+
+function normalizeLooseInlineMath(text: string): string {
+  if (!text) return text;
+  return text.replace(/(?<!\\)\(([^()]{2,80})\)/g, (full, inner: string) => {
+    if (full.startsWith("\\(")) return full;
+    if (!looksLikeMath(inner)) return full;
+    const normalized = latexifyPercent(latexifyGreek(inner.trim()));
+    return `\\(${normalized}\\)`;
+  });
+}
+
+function repairControlEscapedLatex(text: string): string {
+  return text
+    .replace(/\beta/g, "\\beta")
+    .replace(/\text/g, "\\text")
+    .replace(/\times/g, "\\times")
+    .replace(/\tau/g, "\\tau")
+    .replace(/\frac/g, "\\frac")
+    .replace(/\rho/g, "\\rho");
+}
+
+/* ------------------------------------------------------------------ */
 /*  Parse a string into tokens: plain text, \(...\), \[...\]           */
 /* ------------------------------------------------------------------ */
 
@@ -49,13 +92,24 @@ function tokenize(text: string): Token[] {
   return tokens;
 }
 
+function tokenizeWithLooseMath(text: string): Token[] {
+  return tokenize(repairControlEscapedLatex(text)).flatMap((token) => {
+    if (token.type !== "text") return [token];
+    return tokenize(normalizeLooseInlineMath(token.value));
+  });
+}
+
 /* ------------------------------------------------------------------ */
 /*  Render a single LaTeX string with KaTeX, fallback on error         */
 /* ------------------------------------------------------------------ */
 
 function renderLatex(latex: string, displayMode: boolean): string | null {
   try {
-    return katex.renderToString(latex, { displayMode, throwOnError: true });
+    return katex.renderToString(latex, {
+      displayMode,
+      throwOnError: false,
+      strict: "ignore",
+    });
   } catch {
     return null;
   }
@@ -66,7 +120,7 @@ function renderLatex(latex: string, displayMode: boolean): string | null {
 /* ------------------------------------------------------------------ */
 
 export default function MathText({ text, as }: { text: string; as?: "p" | "span" }) {
-  const tokens = tokenize(text);
+  const tokens = tokenizeWithLooseMath(text);
 
   // Fast path: no LaTeX at all, render plain text directly
   if (tokens.length === 1 && tokens[0]?.type === "text") {
@@ -80,11 +134,17 @@ export default function MathText({ text, as }: { text: string; as?: "p" | "span"
 
     if (token.type === "blockLatex") {
       const html = renderLatex(token.value, true);
-      if (!html) return <Fragment key={i}>{token.value}</Fragment>;
+      if (!html) {
+        return (
+          <code key={i} className="block max-w-full overflow-x-auto rounded-lg bg-zinc-100 px-2 py-1 font-mono text-xs text-zinc-700">
+            {token.value}
+          </code>
+        );
+      }
       return (
         <span
           key={i}
-          className="inline-block w-full text-center"
+          className="block max-w-full overflow-x-auto text-center [&_.katex-display]:my-1 [&_.katex-html]:min-w-max"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       );
@@ -92,11 +152,17 @@ export default function MathText({ text, as }: { text: string; as?: "p" | "span"
 
     // inlineLatex
     const html = renderLatex(token.value, false);
-    if (!html) return <Fragment key={i}>{token.value}</Fragment>;
+    if (!html) {
+      return (
+        <code key={i} className="rounded bg-zinc-100 px-1 py-0.5 font-mono text-[0.85em] text-zinc-700">
+          {token.value}
+        </code>
+      );
+    }
     return (
       <span
         key={i}
-        className="[&_.katex]:text-xs [&_.katex]:leading-normal"
+        className="inline max-w-full align-baseline [&_.katex]:text-[0.92em] [&_.katex]:leading-normal"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     );
